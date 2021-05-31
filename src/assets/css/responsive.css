@@ -1,0 +1,69 @@
+@media only screen and (min-width: 1201px){ 
+.navbar-brand .mobile {display: none;}
+.navbar-brand .desktop {display: block;}
+}
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+.navbar-brand .mobile {display: none;}
+.navbar-brand .desktop {display: block;}
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+.navbar{background:#fff;}
+.navbar ul li a {color: #505050; font-weight: 500;}
+.navbar ul li:hover a {color: #505050; background: transparent;}
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {background: #fff; color: #008cfe;}
+.navbar-brand .mobile {display: block;}
+.navbar-brand .desktop {display: none;}
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+.navbar{background:#fff;}
+.navbar ul li a {color: #505050; font-weight: 500;}
+.navbar ul li:hover a {color: #505050; background: transparent;}
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {background: #fff; color: #008cfe;}
+.navbar-brand .mobile {display: block;}
+.navbar-brand .desktop {display: none;}
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+.navbar{background:#fff;}
+.navbar ul li a {color: #505050; font-weight: 500;}
+.navbar ul li:hover a {color: #505050; background: transparent;}
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {background: #fff; color: #008cfe;}
+.navbar-brand .mobile {display: block;}
+.navbar-brand .desktop {display: none;}
+}
+@media only screen and (max-width: 479px) {
+.navbar{background:#fff;}
+.navbar ul li a {color: #505050; font-weight: 500;}
+.navbar ul li:hover a {color: #505050; background: transparent;}
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {background: #fff; color: #008cfe;}
+
+.header-1-text h1 {font-size: 30px; font-weight: 600; line-height: 35px;}
+.header-1-text h5 {font-size: 14px; line-height: 23px;}
+.header-1-text {margin: 62% 0 0 0;}
+
+.header-inner-text h1 {font-size: 30px; font-weight: 600; line-height: 35px;}
+.header-inner-text h5 {font-size: 14px; line-height: 23px;}
+.header-inner-text {margin: 40% 0 0 0;}
+
+.navbar-brand .mobile {display: block;}
+.navbar-brand .desktop {display: none;}
+}
+
+@media (max-width: 767px) {
+  .comments-avatar {
+    float: none;
+  }
+  .latest-comments li.children {
+    margin-left: 0;
+  }
+   .comments-text {
+    margin-top: 15px;
+  }
+  .conatct-post-form {
+    padding: 20px;
+  }
+}
