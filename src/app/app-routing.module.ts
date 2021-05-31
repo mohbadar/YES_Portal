@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { BlogleftComponent } from './components/blogleft/blogleft.component';
-import { BlogrightComponent } from './components/blogright/blogright.component';
-import { BlogdetailsComponent } from './components/blogdetails/blogdetails.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BlogleftComponent } from './pages/blogleft/blogleft.component';
+import { BlogrightComponent } from './pages/blogright/blogright.component';
+import { BlogdetailsComponent } from './pages/blogdetails/blogdetails.component';
 
 const routes: Routes = [
 
