@@ -10,6 +10,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { BlogleftComponent } from './pages/blogleft/blogleft.component';
 import { BlogrightComponent } from './pages/blogright/blogright.component';
 import { BlogdetailsComponent } from './pages/blogdetails/blogdetails.component';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
 
 @NgModule({
   declarations: [
@@ -24,7 +31,15 @@ import { BlogdetailsComponent } from './pages/blogdetails/blogdetails.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: createTranslateLoader,
+          deps: [HttpClient]
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
