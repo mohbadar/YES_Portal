@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'yes-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'yes-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-	selectedLang;
-	languages = [
+    selectedLang;
+    languages = [
         {
             name: 'English',
             icon: 'us.png',
@@ -24,17 +24,17 @@ export class HeaderComponent implements OnInit {
         }
     ];
 
-	constructor(private translate: TranslateService,) { }
+    constructor(private translate: TranslateService,) { }
 
-	ngOnInit(): void {
-		if (localStorage.getItem('lang')) {
+    ngOnInit(): void {
+        if (localStorage.getItem('lang')) {
             this.selectedLang = localStorage.getItem('lang');
         } else {
             this.selectedLang = this.translate.getDefaultLang
         }
-	}
+    }
 
-	changeLang(lang) {
+    changeLang(lang) {
         console.log('Change Language: ', lang);
         this.selectedLang = lang;
         this.translate.use(lang);
