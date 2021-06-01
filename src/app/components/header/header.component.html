@@ -1,68 +1,75 @@
 <nav id="navbar-1" class="navbar navbar-expand-md btco-hover-menu navbar-1">
-    <div class="container"> <a data-scroll class="navbar-brand" routerLink="/home"><img src="assets/images/header-logo-1.svg" id="logo" class="img-fluid desktop" alt=""><img src="assets/images/header-logo-2.png" class="img-fluid mobile" alt=""></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown" >
-        <ul class="navbar-nav mr-auto ml-auto">
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#header">Home</a> </li>
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#home" id="navbarDropdown">{{ 'HOME'|translate }}</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" routerLink="/vision">{{ 'VISION'|translate }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/about-us">{{ 'ABOUT_US'|translate }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/contact-us">{{ 'CONTACT_US'|translate }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/contact-us">{{ 'MEMBERSHIP'|translate }}</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#home" id="navbarDropdown">{{ 'E-LEARNING'|translate }}</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" routerLink="/vision">{{ 'VISION'|translate }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/about-us">{{ 'ABOUT_US'|translate }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/contact-us">{{ 'CONTACT_US'|translate }}</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/contact-us">{{ 'MEMBERSHIP'|translate }}</a>
-            </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#about">About</a> </li>
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#services">Services</a> </li>
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#team">Team</a> </li>
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#portfolio">Portfolio</a> </li>
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#blog" id="navbarDropdown">Blog</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" routerLink="/blogleft">Blog Sidebar Left</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" routerLink="/blogright">Blog Siderbar Right</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" routerLink="/blogdetails">Blog Details</a>
-              </div>
-          </li>
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#clients">Clients</a> </li>
-          <li class="nav-item"> <a class="nav-link" data-scroll href="#footer">Contact</a> </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" id="addClass" href="#"> <i class="icofont-search"></i> </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown">
-              <img src="assets/images/language.svg" alt="">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <ng-container *ngFor="let language of languages">
-                <a class="dropdown-item" (click)="changeLang(language.value)" href="#lang">
-                  <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
-                  <span>{{ language.name }}</span>
-                  <img class="check-img" *ngIf="selectedLang == language.value" src="assets/images/check.png">
-                </a>
-                <div class="dropdown-divider"></div>
-              </ng-container>
-                
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="container"> <a data-scroll class="navbar-brand" routerLink="/home"><img
+        src="assets/images/header-logo-1.svg" id="logo" class="img-fluid desktop" alt=""><img
+        src="assets/images/header-logo-2.png" class="img-fluid mobile" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span
+        class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto ml-auto">
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#header">{{ 'Home' | translate }}</a> </li>
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#home"
+            id="navbarDropdown">{{ 'HOME'|translate }}</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/vision">{{ 'VISION'|translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/about-us">{{ 'ABOUT_US'|translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/contact-us">{{ 'CONTACT_US'|translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/contact-us">{{ 'MEMBERSHIP'|translate }}</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#home"
+            id="navbarDropdown">{{ 'E-LEARNING'|translate }}</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/vision">{{ 'VISION'|translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/about-us">{{ 'ABOUT_US'|translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/contact-us">{{ 'CONTACT_US'|translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/contact-us">{{ 'MEMBERSHIP'|translate }}</a>
+          </div>
+        </li>
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#about">About</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#services">Services</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#team">Team</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#portfolio">Portfolio</a> </li>
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#blog"
+            id="navbarDropdown">Blog</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/blogleft">Blog Sidebar Left</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/blogright">Blog Siderbar Right</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/blogdetails">Blog Details</a>
+          </div>
+        </li>
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#clients">Clients</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-scroll href="#footer">Contact</a> </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" id="addClass" href="#"> <i class="icofont-search"></i> </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown">
+            <img src="assets/images/language.svg" alt="">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ng-container *ngFor="let language of languages">
+              <a class="dropdown-item" (click)="changeLang(language.value)" href="#lang">
+                <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
+                <span>{{ language.name }}</span>
+                <img class="check-img" *ngIf="selectedLang == language.value" src="assets/images/check.png">
+              </a>
+              <div class="dropdown-divider"></div>
+            </ng-container>
+
+          </div>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
