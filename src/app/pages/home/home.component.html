@@ -1,12 +1,12 @@
-<header id="header" class="header-1">
+<header id="header" class="header-1"
+  [ngStyle]="{'background-image': 'linear-gradient(#293382, transparent), url(' + coverDetails?.media.url + ')'}">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="header-1-text">
-          <h1 class="text-center">{{ 'MAIN-TEXT'|translate }}</h1>
-          <h5 class="text-center">It is a long established fact that a reader will be distracted by the readable content
-            of a page <br />
-            when looking at its layout. The point of using </h5>
+          <h1 class="text-center">{{ coverDetails?.slogan }}</h1>
+          <h5 class="text-center">{{ coverDetails?.quote}} <br />{{coverDetails?.quotee_name
+            }} </h5>
           <!-- <p><a class="btn btn-yellow" href="#">View Our Profile</a> <a class="btn btn-red" href="#">Check Shop Page</a>
           </p> -->
         </div>

@@ -13,12 +13,12 @@
 			if(scrollTop > $('#navbar-1').height()){
 				$('#navbar-1').addClass('fixed-top');
 				$('#navbar-1').removeClass('navbar-1');
-				$('.desktop').attr('src', 'assets/images/header-logo-2.png');
+				$('.desktop').attr('src', 'assets/images/logo/mainLogo.png');
 			}
 			else {
 				$('#navbar-1').addClass('navbar-1');
 				$('#navbar-1').removeClass('fixed-top');
-				$('.desktop').attr('src', 'assets/images/header-logo-1.png');
+				$('.desktop').attr('src', 'assets/images/logo/mainLogo.png');
 			}
 		});
 
