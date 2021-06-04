@@ -14,17 +14,20 @@ export class PageService {
 
   // baseUrl = 'http://localhost:1337';
 
+  getMenuList(graphQuery) {
+    console.log("Menue", graphQuery);
+    return this.getGraphQueryData(graphQuery)
+  }
 
   getCoverDetails(graphQuery) {
     console.log("query", graphQuery);
     return this.getGraphQueryData(graphQuery)
   }
 
-  getMenuList(graphQuery) {
-    console.log("Menue", graphQuery);
+  getAboutUsDetails(graphQuery) {
+    console.log("About_Query", graphQuery);
     return this.getGraphQueryData(graphQuery)
   }
-
 
   getGraphQueryData(query) {
     return this.http.get(`/graphql`, {

@@ -421,7 +421,7 @@ button.close {
 }
 
 .header-1-text {
-  margin: 27% 0 0 0;
+  margin: 30% 0 0 0;
   text-align: center;
 }
 
@@ -486,10 +486,72 @@ button.close {
   margin-top: -60px;
 }
 
+
+.np-news-card {
+  position: relative;
+  width: 100%;
+  padding-right: 7px;
+  padding-left: 7px;
+  cursor: pointer;
+}
+
+.np-news-card-wrapper {
+  height: 250px;
+  border: 1px solid #b9b9b9;
+}
+
+.card-img {
+  height: 100%;
+  width: 100%;
+}
+
+.news-date {
+  top: 0;
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  background-color: #3ba6de;
+  color: #fff;
+  padding: 1% 5%;
+  text-align: center;
+}
+
+.news-date p {
+  margin: 0;
+}
+
+.news-date h4 {
+  margin: 0;
+}
+
+.contents {
+  position: absolute;
+  height: 40%;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 7px;
+  padding: 8px;
+  width: calc(100% - 30px);
+  overflow: hidden;
+}
+
+body[dir=rtl] .bg-gradient {
+  background: linear-gradient(to left, #3ba6de, rgba(39, 35, 97, 0) 100%) !important;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #3ba6de, rgba(39, 35, 97, 0) 100%) !important;
+}
+
+
+
 .features-cont {
   background: #fff;
   box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
-  padding: 30px;
+  padding: 10px;
+  /* padding: 15px; */
 }
 
 .features-cont i {
@@ -1205,7 +1267,7 @@ blockquote {
 .footer hr {
   margin-bottom: 1rem;
   border-top: 2px solid #ff9b0c;
-  width: 15%;
+  width: 100%;
   display: inline-block;
 }
 

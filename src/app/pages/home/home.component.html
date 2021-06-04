@@ -1,5 +1,5 @@
 <header id="header" class="header-1"
-  [ngStyle]="{'background-image': 'linear-gradient(#293382, transparent), url(' + coverDetails?.media.url + ')'}">
+  [ngStyle]="{'background-image': 'linear-gradient(to bottom, black, rgba(39, 35, 97, 0) 100%), url(' + coverDetails?.media.url + ')'}">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -17,32 +17,27 @@
 <section class="features">
   <div class="container">
     <div class="features-cont">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="icofont-bucket2 bg-color-1"></i>
-            <h5>Best Design Service</h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content </p>
-            <a href="#"><i class="icofont-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="icofont-code-alt bg-color-2"></i>
-            <h5>Optimised Code</h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content </p>
-            <a href="#"><i class="icofont-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature">
-            <i class="icofont-headphone bg-color-3"></i>
-            <h5>Lifetime Free Support</h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content </p>
-            <a href="#"><i class="icofont-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let p of photos">
+          <ng-template carouselSlide>
+            <div class="">
+              <div class="np-news-card">
+                <div class="np-news-card-wrapper">
+                  <img [src]="p.src" alt="" class="card-img">
+                  <div class="contents bg-gradient">
+                    <h5 class="text-white">{{ p.title }}</h5>
+                  </div>
+                  <!-- <div class="news-date">
+                      <h4 class="text-white">2</h4>
+                      <p class="text-white">June</p>
+                    </div> -->
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+
+      </owl-carousel-o>
     </div>
   </div>
 </section>
@@ -50,24 +45,24 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h6>About us</h6>
-        <h2>Who we are & what we did before.</h2>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-          opposed to using 'Content here, content here', making it look </p>
-        <ul>
+        <h6>{{ 'ABOUT_US' | translate }}</h6>
+        <h2>{{ aboutUs?.title }}</h2>
+        <p>{{ aboutUs?.body }}</p>
+        <!-- <ul>
           <li>Vitae dicta sunt explicabo nemo enim ipsay voluptatem</li>
           <li>It is a long established fact that a reader will be distracted</li>
           <li>By the readable content of a page when</li>
           <li>The point of using Lorem Ipsum is that it has a more-or-less</li>
-        </ul>
-        <a class="btn btn-yellow" href="#">View Details</a>
+        </ul> -->
+        <a class="btn btn-primary" href="#">View Details</a>
       </div>
-      <div class="col-md-6"><img src="assets/images/about.png" class="img-fluid" alt="about"></div>
+      <div class="col-md-6"><img [src]="aboutUs?.media[0]?.url" class="img-fluid" alt="about"></div>
     </div>
   </div>
 </section>
-<section class="caption">
+
+<!--  -->
+<!-- <section class="caption">
   <div class="container">
     <div class="caption-cont">
       <div class="row align-items-center">
@@ -79,7 +74,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <section id="services" class="services section-padding">
   <div class="container">
     <div class="row justify-content-center">
@@ -183,7 +178,7 @@
     </div>
   </div>
 </section>
-<section id="portfolio" class="portfolio section-padding">
+<!-- <section id="portfolio" class="portfolio section-padding">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -252,9 +247,9 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section class="caption2">
+<!-- <section class="caption2">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-lg-8 col-md-8 col-sm-8">
@@ -266,7 +261,7 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <section id="blog" class="recentposts section-padding">
   <div class="container">
