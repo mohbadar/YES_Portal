@@ -7,8 +7,6 @@
           <h1 class="text-center">{{ coverDetails?.slogan }}</h1>
           <h5 class="text-center">{{ coverDetails?.quote}} <br />{{coverDetails?.quotee_name
             }} </h5>
-          <!-- <p><a class="btn btn-yellow" href="#">View Our Profile</a> <a class="btn btn-red" href="#">Check Shop Page</a>
-          </p> -->
         </div>
       </div>
     </div>
@@ -26,10 +24,10 @@
                 <div class="contents bg-gradient">
                   <h5 class="text-white">{{ post?.title }}</h5>
                 </div>
-                <!-- <div class="news-date">
-                      <h4 class="text-white">2</h4>
-                      <p class="text-white">June</p>
-                    </div> -->
+                <div class="news-date">
+                  <h4 class="text-white">2</h4>
+                  <p class="text-white">June</p>
+                </div>
               </div>
             </div>
           </ng-template>
@@ -45,14 +43,8 @@
       <div class="col-md-6">
         <h6>{{ 'ABOUT_US' | translate }}</h6>
         <h2>{{ aboutUs?.title }}</h2>
-        <p>{{ aboutUs?.body }}</p>
-        <!-- <ul>
-          <li>Vitae dicta sunt explicabo nemo enim ipsay voluptatem</li>
-          <li>It is a long established fact that a reader will be distracted</li>
-          <li>By the readable content of a page when</li>
-          <li>The point of using Lorem Ipsum is that it has a more-or-less</li>
-        </ul> -->
-        <a class="btn btn-primary" href="#">View Details</a>
+        <p [innerHTML]="aboutUs?.brief | parsehtml | safe"></p>
+        <a class="btn btn-primary" href="#">{{ "VIEW-DETAILS" | translate}}</a>
       </div>
       <div class="col-md-6"><img [src]="aboutUs?.media[0]?.url" class="img-fluid" alt="about"></div>
     </div>
@@ -140,36 +132,17 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="text-center section-title">
-          <h6>Team</h6>
-          <h2 class="text-center">Lets introduce with our team</h2>
+          <h2 class="text-center">{{ "TOP-YOUTH" | translate }}</h2>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" *ngFor="let youth of topYouths">
         <div class="member">
-          <img src="assets/images/member-1.jpg" class="img-fluid" alt="">
+          <img [src]="youth?.photo?.url" class="img-fluid" alt="">
           <div class="member-text">
-            <h5>Alex Jhonson <small>(Coder)</small></h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="member">
-          <img src="assets/images/member-2.jpg" class="img-fluid" alt="">
-          <div class="member-text">
-            <h5>Eric Jhonson <small>(Coder)</small></h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="member">
-          <img src="assets/images/member-3.jpg" class="img-fluid" alt="">
-          <div class="member-text">
-            <h5>Emma Jhonson <small>(Coder)</small></h5>
-            <p>It is a long established fact that a reader will be distracted by the readable content </p>
+            <h5>{{ youth?.name }}</h5>
+            <p> {{ youth?.brief }} </p>
           </div>
         </div>
       </div>

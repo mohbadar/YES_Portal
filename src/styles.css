@@ -26,6 +26,25 @@ html {
   scroll-behavior: smooth;
 }
 
+
+@font-face {
+  font-family: "Bahij Halvetica";
+  src: url("./assets/fonts/bahij_helvetica_neue_bold_by_bahijvirtualacademy-dammcmt_0.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Bahij Halvetica";
+  src: url("./assets/fonts/Bahij_Helvetica_Neue-Light_1.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Bahij Halvetica";
+  src: url("./assets/fonts/bahij_helvetica_neue_roman_by_bahijvirtualacademy-dammd50_0.ttf");
+  font-weight: normal;
+}
+
 .preloader {
   position: fixed;
   left: 0px;
@@ -73,7 +92,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Poppins', sans-serif;
   margin: 0 0 15px;
   font-weight: 600;
   color: #143d3c;
@@ -93,7 +111,7 @@ h6 span {
 html,
 body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', "Bahij Halvetica", "Segoe UI", Arial, sans-serif;
 }
 
 body {}
@@ -227,9 +245,7 @@ ol li {
 /*--------------------------------*/
 /*           2.Navbar
 /*--------------------------------*/
-nav {
-  font-family: 'Poppins', sans-serif;
-}
+
 
 .navbar-1 .navbar-toggler-icon,
 .fixed-top .navbar-toggler-icon {
@@ -386,7 +402,6 @@ button.close {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 0 none;
   color: #333;
-  font-family: "Open Sans", sans-serif;
   font-size: 50px;
   font-weight: 300;
   margin: -51px auto 0;
@@ -501,15 +516,14 @@ button.close {
 }
 
 .card-img {
-  height: 100%;
-  width: 100%;
+  height: auto;
 }
 
 .news-date {
   top: 0;
   position: absolute;
   right: 0;
-  margin-right: 15px;
+  margin-right: 7px;
   background-color: #3ba6de;
   color: #fff;
   padding: 1% 5%;
@@ -750,7 +764,7 @@ body[dir=rtl] .bg-gradient {
 
 .portfolio-content p {
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   color: #333;
 }
 
@@ -898,7 +912,7 @@ body[dir=rtl] .bg-gradient {
 .blog-date {
   font-size: 13px;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   background: #f33f4c;
   color: #fff;
   line-height: 18px;
@@ -1009,7 +1023,7 @@ body[dir=rtl] .bg-gradient {
 }
 
 .blog-post-tag span {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   font-size: 18px;
   color: #143d3c;
   font-weight: 600;
@@ -1246,7 +1260,7 @@ blockquote {
 .clients-cont {
   background: #fff;
   box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
-  padding: 30px;
+  padding: 0px;
 }
 
 /*--------------------------------*/
@@ -1255,7 +1269,7 @@ blockquote {
 .footer {
   background: #2174b8;
   padding: 155px 0 10px;
-  margin: -110px 0 0 0;
+  margin: -80px 0 0 0;
 }
 
 .footer h5 {
