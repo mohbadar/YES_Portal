@@ -19,6 +19,11 @@ export class PageService {
     return this.getGraphQueryData(graphQuery)
   }
 
+  getPostData(graphQuery) {
+    console.log("News", graphQuery);
+    return this.getGraphQueryData(graphQuery)
+  }
+
   getCoverDetails(graphQuery) {
     console.log("query", graphQuery);
     return this.getGraphQueryData(graphQuery)
@@ -28,6 +33,7 @@ export class PageService {
     console.log("About_Query", graphQuery);
     return this.getGraphQueryData(graphQuery)
   }
+
 
   getGraphQueryData(query) {
     return this.http.get(`/graphql`, {

@@ -1,0 +1,29 @@
+{
+    "title": "Home",
+    "path": "/home",
+    "translate": "HOME.MENU",
+    "submenu": [
+        {
+          "title": "Vision",
+          "path": "/vision",
+          "translate": "HOME.VISION"
+        },
+        {
+          "title": "Membership",
+          "path": "/membership",
+          "translate": "HOME.MEMBERSHIP",
+          "submenu": [
+              {
+                "title": "Profile",
+                "path": "/profile",
+                "translate": "HOME.PROFILE"
+              },
+              {
+                "title": "Build Resume",
+                "path": "/build-resume",
+                "translate": "HOME.BUIKD_RESUME"
+              }
+            ]
+        }
+      ]
+  }

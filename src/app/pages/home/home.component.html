@@ -18,20 +18,18 @@
   <div class="container">
     <div class="features-cont">
       <owl-carousel-o [options]="customOptions">
-        <ng-container *ngFor="let p of photos">
+        <ng-container *ngFor="let post of postData">
           <ng-template carouselSlide>
-            <div class="">
-              <div class="np-news-card">
-                <div class="np-news-card-wrapper">
-                  <img [src]="p.src" alt="" class="card-img">
-                  <div class="contents bg-gradient">
-                    <h5 class="text-white">{{ p.title }}</h5>
-                  </div>
-                  <!-- <div class="news-date">
+            <div class="np-news-card">
+              <div class="np-news-card-wrapper">
+                <img [src]="post.image[0].formats?.small?.url" alt="" class="card-img">
+                <div class="contents bg-gradient">
+                  <h5 class="text-white">{{ post?.title }}</h5>
+                </div>
+                <!-- <div class="news-date">
                       <h4 class="text-white">2</h4>
                       <p class="text-white">June</p>
                     </div> -->
-                </div>
               </div>
             </div>
           </ng-template>

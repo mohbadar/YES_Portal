@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   coverDetails;
   aboutUs;
+  postData;
   lang;
   imageUrl = 'assets/images/afg-cover2.jpg';
   customOptions: OwlOptions;
@@ -38,28 +39,30 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  photos = [
-    {
-      id: 1,
-      src: '../../../assets/images/youth.jpg',
-      title: 'Welome to the board',
-    },
-    {
-      id: 2,
-      src: '../../../assets/images/youth.jpg',
-      title: 'Welome to the board',
-    },
-    {
-      id: 3,
-      src: '../../../assets/images/youth.jpg',
-      title: 'سلامونه او نیکی هیلی',
-    },
-    {
-      id: 4,
-      src: '../../../assets/images/youth.jpg',
-      title: 'Welome to the board',
-    }
-  ]
+  // photos = [
+  //   {
+  //     id: 1,
+  //     src: '../../../assets/images/innogration.jpg',
+  //     title: 'Welome to the board',
+  //   },
+  //   {
+  //     id: 2,
+  //     src: '../../../assets/images/youth.jpg',
+  //     title: 'Welome to the board',
+  //   },
+  //   {
+  //     id: 3,
+  //     src: '../../../assets/images/youth.jpg',
+  //     title: 'سلامونه او نیکی هیلی',
+  //   },
+  //   {
+  //     id: 4,
+  //     src: '../../../assets/images/youth.jpg',
+  //     title: 'Welome to the board',
+  //   }
+  // ]
+
+
 
 
 
@@ -68,6 +71,8 @@ export class HomeComponent implements OnInit {
     this.lang = this.translate.currentLang;
     console.log('Current Lang: ', this.lang);
     this.getCoverDetails();
+    this.getPostData();
+
     this.getAboutUsDetails();
 
 
@@ -103,6 +108,27 @@ export class HomeComponent implements OnInit {
 
   }
 
+
+  getPostData() {
+    const graphqlQuery = `{
+      posts {
+        _id
+        title:title_${this.lang},
+        image {
+          formats
+        }
+      }
+    }`;
+    this.pageService.getPostData(graphqlQuery).subscribe((res: any) => {
+      // this.loading = false;
+      console.log('PostData ', res.data);
+      this.postData = res.data.posts;
+    }, err => {
+      // this.loading = false;
+      console.log(err);
+
+    });
+  }
 
 
   getCoverDetails() {
