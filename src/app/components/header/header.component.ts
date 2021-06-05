@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { PageService } from 'src/app/pages/page.service';
+import { MenuHorizontalService } from '../layout/services/menu-horizontal.service';
 
 @Component({
     selector: 'yes-header',
@@ -32,12 +33,15 @@ export class HeaderComponent implements OnInit {
     ];
 
     constructor(private translate: TranslateService,
-        private pageService: PageService) { }
+        private pageService: PageService,
+        public menuHorService: MenuHorizontalService,
+    ) { }
 
     ngOnInit(): void {
-
-
-
+        this.menuHorService.menuList$.subscribe(res => {
+            this.menuList = res;
+            console.log("🚀 ~ file: header.component.ts ~ line 43 ~ HeaderComponent ~ ngOnInit ~ this.menuList", this.menuList)
+        });
         if (localStorage.getItem('lang')) {
             this.lang = localStorage.getItem('lang');
         } else {
@@ -47,7 +51,7 @@ export class HeaderComponent implements OnInit {
 
         this.menuQuery = `{categories(sort: "order") { _id, title:title_${this.lang},slug, subcategories { title:title_${this.lang}, slug}}}`;
 
-        this.getMenuList();
+        // this.getMenuList();
     }
 
     changeLang(lang) {

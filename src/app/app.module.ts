@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,39 +15,42 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { LayoutComponent } from './components/layout/layout.component';
+import { MenuConfigService } from './components/layout/services/menu-config.service';
+import { MenuHorizontalService } from './components/layout/services/menu-horizontal.service';
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    LayoutComponent,
-    HomeComponent,
-    BlogleftComponent,
-    BlogrightComponent,
-    BlogdetailsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    CarouselModule,
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        LayoutComponent,
+        HomeComponent,
+        BlogleftComponent,
+        BlogrightComponent,
+        BlogdetailsComponent,
+    ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        CarouselModule,
 
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: createTranslateLoader,
+                deps: [HttpClient]
+            }
+        }),
+    ],
+    providers: [MenuConfigService, MenuHorizontalService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
