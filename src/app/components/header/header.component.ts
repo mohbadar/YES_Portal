@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { PageService } from 'src/app/pages/page.service';
 
 @Component({
     selector: 'yes-header',
@@ -7,7 +8,13 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+    menuList;
     selectedLang;
+    lang;
+    menuQuery;
+
+
     languages = [
         {
             name: 'English',
@@ -24,14 +31,23 @@ export class HeaderComponent implements OnInit {
         }
     ];
 
-    constructor(private translate: TranslateService,) { }
+    constructor(private translate: TranslateService,
+        private pageService: PageService) { }
 
     ngOnInit(): void {
+
+
+
         if (localStorage.getItem('lang')) {
-            this.selectedLang = localStorage.getItem('lang');
+            this.lang = localStorage.getItem('lang');
         } else {
-            this.selectedLang = this.translate.getDefaultLang
+            this.lang = this.translate.getDefaultLang
         }
+        console.log('------ language: ', this.lang);
+
+        this.menuQuery = `{categories(sort: "order") { _id, title:title_${this.lang},slug, subcategories { title:title_${this.lang}, slug}}}`;
+
+        this.getMenuList();
     }
 
     changeLang(lang) {
@@ -40,6 +56,14 @@ export class HeaderComponent implements OnInit {
         this.translate.use(lang);
         localStorage.setItem('lang', lang);
         window.location.reload();
+    }
+
+    getMenuList() {
+        this.pageService.getMenuList(this.menuQuery).subscribe((menuList: any) => {
+            console.log('Menu List : ', menuList);
+            this.menuList = menuList.data.categories;
+        });
+
     }
 
 }

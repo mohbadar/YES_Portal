@@ -1,0 +1,19 @@
+{
+    "/uploads": {
+        "target": "http://localhost:1337",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/graphql": {
+        "target": "http://localhost:1337",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/logout": {
+        "target": "http://localhost:1337",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
