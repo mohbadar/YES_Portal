@@ -1,63 +1,70 @@
-<nav id="navbar-1" class="navbar navbar-expand-md btco-hover-menu navbar-1">
-    <div class="container"> <a data-scroll class="navbar-brand" routerLink="/home"><img
-                src="assets/images/logo/mainLogo.png" id="logo" class="img-fluid desktop" alt=""><img
-                src="assets/images/logo/mainLogo.png" class="img-fluid mobile" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span
-                class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mr-auto ml-auto">
+<div id="menu_area" class="menu-area">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top mainmenu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
                 <ng-container *ngFor="let m of menuList; let i = index">
                     <ng-container *ngIf="!m.submenu;else has_submenu">
-                        <li class="nav-item"> <a class="nav-link" data-scroll>{{m.translate | translate
-                                }}</a> </li>
+                        <li class="active"><a href="#">{{m.translate | translate}}</a></li>
                     </ng-container>
                     <ng-template #has_submenu>
-                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll
-                                id="navbarDropdown">{{m.translate | translate}}</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">{{m.translate
+                                | translate}}</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <ng-container *ngFor="let sm of m.submenu; let s = index">
                                     <ng-container *ngIf="!sm.submenu;else has_ssubmenu">
-                                        <a class="dropdown-item">{{sm.translate |translate }}</a>
-                                        <div class="dropdown-divider" *ngIf="s < m.submenu.length - 1"></div>
+                                        <li><a href="#">{{sm.translate |translate }}</a></li>
+                                        <p class="dropdown-divider" *ngIf="s < m.submenu.length - 1"></p>
                                     </ng-container>
                                     <ng-template #has_ssubmenu>
-                                        <div class="dropdown-submenu"><a class="nav-link dropdown-toggle" data-scroll
-                                                id="navbarDropdown">{{sm.translate | translate}}</a>
-                                            <div class="dropdown-menu">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                                data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">{{sm.translate |translate }}</a>
+                                            <p class="dropdown-divider" *ngIf="s < m.submenu.length - 1"></p>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <ng-container *ngFor="let ssm of sm.submenu; let ss = index">
-                                                    <a class="dropdown-item" href="#">{{ssm.translate |
-                                                        translate }}</a>
-                                                    <div class="dropdown-divider" *ngIf="ss < sm.submenu.length - 1">
-                                                    </div>
+                                                    <li><a href="#">{{ssm.translate | translate }}</a></li>
+                                                    <p class="dropdown-divider" *ngIf="ss < sm.submenu.length - 1">
+                                                    </p>
                                                 </ng-container>
-                                            </div>
-                                        </div>
+                                            </ul>
+                                        </li>
                                     </ng-template>
                                 </ng-container>
-                            </div>
+                            </ul>
                         </li>
                     </ng-template>
                 </ng-container>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown">
-                        <img src="assets/images/language.svg" alt="">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <ng-container *ngFor="let language of languages ;let l = index">
-                            <a class="dropdown-item" (click)="changeLang(language.value)" href="#lang">
-                                <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
-                                <span>{{ language.name }}</span>
-                                <img class="check-img" *ngIf="selectedLang == language.value"
-                                    src="assets/images/check.png">
-                            </a>
-                            <div class="dropdown-divider" *ngIf="l < languages.length - 1"></div>
-                        </ng-container>
-                    </div>
-                </li>
+            <ul class="navbar-nav mr-auto">
+                <ng-container>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/images/language.svg" alt="">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ng-container *ngFor="let language of languages ;let l = index">
+                                <li (click)="changeLang(language.value)">
+                                    <a href="#">
+                                        <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
+                                        <span>{{ language.name }}</span>
+                                        <img class="check-img" *ngIf="selectedLang == language.value"
+                                            src="assets/images/check.png">
+                                    </a>
+                                </li>
+                                <p class="dropdown-divider" *ngIf="l < languages.length - 1"></p>
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ng-container>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>
