@@ -26,6 +26,25 @@ html {
   scroll-behavior: smooth;
 }
 
+
+@font-face {
+  font-family: "Bahij Halvetica";
+  src: url("./assets/fonts/bahij_helvetica_neue_bold_by_bahijvirtualacademy-dammcmt_0.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Bahij Halvetica";
+  src: url("./assets/fonts/Bahij_Helvetica_Neue-Light_1.ttf");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Bahij Halvetica";
+  src: url("./assets/fonts/bahij_helvetica_neue_roman_by_bahijvirtualacademy-dammd50_0.ttf");
+  font-weight: normal;
+}
+
 .preloader {
   position: fixed;
   left: 0px;
@@ -73,7 +92,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Poppins', sans-serif;
   margin: 0 0 15px;
   font-weight: 600;
   color: #143d3c;
@@ -93,7 +111,7 @@ h6 span {
 html,
 body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', "Bahij Halvetica", "Segoe UI", Arial, sans-serif;
 }
 
 body {}
@@ -227,9 +245,7 @@ ol li {
 /*--------------------------------*/
 /*           2.Navbar
 /*--------------------------------*/
-nav {
-  font-family: 'Poppins', sans-serif;
-}
+
 
 .navbar-1 .navbar-toggler-icon,
 .fixed-top .navbar-toggler-icon {
@@ -386,7 +402,6 @@ button.close {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 0 none;
   color: #333;
-  font-family: "Open Sans", sans-serif;
   font-size: 50px;
   font-weight: 300;
   margin: -51px auto 0;
@@ -502,14 +517,13 @@ button.close {
 
 .card-img {
   height: 100%;
-  width: 100%;
 }
 
 .news-date {
   top: 0;
   position: absolute;
   right: 0;
-  margin-right: 15px;
+  margin-right: 7px;
   background-color: #3ba6de;
   color: #fff;
   padding: 1% 5%;
@@ -596,7 +610,8 @@ body[dir=rtl] .bg-gradient {
   display: inline-block;
   padding: 6px 20px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
   letter-spacing: 2px;
 }
 
@@ -679,7 +694,8 @@ body[dir=rtl] .bg-gradient {
   display: inline-block;
   padding: 6px 20px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -750,7 +766,7 @@ body[dir=rtl] .bg-gradient {
 
 .portfolio-content p {
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   color: #333;
 }
 
@@ -839,7 +855,8 @@ body[dir=rtl] .bg-gradient {
   display: inline-block;
   padding: 6px 20px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -854,10 +871,14 @@ body[dir=rtl] .bg-gradient {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  max-height: 230px;
+  overflow: hidden;
 }
 
 .blog-title h3 {
   font-size: 18px;
+  max-height: 45px;
+  overflow: hidden;
 }
 
 .blog-title h3 a {
@@ -868,12 +889,16 @@ body[dir=rtl] .bg-gradient {
 }
 
 .blog-title h3 a:hover {
-  color: #ff9b0c;
+  color: #3ba6de;
 }
 
 .blog-title p {
   margin-top: 10px;
   margin-bottom: 20px;
+  max-height: 90px;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
 }
 
 .blog-meta {
@@ -898,8 +923,8 @@ body[dir=rtl] .bg-gradient {
 .blog-date {
   font-size: 13px;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  background: #f33f4c;
+  /* font-family: 'Poppins', sans-serif; */
+  background: #2174b8;
   color: #fff;
   line-height: 18px;
   padding: 5px 10px;
@@ -1009,7 +1034,7 @@ body[dir=rtl] .bg-gradient {
 }
 
 .blog-post-tag span {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
   font-size: 18px;
   color: #143d3c;
   font-weight: 600;
@@ -1246,7 +1271,7 @@ blockquote {
 .clients-cont {
   background: #fff;
   box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
-  padding: 30px;
+  padding: 0px;
 }
 
 /*--------------------------------*/
@@ -1255,7 +1280,12 @@ blockquote {
 .footer {
   background: #2174b8;
   padding: 155px 0 10px;
-  margin: -110px 0 0 0;
+  margin: -80px 0 0 0;
+}
+
+.img-footer {
+  max-width: 100%;
+  height: auto
 }
 
 .footer h5 {
@@ -1273,6 +1303,16 @@ blockquote {
 
 .footer p {
   color: #fff;
+}
+
+.footer span {
+  padding: 10px;
+  color: #fff;
+}
+
+body[dir=rtl] .footer p {
+  color: #fff;
+  font-size: 24px;
 }
 
 .footer i {
@@ -1298,13 +1338,13 @@ blockquote {
   color: #ff9b0c;
 }
 
-.footer ul.links li a:before {
+/* .footer ul.links li a:before {
   color: #ff9b0c;
   content: "\eab8";
   font-family: Icofont;
   float: left;
   margin-right: 2px;
-}
+} */
 
 .footer ul.social {
   list-style-type: none;

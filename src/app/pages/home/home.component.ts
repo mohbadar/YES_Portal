@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   coverDetails;
   aboutUs;
   postData;
+  topYouths;
+  recentBlogs;
   lang;
   imageUrl = 'assets/images/afg-cover2.jpg';
   customOptions: OwlOptions;
@@ -39,32 +41,6 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  // photos = [
-  //   {
-  //     id: 1,
-  //     src: '../../../assets/images/innogration.jpg',
-  //     title: 'Welome to the board',
-  //   },
-  //   {
-  //     id: 2,
-  //     src: '../../../assets/images/youth.jpg',
-  //     title: 'Welome to the board',
-  //   },
-  //   {
-  //     id: 3,
-  //     src: '../../../assets/images/youth.jpg',
-  //     title: 'سلامونه او نیکی هیلی',
-  //   },
-  //   {
-  //     id: 4,
-  //     src: '../../../assets/images/youth.jpg',
-  //     title: 'Welome to the board',
-  //   }
-  // ]
-
-
-
-
 
   ngOnInit(): void {
 
@@ -72,8 +48,9 @@ export class HomeComponent implements OnInit {
     console.log('Current Lang: ', this.lang);
     this.getCoverDetails();
     this.getPostData();
-
     this.getAboutUsDetails();
+    this.getTopYouth();
+    this.getRecentBlogs();
 
 
     this.customOptions = {
@@ -146,7 +123,7 @@ export class HomeComponent implements OnInit {
     const graphQuery = `{
       aboutUs {
         title: title_${this.lang}
-        body:body_${this.lang}
+        brief:brief_${this.lang}
         media {
           url
         }
@@ -155,6 +132,46 @@ export class HomeComponent implements OnInit {
     this.pageService.getAboutUsDetails(graphQuery).subscribe((res: any) => {
       this.aboutUs = res.data.aboutUs;
       console.log('ABOUT-US: ', this.aboutUs);
+    }, err => {
+      console.log(err);
+
+    });
+  }
+
+  getTopYouth() {
+    const graphQuery = `{
+      topYouths {
+        _id
+        name:name_${this.lang}
+        brief: brief_${this.lang}
+        photo {
+          url
+        }
+      }
+    }`;
+    this.pageService.getTopYouth(graphQuery).subscribe((res: any) => {
+      this.topYouths = res.data.topYouths;
+      console.log('YTouth: ', this.topYouths);
+    }, err => {
+      console.log(err);
+
+    });
+  }
+
+  getRecentBlogs() {
+    const graphQuery = `{
+      blogs{
+        title: title_${this.lang}
+        brief:brief_${this.lang}
+        author:author_${this.lang}
+        image {
+          url
+        }
+      }
+    }`;
+    this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
+      this.recentBlogs = res.data.blogs;
+      console.log('Blogs: ', this.recentBlogs);
     }, err => {
       console.log(err);
 
