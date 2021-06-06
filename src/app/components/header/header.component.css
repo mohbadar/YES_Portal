@@ -4,15 +4,18 @@
   border: 0 solid transition !important;
   border: 0 solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
+  text-align: justify;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
+
 .dropdown-divider {
   margin: 0 0;
 }
 
+
 .mainmenu a,
-.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav>li>a,
 .mainmenu ul li a,
 .navbar-expand-lg .navbar-nav .nav-link {
   /* color: #fff; */
@@ -21,17 +24,20 @@
   padding: 12px 12px;
   display: block !important;
 }
+
 /*==========Sub Menu=v==========*/
-.mainmenu .collapse ul > li:hover > a {
-  background: #26d07c;
+.mainmenu .collapse ul>li:hover>a {
+  color: #007bff;
 }
-.mainmenu .collapse ul ul > li:hover > a,
-.navbar-default .navbar-nav .show .dropdown-menu > li > a:focus,
-.navbar-default .navbar-nav .show .dropdown-menu > li > a:hover {
-  background: #26d07c;
+
+.mainmenu .collapse ul ul>li:hover>a,
+.navbar-default .navbar-nav .show .dropdown-menu>li>a:focus,
+.navbar-default .navbar-nav .show .dropdown-menu>li>a:hover {
+  color: #007bff;
 }
-.mainmenu .collapse ul ul ul > li:hover > a {
-  background: #26d07c;
+
+.mainmenu .collapse ul ul ul>li:hover>a {
+  color: #007bff;
 }
 
 .mainmenu .collapse ul ul,
@@ -41,43 +47,50 @@
 
 /******************************Drop-down menu work on hover**********************************/
 .mainmenu {
-  background: none;
   border: 0 solid;
   margin: 0;
   padding: 0;
-  min-height: 20px;
+  min-height: 30px;
   width: 100%;
 }
+
 @media only screen and (min-width: 767px) {
-  .mainmenu .collapse ul li:hover > ul {
+  .mainmenu .collapse ul li:hover>ul {
     display: block;
   }
+
   .mainmenu .collapse ul ul {
     position: absolute;
     top: 100%;
     left: 0;
     display: none;
   }
+
   /*******/
   .mainmenu .collapse ul ul li {
     position: relative;
   }
-  .mainmenu .collapse ul ul li:hover > ul {
+
+  .mainmenu .collapse ul ul li:hover>ul {
     display: block;
   }
+
   .mainmenu .collapse ul ul ul {
     position: absolute;
     top: 0;
     left: 100%;
     display: none;
   }
+
   /*******/
   .mainmenu .collapse ul ul ul li {
     position: relative;
   }
+
   .mainmenu .collapse ul ul ul li:hover ul {
     display: block;
   }
+
   .mainmenu .collapse ul ul ul ul {
     position: absolute;
     top: 0;
@@ -86,15 +99,23 @@
     z-index: 1;
   }
 }
+
 ul.navbar-nav {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+.img-logo {
+  max-width: 30%;
+  height: auto
+}
+
 @media only screen and (max-width: 767px) {
-  .navbar-nav .show .dropdown-menu .dropdown-menu > li > a {
+  .navbar-nav .show .dropdown-menu .dropdown-menu>li>a {
     padding: 16px 15px 16px 35px;
   }
-  .navbar-nav .show .dropdown-menu .dropdown-menu .dropdown-menu > li > a {
+
+  .navbar-nav .show .dropdown-menu .dropdown-menu .dropdown-menu>li>a {
     padding: 16px 15px 16px 45px;
   }
 }
