@@ -14,7 +14,7 @@
 </header>
 <section class="features">
   <div class="container">
-    <div class="features-cont">
+    <div class="features-cont" *ngIf="postData; else nodata">
       <owl-carousel-o [options]="customOptions">
         <ng-container *ngFor="let post of postData">
           <ng-template carouselSlide>
@@ -25,7 +25,7 @@
                   <h5 class="text-white">{{ post?.title }}</h5>
                 </div>
                 <div class="news-date">
-                  <h4 class="text-white">2</h4>
+                  <h4 class="text-white">6</h4>
                   <p class="text-white">June</p>
                 </div>
               </div>
@@ -39,7 +39,7 @@
 </section>
 <section id="about" class="about section-padding">
   <div class="container">
-    <div class="row">
+    <div class="row" *ngIf="aboutUs; else nodata">
       <div class="col-md-6">
         <h6>{{ 'ABOUT_US' | translate }}</h6>
         <h2>{{ aboutUs?.title }}</h2>
@@ -52,7 +52,7 @@
 </section>
 
 <section id="team" class="team section-padding-light">
-  <div class="container">
+  <div class="container" *ngIf="topYouths; else nodata">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="text-center section-title">
@@ -75,7 +75,7 @@
 </section>
 
 
-<section id="blog" class="recentposts section-padding">
+<section id="blog" class="recentposts section-padding" *ngIf="recentBlogs; else nodata">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -88,7 +88,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 remb-30" *ngFor="let blog of recentBlogs">
         <div class="blog-item h2-blogitem">
-          <div class="blog-img"> <img [src]="blog?.image?.url" alt=""> </div>
+          <div class="blog-img"> <img [src]="blog?.image?.url" alt="" (error)="imageError($event.target)"> </div>
           <div class="blog-content">
             <div class="blog-title">
               <h3><a href="#">{{ blog?.title }}</a></h3>
@@ -99,8 +99,8 @@
                 <h4>{{ blog?.author}}</h4>
                 <!-- <h5>SEO Manager</h5> -->
               </div>
-              <div class="blog-date"> <span>23 Des <br />
-                  2019</span> </div>
+              <div class="blog-date"> <span>6 June <br />
+                  2021</span> </div>
             </div>
           </div>
         </div>
@@ -110,3 +110,13 @@
     </div>
   </div>
 </section>
+
+<ng-template #nodata>
+  <div class="">
+    <div class="jumbotron no-data">
+      <div [class.dot-falling]="loading"></div>
+      <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+    </div>
+  </div>
+</ng-template>
+<ngx-spinner></ngx-spinner>

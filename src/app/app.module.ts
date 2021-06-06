@@ -16,6 +16,7 @@ import { SharedModule } from './shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MenuConfigService } from './components/layout/services/menu-config.service';
 import { MenuHorizontalService } from './components/layout/services/menu-horizontal.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -37,6 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     CarouselModule,
     SharedModule,
+    NgxSpinnerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

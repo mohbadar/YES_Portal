@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PageService } from '../page.service';
 
 @Component({
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private pageService: PageService,
+    private spinner: NgxSpinnerService,
     private translate: TranslateService
   ) { }
 
@@ -87,6 +89,7 @@ export class HomeComponent implements OnInit {
 
 
   getPostData() {
+    this.spinner.show();
     const graphqlQuery = `{
       posts {
         _id
@@ -97,11 +100,11 @@ export class HomeComponent implements OnInit {
       }
     }`;
     this.pageService.getPostData(graphqlQuery).subscribe((res: any) => {
-      // this.loading = false;
+      this.spinner.hide();
       console.log('PostData ', res.data);
       this.postData = res.data.posts;
     }, err => {
-      // this.loading = false;
+      this.spinner.hide();
       console.log(err);
 
     });
@@ -109,11 +112,14 @@ export class HomeComponent implements OnInit {
 
 
   getCoverDetails() {
+    this.spinner.show();
     const graphQuery = `{cover {slogan:slogan_${this.lang} quote:quote_${this.lang} quotee_name:quotee_name_${this.lang} media{url} }}`;
     this.pageService.getCoverDetails(graphQuery).subscribe((res: any) => {
+      this.spinner.hide();
       this.coverDetails = res.data.cover;
       console.log(' data: ', this.coverDetails);
     }, err => {
+      this.spinner.hide();
       console.log(err);
 
     });
@@ -176,6 +182,12 @@ export class HomeComponent implements OnInit {
       console.log(err);
 
     });
+  }
+
+  imageError(el) {
+    el.onerror = '';
+    el.src = '../../../assets/images/placeholder/img-avatar.png';
+    return true;
   }
 
 }
