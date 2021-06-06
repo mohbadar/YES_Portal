@@ -516,7 +516,7 @@ button.close {
 }
 
 .card-img {
-  height: auto;
+  height: 100%;
 }
 
 .news-date {
@@ -610,7 +610,8 @@ body[dir=rtl] .bg-gradient {
   display: inline-block;
   padding: 6px 20px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
   letter-spacing: 2px;
 }
 
@@ -693,7 +694,8 @@ body[dir=rtl] .bg-gradient {
   display: inline-block;
   padding: 6px 20px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -853,7 +855,8 @@ body[dir=rtl] .bg-gradient {
   display: inline-block;
   padding: 6px 20px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -868,10 +871,14 @@ body[dir=rtl] .bg-gradient {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  max-height: 230px;
+  overflow: hidden;
 }
 
 .blog-title h3 {
   font-size: 18px;
+  max-height: 45px;
+  overflow: hidden;
 }
 
 .blog-title h3 a {
@@ -882,12 +889,16 @@ body[dir=rtl] .bg-gradient {
 }
 
 .blog-title h3 a:hover {
-  color: #ff9b0c;
+  color: #3ba6de;
 }
 
 .blog-title p {
   margin-top: 10px;
   margin-bottom: 20px;
+  max-height: 90px;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
 }
 
 .blog-meta {
@@ -913,7 +924,7 @@ body[dir=rtl] .bg-gradient {
   font-size: 13px;
   font-weight: 500;
   /* font-family: 'Poppins', sans-serif; */
-  background: #f33f4c;
+  background: #2174b8;
   color: #fff;
   line-height: 18px;
   padding: 5px 10px;
@@ -1272,6 +1283,11 @@ blockquote {
   margin: -80px 0 0 0;
 }
 
+.img-footer {
+  max-width: 100%;
+  height: auto
+}
+
 .footer h5 {
   color: #fff;
   font-weight: 400;
@@ -1287,6 +1303,16 @@ blockquote {
 
 .footer p {
   color: #fff;
+}
+
+.footer span {
+  padding: 10px;
+  color: #fff;
+}
+
+body[dir=rtl] .footer p {
+  color: #fff;
+  font-size: 24px;
 }
 
 .footer i {
@@ -1312,13 +1338,13 @@ blockquote {
   color: #ff9b0c;
 }
 
-.footer ul.links li a:before {
+/* .footer ul.links li a:before {
   color: #ff9b0c;
   content: "\eab8";
   font-family: Icofont;
   float: left;
   margin-right: 2px;
-}
+} */
 
 .footer ul.social {
   list-style-type: none;

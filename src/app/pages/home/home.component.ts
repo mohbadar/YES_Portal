@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   aboutUs;
   postData;
   topYouths;
+  recentBlogs;
   lang;
   imageUrl = 'assets/images/afg-cover2.jpg';
   customOptions: OwlOptions;
@@ -49,6 +50,7 @@ export class HomeComponent implements OnInit {
     this.getPostData();
     this.getAboutUsDetails();
     this.getTopYouth();
+    this.getRecentBlogs();
 
 
     this.customOptions = {
@@ -149,7 +151,27 @@ export class HomeComponent implements OnInit {
     }`;
     this.pageService.getTopYouth(graphQuery).subscribe((res: any) => {
       this.topYouths = res.data.topYouths;
-      console.log('Touth: ', this.aboutUs);
+      console.log('YTouth: ', this.topYouths);
+    }, err => {
+      console.log(err);
+
+    });
+  }
+
+  getRecentBlogs() {
+    const graphQuery = `{
+      blogs{
+        title: title_${this.lang}
+        brief:brief_${this.lang}
+        author:author_${this.lang}
+        image {
+          url
+        }
+      }
+    }`;
+    this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
+      this.recentBlogs = res.data.blogs;
+      console.log('Blogs: ', this.recentBlogs);
     }, err => {
       console.log(err);
 
