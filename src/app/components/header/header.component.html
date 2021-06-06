@@ -6,55 +6,58 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span
                 class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mr-auto ml-auto" *ngIf="menuList">
+            <ul class="navbar-nav mr-auto ml-auto">
                 <ng-container *ngFor="let m of menuList; let i = index">
-                    <li class="nav-item" *ngIf="!m.submenu ; else has_submenu"> <a class="nav-link" data-scroll
-                            href="#header">
-                            {{m.translate | translate }}</a> </li>
+                    <ng-container *ngIf="!m.submenu;else has_submenu">
+                        <li class="nav-item"> <a class="nav-link" data-scroll>{{m.translate | translate
+                                }}</a> </li>
+                    </ng-container>
                     <ng-template #has_submenu>
-                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll href="#home"
-                                id="navbarDropdown">
-                                {{m.translate | translate }}</a>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-scroll
+                                id="navbarDropdown">{{m.translate | translate}}</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <ng-container *ngFor="let sm of m.submenu">
+                                <ng-container *ngFor="let sm of m.submenu; let s = index">
                                     <ng-container *ngIf="!sm.submenu;else has_ssubmenu">
-                                        <a class="dropdown-item">{{sm.translate |
-                                            translate }}</a>
-                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item">{{sm.translate |translate }}</a>
+                                        <div class="dropdown-divider" *ngIf="s < m.submenu.length - 1"></div>
                                     </ng-container>
                                     <ng-template #has_ssubmenu>
-                        <li class="dropdown-submenu"><a class="dropdown-item">{{sm.translate |
-                                translate }}</a>
-                            <ul class="dropdown-menu">
-                                <a *ngFor="let ssm of sm.submenu" class="dropdown-item" href="#">{{ssm.translate |
-                                    translate }}</a>
-                            </ul>
+                                        <div class="dropdown-submenu"><a class="nav-link dropdown-toggle" data-scroll
+                                                id="navbarDropdown">{{sm.translate | translate}}</a>
+                                            <div class="dropdown-menu">
+                                                <ng-container *ngFor="let ssm of sm.submenu; let ss = index">
+                                                    <a class="dropdown-item" href="#">{{ssm.translate |
+                                                        translate }}</a>
+                                                    <div class="dropdown-divider" *ngIf="ss < sm.submenu.length - 1">
+                                                    </div>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>
+                            </div>
                         </li>
                     </ng-template>
                 </ng-container>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown">
+                        <img src="assets/images/language.svg" alt="">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ng-container *ngFor="let language of languages ;let l = index">
+                            <a class="dropdown-item" (click)="changeLang(language.value)" href="#lang">
+                                <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
+                                <span>{{ language.name }}</span>
+                                <img class="check-img" *ngIf="selectedLang == language.value"
+                                    src="assets/images/check.png">
+                            </a>
+                            <div class="dropdown-divider" *ngIf="l < languages.length - 1"></div>
+                        </ng-container>
+                    </div>
+                </li>
+            </ul>
         </div>
-        </li>
-        </ng-template>
-        </ng-container>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown">
-                    <img src="assets/images/language.svg" alt="">
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <ng-container *ngFor="let language of languages">
-                        <a class="dropdown-item" (click)="changeLang(language.value)" href="#lang">
-                            <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
-                            <span>{{ language.name }}</span>
-                            <img class="check-img" *ngIf="selectedLang == language.value" src="assets/images/check.png">
-                        </a>
-                        <div class="dropdown-divider"></div>
-                    </ng-container>
-
-                </div>
-            </li>
-        </ul>
-    </div>
     </div>
 </nav>
