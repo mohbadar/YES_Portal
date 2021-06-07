@@ -261,9 +261,8 @@ ol li {
   font-size: 14px;
 }
 
-ul.navbar-nav {
-  margin-top: 10px;
-  margin-bottom: 10px;
+body[dir=rtl] .navbar-nav {
+  margin-right: 30px;
 }
 
 .navbar-1 ul li a.nav-link {
@@ -427,12 +426,25 @@ button.close {
 /*           3.Header
 /*--------------------------------*/
 .header-1 {
-  background-image: linear-gradient(#293382, transparent), url('assets/images/afg-cover2.jpg');
-  /* background-image: url(assets/images/youth.jpg); */
   min-height: 650px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+body[dir=ltr] .marginLTR {
+  margin-right: auto;
+}
+
+body[dir=ltr].navbar-collapse {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-collapse {
+    display: flex !important;
+    padding-left: 10px;
+  }
 }
 
 .header-1-text {
