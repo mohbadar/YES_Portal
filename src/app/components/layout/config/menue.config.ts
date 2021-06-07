@@ -41,12 +41,12 @@ export class MenuConfig {
                     ]
                 }, {
                     title: 'E-Learning ',
-                    page: '/e-learning',
+                    page: '/',
                     translate: 'MENU.E_LEARNING',
                     submenu: [
                         {
                             title: 'Blogs',
-                            page: '/blogs',
+                            page: '/e-learning/blogleft',
                             translate: 'MENU.BLOGS'
                         },
                         {

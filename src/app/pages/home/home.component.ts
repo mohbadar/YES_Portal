@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -24,8 +25,14 @@ export class HomeComponent implements OnInit {
   constructor(
     private pageService: PageService,
     private spinner: NgxSpinnerService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) { }
+
+  publishedAt: any = {};
+  monthNames = ["Jan", "Feb", "March", "April", "May", "June",
+    "July", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
 
   languages = [
     {
@@ -45,6 +52,8 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+
 
     this.lang = this.translate.currentLang;
     console.log('Current Lang: ', this.lang);
@@ -85,6 +94,18 @@ export class HomeComponent implements OnInit {
       nav: true
     }
 
+
+    // const d = new Date(this.postData.publishedAt);
+    // console.log('Data: ', d.getMonth());
+    // this.publishedAt['month'] = this.monthNames[d.getMonth()];
+    // this.publishedAt['day'] = d.getDate();
+    // console.log('the whole date:', d);
+
+    // console.log('d get month:', d.getMonth());
+
+    // console.log('the published at month:', this.publishedAt.month);
+    // console.log('the published at day:', this.publishedAt.day);
+
   }
 
 
@@ -97,6 +118,7 @@ export class HomeComponent implements OnInit {
         image {
           formats
         }
+        publishedAt: createdAt
       }
     }`;
     this.pageService.getPostData(graphqlQuery).subscribe((res: any) => {
@@ -166,7 +188,9 @@ export class HomeComponent implements OnInit {
 
   getRecentBlogs() {
     const graphQuery = `{
-      blogs{
+      blogs(limit: 3){
+        _id,
+        slug,
         title: title_${this.lang}
         brief:brief_${this.lang}
         author:author_${this.lang}
@@ -188,6 +212,15 @@ export class HomeComponent implements OnInit {
     el.onerror = '';
     el.src = '../../../assets/images/placeholder/img-avatar.png';
     return true;
+  }
+
+
+  showBlogDetails(id, slug) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+      // this.router.navigateByUrl('//e-learning/blogleft' + "/" + id + "/" + slug));
+      this.router.navigate(['//e-learning/blogdetails/' + id + "/" + slug])
+
+    )
   }
 
 }
