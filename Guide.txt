@@ -1,0 +1,67 @@
+sudo apt update
+sudo apt-get update
+sudo apt upgrade
+sudo apt-get install unzip
+
+# Install NGNIX
+sudo apt install nginx
+sudo ufw app list
+sudo service nginx status
+
+cd /etc/nginx/sites-available/
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/yes
+
+sudo ln -s /etc/nginx/sites-available/yes /etc/nginx/sites-enabled/
+sudo nginx -t
+
+# MongoDB
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+sudo apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+-----Ubuntu 18.04
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+
+/var/lib/mongodb
+/var/log/mongodb
+/etc/mongod.conf
+
+sudo systemctl start mongod
+sudo systemctl daemon-reload
+sudo systemctl status mongod
+sudo systemctl enable mongod
+
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+mongo
+
+
+# install GIT
+sudo apt install git-all
+
+# Install NodeJs
+sudo apt install nodejs
+sudo apt install npm
+sudo npm install npm -g
+
+# Clone YES Admin
+git clone https://github.com/nsia-infosys/YES-Portal-Admin.git
+sudo npm install
+--- If build failed
+sudo npm install --unsafe-perm
+sudo rm package-lock.json && npm i
+sudo chown -R $(whoami) ~/.npm
+
+# Upload and Move Yes Portal Client side code
+sudo rm -rf /var/www/dist.zip
+sudo mv ~/dist.zip /var/www/
+cd /var/www/
+sudo unzip dist.zip
+sudo cp -a dist/yes/. yes_web/
