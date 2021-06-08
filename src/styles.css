@@ -728,7 +728,12 @@ body[dir=rtl] .bg-gradient {
 }
 
 .member .member-text {
-  padding: 30px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.member .member-text:hover {
+  color: red;
 }
 
 /*--------------------------------*/
@@ -895,6 +900,7 @@ body[dir=rtl] .bg-gradient {
 
 .blog-title h3 a {
   color: #333;
+  cursor: pointer;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -1369,6 +1375,13 @@ body[dir=rtl] .footer p {
 
 .footer ul.social li a:hover i {
   color: #fff;
+}
+
+.footer ul.social li a i {
+  font-size: 30px;
+  color: #fff;
+  padding: 15px;
+  margin-top: 10px;
 }
 
 .footer .logo {

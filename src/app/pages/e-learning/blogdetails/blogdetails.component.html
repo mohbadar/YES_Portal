@@ -3,156 +3,39 @@
     <div class="row">
       <div class="col-md-12">
         <div class="header-inner-text">
-          <h1 class="text-center">Blog Details</h1>
+          <h1 class="text-center">{{ 'BLOG-DETAILS' | translate }} </h1>
           <!-- <h5 class="text-center"><a class="breadcrumb-link" href="#">Home</a> > Blog Posts</h5> -->
         </div>
       </div>
     </div>
   </div>
 </header>
-<!-- <div id="blog" class="recentposts section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="row">
-            <div class="col-lg-12 col-md-12">
-              <div class="blog-item">
-                <div class="blog-img"> <img src="assets/images/post-1.jpg" alt=""> </div>
-                <div class="blog-content">
-                  <div class="blog-details-meta"> <span><a href="#"><i class="icofont-user-alt-3"></i> Hobi</a></span> <span><i class="icofont-calendar"></i> April 30, 2019 </span> <span><a href="#"><i class="icofont-speech-comments"></i> No Comments</a></span> </div>
-                  <div class="blog-title">
-                    <h2>tartup Marketing Solution for Business Owner.</h2>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                    <blockquote>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</blockquote>
-                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                  </div>
-                  <div class="blog-post-tag"><span>Post Tags</span><a href="#" rel="tag">Brand</a> <a href="#" rel="tag">CSS</a> <a href="#" rel="tag">Design</a> <a href="#" rel="tag">HTML</a> <a href="#" rel="tag">Lifestyle</a> <a href="#" rel="tag">Logo</a> <a href="#" rel="tag">Make</a> <a href="#" rel="tag">Musician</a> <a href="#" rel="tag">Photo</a> <a href="#" rel="tag">Travel</a></div>
+<div id="blog" class="recentposts section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="blog-item">
+              <!-- <div class="blog-img"> <img src="assets/images/header-1.png" alt=""> </div> -->
+              <div class="blog-details">
+                <div class="blog-details-meta">
+                  <span><a href="#"><i class="icofont-user-alt-3 mt-2 mb-2"></i> {{ blogDetails?.author}}</a></span>
+                  <span><i class="icofont-calendar"></i> April 30, 2019 </span>
                 </div>
-                <div class="post-comments">
-                  <div class="blog-coment-title mb-30">
-                    <h2>03 Comments</h2>
-                    <hr/>
-                  </div>
-                  <div class="latest-comments">
-                    <ul>
-                      <li>
-                        <div class="comments-box">
-                          <div class="comments-avatar"> <img src="https://via.placeholder.com/100" alt=""> </div>
-                          <div class="comments-text">
-                            <div class="avatar-name">
-                              <h5>Karon Balina</h5>
-                              <span>19th May 2018</span> <a class="reply" href="#"><i class="fas fa-reply"></i>Reply</a> </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                              exercitation
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="children">
-                        <div class="comments-box">
-                          <div class="comments-avatar"> <img src="https://via.placeholder.com/100" alt=""> </div>
-                          <div class="comments-text">
-                            <div class="avatar-name">
-                              <h5>Julias Roy</h5>
-                              <span>19th May 2018</span> <a class="reply" href="#"><i class="fas fa-reply"></i>Reply</a> </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                              exercitation
-                              ullamco laboris nisi ut aliquip.</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="comments-box">
-                          <div class="comments-avatar"> <img src="https://via.placeholder.com/100" alt=""> </div>
-                          <div class="comments-text">
-                            <div class="avatar-name">
-                              <h5>Arista Williamson</h5>
-                              <span>19th May 2018</span> <a class="reply" href="#"><i class="fas fa-reply"></i>Reply</a> </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt
-                              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                              exercitation
-                              ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                <div class="blog-title-body">
+                  <h2>{{ blogDetails?.title }}</h2>
+                  <p [innerHTML]="blogDetails?.brief | parsehtml | safe"></p>
+
                 </div>
-                <div class="post-comments-form">
-                  <div class="post-comments-title">
-                    <h2>Post Comments</h2>
-                    <hr/>
-                  </div>
-                  <form id="contacts-form" class="conatct-post-form" action="#">
-                    <div class="row">
-                      <div class="col-xl-12">
-                        <div class="contact-icon contacts-message">
-                          <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Your Comments...."></textarea>
-                        </div>
-                      </div>
-                      <div class="col-xl-12">
-                        <div class="contact-icon contacts-name">
-                          <input type="text" placeholder="Your Name.... ">
-                        </div>
-                      </div>
-                      <div class="col-xl-12">
-                        <div class="contact-icon contacts-email">
-                          <input type="email" placeholder="Your Email....">
-                        </div>
-                      </div>
-                      <div class="col-xl-12">
-                        <div class="contact-icon contacts-website">
-                          <input type="text" placeholder="Your Website....">
-                        </div>
-                      </div>
-                      <div class="col-xl-12">
-                        <button class="btn btn-red" type="submit">Post comment</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="sidebar">
-            <div class="widget">
-              <h3>Recent Posts</h3>
-              <hr/>
-              <ul>
-                <li><a href="#">How To Make Simple HTML Email Coding With Easy Way.</a></li>
-                <li><a href="#">How To Make Simple HTML Email Coding With Easy Way.</a></li>
-                <li><a href="#">How To Make Simple HTML Email Coding With Easy Way.</a></li>
-                <li><a href="#">How To Make Simple HTML Email Coding With Easy Way.</a></li>
-                <li><a href="#">How To Make Simple HTML Email Coding With Easy Way.</a></li>
-                <li><a href="#">How To Make Simple HTML Email Coding With Easy Way.</a></li>
-              </ul>
-            </div>
-            <div class="widget">
-              <h3>Categories</h3>
-              <hr/>
-              <ul>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">Seo</a></li>
-                <li><a href="#">Blogging</a></li>
-                <li><a href="#">Online Marketing</a></li>
-                <li><a href="#">App Development</a></li>
-              </ul>
-            </div>
-            <div class="widget">
-              <h3>Tags</h3>
-              <hr/>
-              <div class="tagcloud"><a href="#">Business</a><a href="#">Selling</a><a href="#">Digital Products</a><a href="#">Envato</a><a href="#">Themeforest</a><a href="#">Codecanyon</a></div>
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+</div>
