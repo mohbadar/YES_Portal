@@ -1,7 +1,9 @@
 import { CommonModule } from "@angular/common";
-import { Route } from "@angular/compiler/src/core";
+import { HttpClient } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SharedModule } from "src/app/shared.module";
 import { BlogdetailsComponent } from "./blogdetails/blogdetails.component";
 import { BlogleftComponent } from "./blogleft/blogleft.component";
