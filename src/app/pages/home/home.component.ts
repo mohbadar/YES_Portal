@@ -223,4 +223,11 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  showNewsDetails(id) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+      this.router.navigate(['//news-opportunities/news-details/' + id])
+
+    )
+  }
+
 }

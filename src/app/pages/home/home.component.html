@@ -20,9 +20,9 @@
                     <ng-template carouselSlide>
                         <div class="np-news-card">
                             <div class="np-news-card-wrapper">
-                                <img [src]="post.image[0].formats?.small?.url" alt="" class="card-img">
+                                <img [src]="post?.image[0].formats?.small?.url" alt="" class="card-img">
                                 <div class="contents bg-gradient">
-                                    <h5 class="text-white">{{ post?.title }}</h5>
+                                    <h5 class="text-white" (click)="showNewsDetails(post._id)">{{ post?.title }}</h5>
                                 </div>
                                 <div class="news-date">
                                     <h4 class="text-white">5</h4>
