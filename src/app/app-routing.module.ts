@@ -7,27 +7,31 @@ import { BlogrightComponent } from './pages/e-learning/blogright/blogright.compo
 import { BlogdetailsComponent } from './pages/e-learning/blogdetails/blogdetails.component';
 
 const routes: Routes = [
-	{
-		path: '',
-		component: LayoutComponent,
-		children: [
-			{
-				path: '', component: HomeComponent
-			},
-			{
-				path: 'e-learning',
-				loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.eLearningModule)
-			}
-		]
-	},
-	{
-		path: 'template',
-		loadChildren: () => import('./template/template.module').then(m => m.TemplateModule)
-	},
+    {
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: '', component: HomeComponent
+            },
+            {
+                path: 'e-learning',
+                loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.eLearningModule)
+            },
+            {
+                path: 'news-opportunities',
+                loadChildren: () => import('./pages/news-opportunities/news-opportunities.module').then(m => m.NewsOpportunitiesModule)
+            }
+        ]
+    },
+    {
+        path: 'template',
+        loadChildren: () => import('./template/template.module').then(m => m.TemplateModule)
+    },
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: []
 })
 export class AppRoutingModule { }

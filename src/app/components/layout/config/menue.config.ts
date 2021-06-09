@@ -244,6 +244,23 @@ export class MenuConfig {
     }
 
     public get configs(): any {
+        this.defaults.header.items = this.prepareComponentsUrls(
+            this.defaults.header.items
+        );
         return this.defaults;
+    }
+
+    // Recursively add the parent's page url to the child's page url
+    private prepareComponentsUrls(jObject, identifier = "") {
+        return jObject.map((obj) => {
+            if (obj.hasOwnProperty("page")) {
+                obj.page = identifier + obj.page;
+                if (obj.hasOwnProperty("submenu")) {
+                    obj.submenu = this.prepareComponentsUrls(obj.submenu, obj.page);
+                }
+            }
+
+            return obj;
+        });
     }
 }
