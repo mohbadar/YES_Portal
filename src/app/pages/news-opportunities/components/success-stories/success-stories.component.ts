@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { NewsOpportunitiesService } from '../../news-opportunities.service';
+import { PageService } from 'src/app/pages/page.service';
 
 @Component({
     selector: 'app-success-stories',
@@ -14,8 +15,9 @@ export class SuccessStoriesComponent implements OnInit {
 
 
     constructor(
+        private router: Router,
         private translate: TranslateService,
-        private newsOpportunitiesService: NewsOpportunitiesService
+        private pageService: PageService
     ) { }
 
     ngOnInit(): void {
@@ -25,18 +27,18 @@ export class SuccessStoriesComponent implements OnInit {
 
     getSuccessStories() {
         this.loading = true;
-        const graphQuery = `{successStories(locale:"${this.lang}") { id, title, createdAt , description, author, localizations{id, locale}, photos{ url }}}`;
-        this.newsOpportunitiesService.getSuccessStories(graphQuery).subscribe((res: any) => {
+        const graphQuery = `{successStories(locale:"${this.lang}") { id title description author publishedAt: published_at photos{ url }}}`;
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.loading = false;
             this.successStories = res.data.successStories;
             this.formatDate();
             console.log("🚀 ~ file: success-stories.component.ts ~ line 30 ~ SuccessStoriesComponent ~ this.newsOpportunitiesService.getSuccessStories ~ res.data", res.data)
-        })
+        });
     }
 
     formatDate() {
         this.successStories.forEach(element => {
-            const date = new Date(element.createdAt);
+            const date = new Date(element.publishedAt);
             const year = date.getFullYear();
             const month = date.toLocaleString('default', { month: 'long' });
             const day = date.getDay();
@@ -50,6 +52,11 @@ export class SuccessStoriesComponent implements OnInit {
         el.onerror = '';
         el.src = '../../../../../assets/images/post-1.jpg';
         return true;
+    }
+
+    redirectToStoryDetails(id) {
+        console.log("🚀 ~ file: success-stories.component.ts ~ line 56 ~ SuccessStoriesComponent ~ redirectToStoryDetails ~ id", id)
+        this.router.navigate(['/news-opportunities/success-story-details', id])
     }
 
 }

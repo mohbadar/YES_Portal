@@ -43,6 +43,10 @@ export class PageService {
         return this.getGraphQueryData(graphQuery)
     }
 
+    getData(graphQuery) {
+        return this.getGraphQueryData(graphQuery);
+    }
+
     getGraphQueryData(query) {
         return this.http.get(`/graphql`, {
             params: { query }

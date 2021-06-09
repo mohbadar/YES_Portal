@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SuccessStoriesComponent } from './components/success-stories/success-stories.component';
 import { SharedModule } from 'src/app/shared.module';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
+import { SuccessStoryDetailsComponent } from './components/success-stories/success-story-details/success-story-details.component';
 
 const routes: Routes = [
     {
@@ -14,6 +15,9 @@ const routes: Routes = [
             {
                 path: 'success-stories',
                 component: SuccessStoriesComponent
+            }, {
+                path: 'success-story-details/:story_id',
+                component: SuccessStoryDetailsComponent
             },
             {
                 path: 'news-details/:_id',
@@ -25,7 +29,7 @@ const routes: Routes = [
 
 
 @NgModule({
-    declarations: [NewsOpportunitiesComponent, SuccessStoriesComponent, NewsDetailsComponent],
+    declarations: [NewsOpportunitiesComponent, SuccessStoriesComponent, NewsDetailsComponent, SuccessStoryDetailsComponent],
     imports: [
         RouterModule.forChild(routes),
         CommonModule,

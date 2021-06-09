@@ -57,7 +57,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="blog-title">
-                                    <h3><a href="#">{{ss.title}}</a></h3>
+                                    <h3><a (click)="redirectToStoryDetails(ss.id)">{{ss.title}}</a></h3>
                                     <p [innerHTML]="ss.description | parsehtml | safe"></p>
                                 </div>
                                 <div class="blog-meta">

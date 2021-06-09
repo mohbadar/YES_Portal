@@ -6,10 +6,7 @@ import { PageService } from '../page.service';
 })
 export class NewsOpportunitiesService {
 
-    constructor(private pageService: PageService) { }
+    constructor() { }
 
-    getSuccessStories(graphQuery) {
-        return this.pageService.getGraphQueryData(graphQuery);
-    }
 
 }
