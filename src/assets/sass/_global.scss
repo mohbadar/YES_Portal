@@ -1,0 +1,197 @@
+@import './variabls';
+
+body {
+  font-family: $font-family;
+  overflow-x: hidden;
+}
+
+.custom-container {
+  width: $custom-container-width;
+  margin: auto;
+}
+
+.border-primary {
+  border-color: $primary-color !important;
+}
+
+.color-white {
+    color: $white;
+}
+
+.cl-secondary {
+    color: $secondary-color;
+}
+
+.np-ab-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+}
+
+.np-section {
+  margin-bottom: 1rem !important;
+}
+
+.np-hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.493);
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, $primary-color, rgba(39, 35, 97, 0) 100%) !important;
+}
+
+body[dir=rtl] {
+  .bg-gradient {
+    background: linear-gradient(to left, $primary-color, rgba(39, 35, 97, 0) 100%) !important;
+  }
+}
+
+.contents {
+  position: absolute;
+  height: 50%;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 15px;
+  padding: 16px;
+  width: calc(100% - 30px);
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 226, 226);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(138, 137, 137);
+}
+
+.no-data {
+  width: 85%;
+  margin: auto;
+  border-radius: 0px;
+  color: #bfc0c0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.img-icon {
+  width: 20px;
+}
+
+
+
+/**
+ * ==============================================
+ * Dot Falling
+ * ==============================================
+ */
+.dot-falling {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #282560;
+  color: #282560;
+  box-shadow: 9999px 0 0 0 #282560;
+  animation: dotFalling 1s infinite linear;
+  animation-delay: 0.1s;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.dot-falling::before,
+.dot-falling::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-falling::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: $primary-color;
+  color: $primary-color;
+  animation: dotFallingBefore 1s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-falling::after {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: $primary-color;
+  color: $primary-color;
+  animation: dotFallingAfter 1s infinite linear;
+  animation-delay: 0.2s;
+}
+
+@keyframes dotFalling {
+  0% {
+    box-shadow: 9999px -15px 0 0 rgba(152, 128, 255, 0);
+  }
+
+  25%,
+  50%,
+  75% {
+    box-shadow: 9999px 0 0 0 $primary-color;
+  }
+
+  100% {
+    box-shadow: 9999px 15px 0 0 rgba(152, 128, 255, 0);
+  }
+}
+
+@keyframes dotFallingBefore {
+  0% {
+    box-shadow: 9984px -15px 0 0 rgba(152, 128, 255, 0);
+  }
+
+  25%,
+  50%,
+  75% {
+    box-shadow: 9984px 0 0 0 $primary-color;
+  }
+
+  100% {
+    box-shadow: 9984px 15px 0 0 rgba(152, 128, 255, 0);
+  }
+}
+
+@keyframes dotFallingAfter {
+  0% {
+    box-shadow: 10014px -15px 0 0 rgba(152, 128, 255, 0);
+  }
+
+  25%,
+  50%,
+  75% {
+    box-shadow: 10014px 0 0 0 $primary-color;
+  }
+
+  100% {
+    box-shadow: 10014px 15px 0 0 rgba(152, 128, 255, 0);
+  }
+}

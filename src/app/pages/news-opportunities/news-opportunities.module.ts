@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NewsOpportunitiesComponent } from './news-opportunities.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SuccessStoriesComponent } from './components/success-stories/success-stories.component';
+import { SharedModule } from 'src/app/shared.module';
 
 const routes: Routes = [
     {
@@ -22,7 +23,8 @@ const routes: Routes = [
     declarations: [NewsOpportunitiesComponent, SuccessStoriesComponent],
     imports: [
         RouterModule.forChild(routes),
-        CommonModule
+        CommonModule,
+        SharedModule
     ]
 })
 export class NewsOpportunitiesModule { }

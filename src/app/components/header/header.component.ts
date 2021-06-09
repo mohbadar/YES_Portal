@@ -24,11 +24,11 @@ export class HeaderComponent implements OnInit {
         }, {
             name: 'پښتو',
             icon: 'afg.png',
-            value: 'ps'
+            value: 'ps-AF'
         }, {
             name: 'دری',
             icon: 'afg.png',
-            value: 'dr'
+            value: 'fa-AF'
         }
     ];
 

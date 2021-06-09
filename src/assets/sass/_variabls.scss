@@ -1,0 +1,37 @@
+$primary-color: #293382;
+$primary-color-light: #4a5dda;
+$primary-color-opac: #2834809a;
+$primary-color-dark: #192363;
+$secondary-color: #FFBE00;
+$secondary-color-disabled: #a5823b;
+$white: #fff;
+$grey: #F1F1F1;
+$light-grey: #E5E5E5;
+$space-grey: #CBCBCB;
+$text-color: #283480;
+$screen-threshold: 1000px;
+
+$custom-container-width: 88%;
+$country-details-max-height: 250px;
+$font-family: "Montserrat", "Bahij Halvetica", "Segoe UI", Arial, sans-serif;
+
+$navbar-padding: 4px 10px;
+
+
+@font-face {
+    font-family: "Bahij Halvetica";
+    src: url("../fonts/bahij_helvetica_neue_bold_by_bahijvirtualacademy-dammcmt_0.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Bahij Halvetica";
+    src: url("../fonts/Bahij_Helvetica_Neue-Light_1.ttf");
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Bahij Halvetica";
+    src: url("../fonts/bahij_helvetica_neue_roman_by_bahijvirtualacademy-dammd50_0.ttf");
+    font-weight: normal;
+}

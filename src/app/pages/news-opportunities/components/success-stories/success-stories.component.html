@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header-inner-text">
-                    <h1 class="text-center">Blog Posts</h1>
-                    <h5 class="text-center"><a class="breadcrumb-link" href="#">Home</a> > Blog Posts</h5>
+                    <h1 class="text-center">{{ 'LABEL.SUCCESS_STORIES' | translate}}</h1>
                 </div>
             </div>
         </div>
@@ -49,130 +48,39 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img"> <img src="assets/images/post-1.jpg" alt=""> </div>
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                    <h3><a href="#">Startup Marketing Solution for Business Owner.</a></h3>
-                                    <p>is simply dummy text of the printing and type tting industry. Lorem Ipsum has
-                                        been.</p>
-                                </div>
-                                <div class="blog-meta">
-                                    <div class="blog-author">
-                                        <h4>Eva Rakim</h4>
-                                        <h5>SEO Manager</h5>
-                                    </div>
-                                    <div class="blog-date"> <span>23 Des <br />
-                                            2019</span> </div>
-                                </div>
+                <div class="row" *ngIf="successStories; else noData">
+                    <div class="col-lg-6 col-md-6" *ngFor="let ss of successStories">
+                        <div class=" blog-item">
+                            <div class="blog-img">
+                                <img class="np-feature-image" [src]="ss.photos[0].url"
+                                    (error)="imageError($event.target)" alt="">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img"> <img src="assets/images/post-2.jpg" alt=""> </div>
                             <div class="blog-content">
                                 <div class="blog-title">
-                                    <h3><a href="#">Startup Marketing Solution for Business Owner.</a></h3>
-                                    <p>is simply dummy text of the printing and type tting industry. Lorem Ipsum has
-                                        been.</p>
+                                    <h3><a href="#">{{ss.title}}</a></h3>
+                                    <p [innerHTML]="ss.description | parsehtml | safe"></p>
                                 </div>
                                 <div class="blog-meta">
                                     <div class="blog-author">
-                                        <h4>Mark Jacobs</h4>
-                                        <h5>Web Desinger</h5>
+                                        <h4>{{ss.author}}</h4>
+                                        <!-- <h5>SEO Manager</h5> -->
                                     </div>
-                                    <div class="blog-date"> <span>05 Jun <br />
-                                            2019</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img"> <img src="assets/images/post-1.jpg" alt=""> </div>
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                    <h3><a href="#">Startup Marketing Solution for Business Owner.</a></h3>
-                                    <p>is simply dummy text of the printing and type tting industry. Lorem Ipsum has
-                                        been.</p>
-                                </div>
-                                <div class="blog-meta">
-                                    <div class="blog-author">
-                                        <h4>Eva Rakim</h4>
-                                        <h5>SEO Manager</h5>
-                                    </div>
-                                    <div class="blog-date"> <span>23 Des <br />
-                                            2019</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img"> <img src="assets/images/post-2.jpg" alt=""> </div>
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                    <h3><a href="#">Startup Marketing Solution for Business Owner.</a></h3>
-                                    <p>is simply dummy text of the printing and type tting industry. Lorem Ipsum has
-                                        been.</p>
-                                </div>
-                                <div class="blog-meta">
-                                    <div class="blog-author">
-                                        <h4>Mark Jacobs</h4>
-                                        <h5>Web Desinger</h5>
-                                    </div>
-                                    <div class="blog-date"> <span>05 Jun <br />
-                                            2019</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img"> <img src="assets/images/post-1.jpg" alt=""> </div>
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                    <h3><a href="#">Startup Marketing Solution for Business Owner.</a></h3>
-                                    <p>is simply dummy text of the printing and type tting industry. Lorem Ipsum has
-                                        been.</p>
-                                </div>
-                                <div class="blog-meta">
-                                    <div class="blog-author">
-                                        <h4>Eva Rakim</h4>
-                                        <h5>SEO Manager</h5>
-                                    </div>
-                                    <div class="blog-date"> <span>23 Des <br />
-                                            2019</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img"> <img src="assets/images/post-2.jpg" alt=""> </div>
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                    <h3><a href="#">Startup Marketing Solution for Business Owner.</a></h3>
-                                    <p>is simply dummy text of the printing and type tting industry. Lorem Ipsum has
-                                        been.</p>
-                                </div>
-                                <div class="blog-meta">
-                                    <div class="blog-author">
-                                        <h4>Mark Jacobs</h4>
-                                        <h5>Web Desinger</h5>
-                                    </div>
-                                    <div class="blog-date"> <span>05 Jun <br />
-                                            2019</span> </div>
+                                    <div class="blog-date"> <span>{{ss.createdDay}} {{ss.createdMonth}} <br />
+                                            {{ss.createdYear}}</span> </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <ng-template #noData>
+                    <div class="row">
+                        <div class="jumbotron no-data">
+                            <div [class.dot-falling]="loading"></div>
+                            <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                        </div>
+                    </div>
+                </ng-template>
             </div>
-
         </div>
     </div>
 </div>
