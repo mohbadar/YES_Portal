@@ -42,6 +42,13 @@ export class SuccessStoryDetailsComponent implements OnInit {
                 this.successStoryDetails = res.data.successStory;
                 console.log("🚀 ~ file: success-story-details.component.ts ~ line 43 ~ SuccessStoryDetailsComponent ~ this.pageService.getData ~  this.successStoryDetails", this.successStoryDetails)
             }
+            const date = new Date(this.successStoryDetails.publishedAt);
+            const year = date.getFullYear();
+            const month = date.toLocaleString('default', { month: 'long' });
+            const day = date.getDay();
+            this.successStoryDetails.createdMonth = month;
+            this.successStoryDetails.createdYear = year;
+            this.successStoryDetails.createdDay = day;
         });
 
     }
