@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="row">
+                <div class="row" *ngIf="successStoryDetails; else noData">
                     <div class="col-lg-12 col-md-12">
                         <div class="blog-item">
                             <!-- <div class="blog-img"> <img src="assets/images/header-1.png" alt=""> </div> -->
@@ -31,13 +31,18 @@
                                     <p [innerHTML]="successStoryDetails?.description | parsehtml | safe"></p>
 
                                 </div>
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
+                <ng-template #noData>
+                    <div class="row">
+                        <div class="jumbotron no-data">
+                            <div [class.dot-falling]="loading"></div>
+                            <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                        </div>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </div>
