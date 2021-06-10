@@ -20,7 +20,7 @@ const routes: Routes = [
                 component: SuccessStoryDetailsComponent
             },
             {
-                path: 'news-details/:_id',
+                path: 'news-details/:id',
                 component: NewsDetailsComponent
             }
         ]

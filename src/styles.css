@@ -889,6 +889,7 @@ body[dir=rtl] .bg-gradient {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  min-height: 230px;
   max-height: 230px;
   overflow: hidden;
 }
@@ -915,7 +916,7 @@ body[dir=rtl] .bg-gradient {
   margin-top: 10px;
   margin-bottom: 20px;
   max-height: 90px;
-  text-align: justify;
+  /* text-align: justify; */
   position: relative;
   overflow: hidden;
 }

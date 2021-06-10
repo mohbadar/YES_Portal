@@ -11,7 +11,6 @@ import { PageService } from '../../page.service';
 })
 export class BlogdetailsComponent implements OnInit {
 
-  blogSlug;
   lang;
   blogId
   blogDetails;
@@ -19,19 +18,14 @@ export class BlogdetailsComponent implements OnInit {
   constructor(private pageService: PageService,
     private route: ActivatedRoute,
     private spinner: NgxSpinnerService,
-    private translate: TranslateService) { }
+    private translate: TranslateService) {
+    this.blogId = this.route.snapshot.paramMap.get('id');
+  }
 
   ngOnInit(): void {
-    this.blogId = this.route.snapshot.paramMap.get('_id');
-    this.blogSlug = this.route.snapshot.paramMap.get('slug');
-    console.log("🚀 ~ file: blogdetails.component.ts ~ line 27 ~ BlogdetailsComponent ~ ngOnInit ~ blogSlug", this.blogSlug)
-    console.log("blog id", this.blogId);
-
     this.lang = this.translate.currentLang;
     console.log('Current Lang: ', this.lang);
     this.getblogDetails();
-
-
   }
 
 
@@ -39,23 +33,36 @@ export class BlogdetailsComponent implements OnInit {
     this.spinner.show();
     const graphQuery = `
     {
-      blogs(
-        where:{ _id:"${this.blogId}" slug:"${this.blogSlug}"}
-      ) {
-        title: title_${this.lang},
-        brief: brief_${this.lang},
-        body: body_${this.lang},
-         author: author_${this.lang}
-       image {
-         url
-       }
-       
-      }
-   }`;
+      blog(id: "${this.blogId}")
+      {
+        id 
+        title 
+        author 
+        brief
+        content
+        publishedAt: published_at 
+        photos
+        {
+          url
+        } 
+        localizations(where: { locale: "${this.lang}" }) {id title author brief content publishedAt: published_at photos { url }}}}
+    `;
     this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
       this.spinner.hide();
-      console.log('blog Details->: ', res);
-      this.blogDetails = res.data.blogs[0];
+      if (res.data.blog.localizations.length > 0) {
+        this.blogDetails = res.data.blog.localizations[0];
+        console.log("🚀 ~ file: blogdetails.component.ts ~ line 54 ~ BlogdetailsComponent ~ this.pageService.getRecentBlogs ~ blogDetails", this.blogDetails)
+      } else {
+        this.blogDetails = res.data.blog;
+        console.log("🚀 ~ file: blogdetails.component.ts ~ line 57 ~ BlogdetailsComponent ~ this.pageService.getRecentBlogs ~ blogDetails", this.blogDetails)
+      }
+      const date = new Date(this.blogDetails.publishedAt);
+      const year = date.getFullYear();
+      const month = date.toLocaleString('default', { month: 'long' });
+      const day = date.getDay();
+      this.blogDetails.createdMonth = month;
+      this.blogDetails.createdYear = year;
+      this.blogDetails.createdDay = day;
     }, err => {
       this.spinner.hide();
       console.log(err);

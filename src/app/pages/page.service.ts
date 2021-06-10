@@ -21,7 +21,7 @@ export class PageService {
         return this.getGraphQueryData(graphQuery)
     }
 
-    getPostData(graphQuery) {
+    getYouthNews(graphQuery) {
         // console.log("News", graphQuery);
         return this.getGraphQueryData(graphQuery)
     }

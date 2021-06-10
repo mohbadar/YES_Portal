@@ -19,13 +19,16 @@
             <div class="blog-item">
               <!-- <div class="blog-img"> <img src="assets/images/header-1.png" alt=""> </div> -->
               <div class="blog-details">
-                <div class="blog-details-meta">
+                <div class="blog-details-meta mt-3 mb-3">
                   <span><a href="#"><i class="icofont-user-alt-3 mt-2 mb-2"></i> {{ blogDetails?.author}}</a></span>
-                  <span><i class="icofont-calendar"></i> April 30, 2019 </span>
+                  <span><i class="icofont-calendar"></i> {{blogDetails?.createdMonth}} {{blogDetails?.createdDay}},
+                    {{blogDetails?.createdYear}} </span>
                 </div>
                 <div class="blog-title-body">
                   <h2>{{ blogDetails?.title }}</h2>
                   <p [innerHTML]="blogDetails?.brief | parsehtml | safe"></p>
+                  <hr>
+                  <p [innerHTML]="blogDetails?.content | parsehtml | safe"></p>
 
                 </div>
 

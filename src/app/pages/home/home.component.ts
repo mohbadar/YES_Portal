@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
     coverDetails;
     aboutUs;
-    postData;
+    youthNews;
     topYouths;
     recentBlogs;
     lang;
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
         this.lang = this.translate.currentLang;
         console.log('Current Lang: ', this.lang);
         this.getCoverDetails();
-        this.getPostData();
+        this.getYouthNews();
         this.getAboutUsDetails();
         this.getTopYouth();
         this.getRecentBlogs();
@@ -93,38 +93,27 @@ export class HomeComponent implements OnInit {
             },
             nav: true
         }
-
-
-        // const d = new Date(this.postData.publishedAt);
-        // console.log('Data: ', d.getMonth());
-        // this.publishedAt['month'] = this.monthNames[d.getMonth()];
-        // this.publishedAt['day'] = d.getDate();
-        // console.log('the whole date:', d);
-
-        // console.log('d get month:', d.getMonth());
-
-        // console.log('the published at month:', this.publishedAt.month);
-        // console.log('the published at day:', this.publishedAt.day);
-
     }
 
 
-    getPostData() {
+    getYouthNews() {
         this.spinner.show();
-        const graphqlQuery = `{
-      posts {
-        _id
-        title:title_${this.lang},
-        image {
-          formats
-        }
-        publishedAt: createdAt
-      }
-    }`;
-        this.pageService.getPostData(graphqlQuery).subscribe((res: any) => {
+        const graphqlQuery = `
+        {
+            youthNews(locale: "${this.lang}") {
+            id
+            title
+            photos {
+              url
+            }
+            publishedAt:published_at
+          }
+        }`;
+        this.pageService.getYouthNews(graphqlQuery).subscribe((res: any) => {
             this.spinner.hide();
-            console.log('PostData ', res.data);
-            this.postData = res.data.posts;
+            console.log('YouthNews ', res.data);
+            this.youthNews = res.data.youthNews;
+            this.formatDate(this.youthNews);
         }, err => {
             this.spinner.hide();
             console.log(err);
@@ -135,7 +124,18 @@ export class HomeComponent implements OnInit {
 
     getCoverDetails() {
         this.spinner.show();
-        const graphQuery = `{cover {slogan:slogan_${this.lang} quote:quote_${this.lang} quotee_name:quotee_name_${this.lang} media{url} }}`;
+        const graphQuery = `
+        {
+            cover(locale: "${this.lang}") {
+              slogan
+              quote
+              quotee_name
+              photo{
+                url
+              }
+            }
+          }
+        `;
         this.pageService.getCoverDetails(graphQuery).subscribe((res: any) => {
             this.spinner.hide();
             this.coverDetails = res.data.cover;
@@ -149,14 +149,14 @@ export class HomeComponent implements OnInit {
 
     getAboutUsDetails() {
         const graphQuery = `{
-      aboutUs {
-        title: title_${this.lang}
-        brief:brief_${this.lang}
-        media {
-          url
-        }
-      }
-    }`;
+            aboutUs(locale: "${this.lang}") {
+            title,
+            brief
+            photos {
+              url
+            }
+          }
+        }`;
         this.pageService.getAboutUsDetails(graphQuery).subscribe((res: any) => {
             this.aboutUs = res.data.aboutUs;
             console.log('ABOUT-US: ', this.aboutUs);
@@ -167,16 +167,18 @@ export class HomeComponent implements OnInit {
     }
 
     getTopYouth() {
-        const graphQuery = `{
-      topYouths {
-        _id
-        name:name_${this.lang}
-        brief: brief_${this.lang}
-        photo {
-          url
-        }
-      }
-    }`;
+        const graphQuery = `
+        {
+            topYouths(locale:"${this.lang}", limit:3) {
+              id
+              name
+              brief
+              photos {
+                url
+              }
+              
+            }
+          }`;
         this.pageService.getTopYouth(graphQuery).subscribe((res: any) => {
             this.topYouths = res.data.topYouths;
             console.log('YTouth: ', this.topYouths);
@@ -188,23 +190,31 @@ export class HomeComponent implements OnInit {
 
     getRecentBlogs() {
         const graphQuery = `{
-      blogs(limit: 3){
-        _id,
-        slug,
-        title: title_${this.lang}
-        brief:brief_${this.lang}
-        author:author_${this.lang}
-        image {
-          url
-        }
-      }
-    }`;
+            blogs(locale:"${this.lang}", limit: 3) 
+            { 
+              id title brief author publishedAt: published_at photos{ url }
+            }
+          }`;
         this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
             this.recentBlogs = res.data.blogs;
+            this.formatDate(this.recentBlogs);
             console.log('Blogs: ', this.recentBlogs);
         }, err => {
             console.log(err);
 
+        });
+    }
+
+
+    formatDate(data) {
+        data.forEach(element => {
+            const date = new Date(element.publishedAt);
+            const year = date.getFullYear();
+            const month = date.toLocaleString('default', { month: 'long' });
+            const day = date.getDay();
+            element.createdMonth = month;
+            element.createdYear = year;
+            element.createdDay = day;
         });
     }
 
@@ -215,19 +225,18 @@ export class HomeComponent implements OnInit {
     }
 
 
-    showBlogDetails(id, slug) {
+    showBlogDetails(id) {
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
-            // this.router.navigateByUrl('//e-learning/blogleft' + "/" + id + "/" + slug));
-            this.router.navigate(['//e-learning/blogdetails/' + id + "/" + slug])
+            this.router.navigate(['//e-learning/blogdetails/' + id])
 
         )
     }
 
-  showNewsDetails(id) {
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
-      this.router.navigate(['//news-opportunities/news-details/' + id])
+    showNewsDetails(id) {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.router.navigate(['//news-opportunities/news-details/' + id])
 
-    )
-  }
+        )
+    }
 
 }
