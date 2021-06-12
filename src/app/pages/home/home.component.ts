@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit {
             publishedAt:published_at
           }
         }`;
-        this.pageService.getYouthNews(graphqlQuery).subscribe((res: any) => {
+        this.pageService.getData(graphqlQuery).subscribe((res: any) => {
             this.spinner.hide();
             console.log('YouthNews ', res.data);
             this.youthNews = res.data.youthNews;
@@ -136,7 +136,7 @@ export class HomeComponent implements OnInit {
             }
           }
         `;
-        this.pageService.getCoverDetails(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.spinner.hide();
             this.coverDetails = res.data.cover;
             console.log(' data: ', this.coverDetails);
@@ -150,14 +150,15 @@ export class HomeComponent implements OnInit {
     getAboutUsDetails() {
         const graphQuery = `{
             aboutUs(locale: "${this.lang}") {
-            title,
+            id
+            title
             brief
             photos {
               url
             }
           }
         }`;
-        this.pageService.getAboutUsDetails(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.aboutUs = res.data.aboutUs;
             console.log('ABOUT-US: ', this.aboutUs);
         }, err => {
@@ -179,7 +180,7 @@ export class HomeComponent implements OnInit {
               
             }
           }`;
-        this.pageService.getTopYouth(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.topYouths = res.data.topYouths;
             console.log('YTouth: ', this.topYouths);
         }, err => {
@@ -195,7 +196,7 @@ export class HomeComponent implements OnInit {
               id title brief author publishedAt: published_at photos{ url }
             }
           }`;
-        this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.recentBlogs = res.data.blogs;
             this.formatDate(this.recentBlogs);
             console.log('Blogs: ', this.recentBlogs);

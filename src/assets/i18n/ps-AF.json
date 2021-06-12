@@ -60,5 +60,10 @@
     "QUICK-LINKS": "ګړندي لینکونه",
     "RECENT-BLOGS": "ورستی مقالې",
     "NODATA": "معلومات نشته",
-    "BLOG-DETAILS": "د بلاګ توضیحات"
+    "BLOG-DETAILS": "د بلاګ توضیحات",
+    "NEWS-DETAILS": "دخبر توضیحات",
+    "CONTACT.MESSAGE": "ایا تاسو کومه پوښتنه لرئ؟ مهرباني وکړئ موږ سره مستقیم اړیکه ونیسئ",
+    "CONTACT_NAME":"ستاسو نوم",
+    "CONTACT_EMAIL": "بریښنالیک",
+    "CONTACT_MESSAGE": "پیغام"
 }

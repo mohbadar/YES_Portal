@@ -5,14 +5,15 @@ export class MenuConfig {
             items: [
                 {
                     title: 'Home',
-                    page: '/home',
+                    page: '',
                     translate: 'MENU.HOME',
                     submenu: [
+                        // {
+                        //     title: 'Vision',
+                        //     page: '/about-us',
+                        //     translate: 'MENU.VISION'
+                        // }, 
                         {
-                            title: 'Vision',
-                            page: '/vision',
-                            translate: 'MENU.VISION'
-                        }, {
                             title: 'About us',
                             page: '/about-us',
                             translate: 'MENU.ABOUT_US'
@@ -41,12 +42,12 @@ export class MenuConfig {
                     ]
                 }, {
                     title: 'E-Learning ',
-                    page: '/',
+                    page: '/e-learning',
                     translate: 'MENU.E_LEARNING',
                     submenu: [
                         {
                             title: 'Blogs',
-                            page: '/e-learning/blogleft',
+                            page: '/blogs',
                             translate: 'MENU.BLOGS'
                         },
                         {
