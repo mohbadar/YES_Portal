@@ -1,0 +1,47 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ "BLOGS" | translate }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="recentposts section-padding">
+    <div class="container">
+        <div class="row" *ngIf="blogs; else nodata">
+            <div class="col-lg-4 col-md-6 remb-30" *ngFor="let blog of blogs">
+                <div class="blog-item h2-blogitem">
+                    <div class="blog-img"> <img [src]="blog?.photos[0]?.url" alt="" (error)="imageError($event.target)">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-title">
+                            <h3 (click)="redirectToBlogDetails(blog.id)">{{ blog?.title }}</h3>
+                            <p [innerHTML]="blog?.brief | parsehtml | safe"></p>
+                        </div>
+                        <div class="blog-meta">
+                            <div class="blog-author">
+                                <h4>{{ blog?.author}}</h4>
+                            </div>
+                            <div class="blog-date"> <span>{{ blog?.createdDay}} {{ blog?.createdMonth}} <br />
+                                    {{blog?.createdYear}}</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

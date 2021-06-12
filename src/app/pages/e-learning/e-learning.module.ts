@@ -5,23 +5,20 @@ import { RouterModule, Routes } from "@angular/router";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SharedModule } from "src/app/shared.module";
-import { BlogdetailsComponent } from "./blogdetails/blogdetails.component";
+import { BlogdetailsComponent } from "./blogs/blogdetails/blogdetails.component";
 import { BlogleftComponent } from "./blogleft/blogleft.component";
 import { BlogrightComponent } from "./blogright/blogright.component";
+import { BlogsComponent } from './blogs/blogs.component';
 
 const routes: Routes = [
     {
-        path: 'blogleft', component: BlogleftComponent
-    },
-    {
-        path: 'blogright', component: BlogrightComponent
+        path: 'blogs', component: BlogsComponent
     },
     {
         path: 'blogdetails/:id', component: BlogdetailsComponent
     },
     {
-        path: '',
-        redirectTo: 'blogleft'
+        path: 'blogright', component: BlogrightComponent
     }
 ]
 
@@ -29,7 +26,8 @@ const routes: Routes = [
     declarations: [
         BlogdetailsComponent,
         BlogleftComponent,
-        BlogrightComponent
+        BlogrightComponent,
+        BlogsComponent
     ],
     imports: [
         CommonModule,

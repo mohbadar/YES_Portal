@@ -4,7 +4,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogleftComponent } from './pages/e-learning/blogleft/blogleft.component';
 import { BlogrightComponent } from './pages/e-learning/blogright/blogright.component';
-import { BlogdetailsComponent } from './pages/e-learning/blogdetails/blogdetails.component';
+import { BlogdetailsComponent } from './pages/e-learning/blogs/blogdetails/blogdetails.component';
 
 const routes: Routes = [
     {

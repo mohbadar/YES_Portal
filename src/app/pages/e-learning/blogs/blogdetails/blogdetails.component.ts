@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { PageService } from '../../page.service';
+import { PageService } from '../../../page.service';
 
 @Component({
   selector: 'app-blogdetails',

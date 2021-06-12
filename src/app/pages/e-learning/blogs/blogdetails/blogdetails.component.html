@@ -27,7 +27,6 @@
                 <div class="blog-title-body">
                   <h2>{{ blogDetails?.title }}</h2>
                   <p [innerHTML]="blogDetails?.brief | parsehtml | safe"></p>
-
                   <p [innerHTML]="blogDetails?.content | parsehtml | safe"></p>
 
                 </div>
