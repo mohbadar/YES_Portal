@@ -5,7 +5,7 @@ export class MenuConfig {
             items: [
                 {
                     title: 'Home',
-                    page: '/home',
+                    page: '',
                     translate: 'MENU.HOME',
                     submenu: [
                         {

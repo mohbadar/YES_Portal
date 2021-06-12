@@ -12,27 +12,23 @@
 <div id="blog" class="recentposts section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="blog-item">
-                            <div class="blog-details">
-                                <div class="blog-details-meta mt-3 mb-3">
-                                    <span><i class="icofont-calendar"></i> {{newsDetails?.createdMonth}}
-                                        {{newsDetails?.createdDay}},
-                                        {{newsDetails?.createdYear}} </span>
-                                </div>
-                                <div class="blog-title-body">
-                                    <h2>{{ newsDetails?.title }}</h2>
-                                    <p [innerHTML]="newsDetails?.contents | parsehtml | safe"></p>
-
-                                </div>
-
-                            </div>
-
+            <div class="col-lg-12 col-md-12">
+                <div class="blog-item">
+                    <div class="blog-details">
+                        <div class="blog-details-meta mt-3 mb-3">
+                            <span><i class="icofont-calendar"></i> {{newsDetails?.createdMonth}}
+                                {{newsDetails?.createdDay}},
+                                {{newsDetails?.createdYear}} </span>
+                        </div>
+                        <div class="blog-title-body">
+                            <h2>{{ newsDetails?.title }}</h2>
+                            <p [innerHTML]="newsDetails?.contents | parsehtml | safe"></p>
 
                         </div>
+
                     </div>
+
+
                 </div>
             </div>
         </div>

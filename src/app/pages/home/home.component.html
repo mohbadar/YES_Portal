@@ -94,7 +94,7 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-title">
-                            <h3><a (click)="showBlogDetails(blog.id)">{{ blog?.title }}</a></h3>
+                            <h3 (click)="showBlogDetails(blog.id)">{{ blog?.title }}</h3>
                             <p [innerHTML]="blog?.brief | parsehtml | safe"></p>
                         </div>
                         <div class="blog-meta">

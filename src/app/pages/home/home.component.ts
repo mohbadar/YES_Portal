@@ -240,8 +240,4 @@ export class HomeComponent implements OnInit {
         )
     }
 
-    showAboutUsDetails() {
-        this.router.navigate(['/home/about-us']);
-    }
-
 }
