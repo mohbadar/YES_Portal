@@ -1,5 +1,5 @@
 <header id="header" class="header-1"
-    [ngStyle]="{'background-image': 'linear-gradient(to bottom, black, rgba(39, 35, 97, 0) 100%), url(' + coverDetails?.photo.url + ')'}">
+    [ngStyle]="{'background-image': 'linear-gradient(to bottom, black, rgba(39, 35, 97, 0) 100%), url(' + coverDetails?.photo?.url + ')'}">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 remb-30" *ngFor="let blog of recentBlogs">
                 <div class="blog-item h2-blogitem">
-                    <div class="blog-img"> <img [src]="blog?.photos[0].url" alt="" (error)="imageError($event.target)">
+                    <div class="blog-img"> <img [src]="blog?.photos[0]?.url" alt="" (error)="imageError($event.target)">
                     </div>
                     <div class="blog-content">
                         <div class="blog-title">
