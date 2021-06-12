@@ -14,15 +14,19 @@
 <section id="about" class="about section-padding">
     <div class="container">
         <div class="row" *ngIf="aboutUs; else nodata">
+            <h2>{{ aboutUs?.title }}</h2>
+            <div class="col-md-12">
+                <h6>{{ 'VISION' | translate }}</h6>
+                <p [innerHTML]="aboutUs?.vision | parsehtml | safe"></p>
+            </div>
 
             <div class="col-md-12">
                 <h6>{{ 'ABOUT_US' | translate }}</h6>
-                <h2>{{ aboutUs?.title }}</h2>
                 <p [innerHTML]="aboutUs?.brief | parsehtml | safe"></p>
                 <!-- <br> -->
                 <p [innerHTML]="aboutUs?.description | parsehtml | safe"></p>
             </div>
-            <div class="col-md-12"><img [src]="aboutUs?.photos[0]?.url" class="img-fluid" alt="about"></div>
+            <!-- <div class="col-md-12"><img [src]="aboutUs?.photos[0]?.url" class="img-fluid" alt="about"></div> -->
         </div>
         <ng-template #nodata>
             <div class="">

@@ -8,11 +8,12 @@ export class MenuConfig {
                     page: '',
                     translate: 'MENU.HOME',
                     submenu: [
+                        // {
+                        //     title: 'Vision',
+                        //     page: '/about-us',
+                        //     translate: 'MENU.VISION'
+                        // }, 
                         {
-                            title: 'Vision',
-                            page: '/vision',
-                            translate: 'MENU.VISION'
-                        }, {
                             title: 'About us',
                             page: '/about-us',
                             translate: 'MENU.ABOUT_US'

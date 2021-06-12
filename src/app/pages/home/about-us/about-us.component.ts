@@ -33,6 +33,7 @@ export class AboutUsComponent implements OnInit {
         id
         title
         brief
+        vision
         description
         photos {
           url
