@@ -63,5 +63,9 @@
     "BLOG-DETAILS": "Blog Details",
     "NEWS-DETAILS": "News Details",
     "LABEL.SUCCESS_STORIES": "Success Stories",
-    "LABEL.SUCCESS-STORY-DETAILS": "Success Story Details"
+    "LABEL.SUCCESS-STORY-DETAILS": "Success Story Details",
+    "CONTACT.MESSAGE": "Do you have any questions? Please do not hesitate to contact us directly.",
+    "CONTACT_NAME":"Your Name",
+    "CONTACT_EMAIL": "E-Mail",
+    "CONTACT_MESSAGE": "Message"
 }

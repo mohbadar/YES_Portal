@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { SharedModule } from 'src/app/shared.module';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -12,13 +13,16 @@ const routes: Routes = [
   },
   {
     path: 'about-us', component: AboutUsComponent
+  },
+  {
+    path: 'contact-us', component: ContactUsComponent
   }
 ]
 
 
 
 @NgModule({
-  declarations: [AboutUsComponent],
+  declarations: [AboutUsComponent, ContactUsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

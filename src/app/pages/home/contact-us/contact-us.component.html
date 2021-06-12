@@ -1,0 +1,62 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'CONTACT_US' | translate }} </h1>
+                    <!-- <h5 class="text-center"><a class="breadcrumb-link" href="#">Home</a> > Blog Posts</h5> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="contact section-padding">
+    <div class="container">
+        <h3 class="text-center text-uppercase">{{ 'CONTACT_US' | translate }} </h3>
+        <p class="text-center w-75 m-auto">{{ "CONTACT.MESSAGE" | translate }}</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-2x fa-phone" aria-hidden="true"></i>
+                        <p>0093-070000000</p>
+                    </div>
+                </div>
+
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <i class="fa fa-2x fa-globe " aria-hidden="true"></i>
+                        <p>yes@gmail.com</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-8 mt-4">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">{{ "CONTACT_NAME" | translate }}</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">{{ "CONTACT_EMAIL" | translate }} </label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="message">{{"CONTACT_MESSAGE" | translate }}</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Send Us</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -61,5 +61,10 @@
     "RECENT-BLOGS": "مقالات اخیر",
     "NODATA": "اطلاعات موجود نیست",
     "BLOG-DETAILS": "جزئیات بلاگ",
-    "NEWS-DETAILS": " جزئیات خبر"
+    "NEWS-DETAILS": " جزئیات خبر",
+    "CONTACT.MESSAGE": "آیا کدام سوالی دارید؟ لطفا دریغ نکنید که به طور مستقیم با ما تماس بگیرید",
+    "CONTACT_NAME":"اسم شما",
+    "CONTACT_EMAIL": "ایمیل",
+    "CONTACT_MESSAGE": "پیام"
+
 }
