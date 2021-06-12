@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header-inner-text">
-                    <h1 class="text-center">News Details Page</h1>
+                    <h1 class="text-center">{{ 'NEWS-DETAILS' | translate }} </h1>
                 </div>
             </div>
         </div>
@@ -17,11 +17,14 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="blog-item">
                             <div class="blog-details">
-                                <div class="blog-title-body mt-3">
-                                    <h2>News Details Title</h2>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam sit cumque
-                                        repellat mollitia molestiae, eaque beatae, saepe sequi quidem dignissimos ex
-                                        quasi libero hic harum placeat provident. Excepturi, fugit at!</p>
+                                <div class="blog-details-meta mt-3 mb-3">
+                                    <span><i class="icofont-calendar"></i> {{newsDetails?.createdMonth}}
+                                        {{newsDetails?.createdDay}},
+                                        {{newsDetails?.createdYear}} </span>
+                                </div>
+                                <div class="blog-title-body">
+                                    <h2>{{ newsDetails?.title }}</h2>
+                                    <p [innerHTML]="newsDetails?.contents | parsehtml | safe"></p>
 
                                 </div>
 

@@ -15,20 +15,20 @@ body {
 }
 
 .color-white {
-    color: $white;
+  color: $white;
 }
 
 .cl-secondary {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 .np-ab-center {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
 }
 
 .np-section {
@@ -59,7 +59,7 @@ body[dir=rtl] {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 15px;
+  margin: 0 7px;
   padding: 16px;
   width: calc(100% - 30px);
   overflow: hidden;
