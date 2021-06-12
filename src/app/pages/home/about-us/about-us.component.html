@@ -1,0 +1,36 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'ABOUT_US' | translate }} </h1>
+                    <!-- <h5 class="text-center"><a class="breadcrumb-link" href="#">Home</a> > Blog Posts</h5> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="about" class="about section-padding">
+    <div class="container">
+        <div class="row" *ngIf="aboutUs; else nodata">
+
+            <div class="col-md-12">
+                <h6>{{ 'ABOUT_US' | translate }}</h6>
+                <h2>{{ aboutUs?.title }}</h2>
+                <p [innerHTML]="aboutUs?.brief | parsehtml | safe"></p>
+                <!-- <br> -->
+                <p [innerHTML]="aboutUs?.description | parsehtml | safe"></p>
+            </div>
+            <div class="col-md-12"><img [src]="aboutUs?.photos[0]?.url" class="img-fluid" alt="about"></div>
+        </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>

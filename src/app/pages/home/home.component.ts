@@ -150,7 +150,8 @@ export class HomeComponent implements OnInit {
     getAboutUsDetails() {
         const graphQuery = `{
             aboutUs(locale: "${this.lang}") {
-            title,
+            id
+            title
             brief
             photos {
               url
@@ -237,6 +238,10 @@ export class HomeComponent implements OnInit {
             this.router.navigate(['//news-opportunities/news-details/' + id])
 
         )
+    }
+
+    showAboutUsDetails() {
+        this.router.navigate(['/home/about-us']);
     }
 
 }

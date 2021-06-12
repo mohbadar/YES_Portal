@@ -230,10 +230,16 @@ input:-webkit-autofill:focus {
   color: #4484CE;
 }
 
+body[dir=rtl] p {
+  line-height: 26px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 p {
   color: #888;
   line-height: 26px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 ul li,

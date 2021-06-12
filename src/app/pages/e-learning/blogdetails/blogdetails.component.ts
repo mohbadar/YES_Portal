@@ -14,6 +14,7 @@ export class BlogdetailsComponent implements OnInit {
   lang;
   blogId
   blogDetails;
+  loading: boolean = false;
 
   constructor(private pageService: PageService,
     private route: ActivatedRoute,
@@ -30,7 +31,7 @@ export class BlogdetailsComponent implements OnInit {
 
 
   getblogDetails() {
-    this.spinner.show();
+    this.loading = true;
     const graphQuery = `
     {
       blog(id: "${this.blogId}")
@@ -47,8 +48,8 @@ export class BlogdetailsComponent implements OnInit {
         } 
         localizations(where: { locale: "${this.lang}" }) {id title author brief content publishedAt: published_at photos { url }}}}
     `;
-    this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
-      this.spinner.hide();
+    this.pageService.getData(graphQuery).subscribe((res: any) => {
+      this.loading = false;
       if (res.data.blog.localizations.length > 0) {
         this.blogDetails = res.data.blog.localizations[0];
         console.log("🚀 ~ file: blogdetails.component.ts ~ line 54 ~ BlogdetailsComponent ~ this.pageService.getRecentBlogs ~ blogDetails", this.blogDetails)
@@ -64,7 +65,7 @@ export class BlogdetailsComponent implements OnInit {
       this.blogDetails.createdYear = year;
       this.blogDetails.createdDay = day;
     }, err => {
-      this.spinner.hide();
+      this.loading = false;
       console.log(err);
 
     })

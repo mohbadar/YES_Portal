@@ -12,7 +12,8 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             {
-                path: '', component: HomeComponent
+                path: '',
+                loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
             },
             {
                 path: 'e-learning',
