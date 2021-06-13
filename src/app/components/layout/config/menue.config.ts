@@ -17,25 +17,26 @@ export class MenuConfig {
                             title: 'About us',
                             page: '/about-us',
                             translate: 'MENU.ABOUT_US'
-                        }, {
-                            title: 'Contact us',
-                            page: '/contact-us',
-                            translate: 'MENU.CONTACT_US'
                         },
+                        // {
+                        //     title: 'Contact us',
+                        //     page: '/contact-us',
+                        //     translate: 'MENU.CONTACT_US'
+                        // },
                         {
-                            title: 'Membership',
-                            page: '/membership',
-                            translate: 'MENU.MEMBERSHIP',
+                            title: 'Contact Us',
+                            page: '/',
+                            translate: 'MENU.CONTACT_US',
                             submenu: [
                                 {
-                                    title: 'Profile',
-                                    page: '/profile',
-                                    translate: 'MENU.PROFILE'
+                                    title: 'Complains',
+                                    page: '/complains',
+                                    translate: 'MENU.COMPLAINS'
                                 },
                                 {
-                                    title: 'Build Resume',
-                                    path: '/build-resume',
-                                    translate: 'MENU.BUILD_RESUME'
+                                    title: 'Get In Touch',
+                                    path: '/get-in-touch',
+                                    translate: 'MENU.GET_IN_TOUCH'
                                 }
                             ]
                         }
@@ -45,11 +46,11 @@ export class MenuConfig {
                     page: '/e-learning',
                     translate: 'MENU.E_LEARNING',
                     submenu: [
-                        {
-                            title: 'Blogs',
-                            page: '/blogs',
-                            translate: 'MENU.BLOGS'
-                        },
+                        // {
+                        //     title: 'Blogs',
+                        //     page: '/blogs',
+                        //     translate: 'MENU.BLOGS'
+                        // },
                         {
                             title: 'Training Packages',
                             page: '/training-packages',
@@ -100,10 +101,6 @@ export class MenuConfig {
                             title: 'Motivational Videos',
                             page: '/motivational-videos',
                             translate: 'MENU.MOTIVATIONAL_VIDEOS'
-                        }, {
-                            title: 'Online Library',
-                            page: '/online-library',
-                            translate: 'MENU.ONLINE_LIBRARY'
                         },
                     ]
                 }, {
@@ -111,6 +108,11 @@ export class MenuConfig {
                     page: '/inventors-platform',
                     translate: 'MENU.INVENTORS_PLATFORM',
                     submenu: [
+                        {
+                            title: 'Ideas',
+                            page: '/ideas',
+                            translate: 'MENU.IDEAS'
+                        },
                         {
                             title: 'Inventions',
                             page: '/inventions',
@@ -125,15 +127,13 @@ export class MenuConfig {
                             translate: 'MENU.RESEARCH'
                         }
                     ]
-                }, {
+                },
+                {
                     title: 'Discussion Board',
                     page: '/discussion-board',
                     translate: 'MENU.DISCUSSION_BOARD',
-                }, {
-                    title: 'Ideas',
-                    page: 'ideas',
-                    translate: 'MENU.IDEAS',
-                }, {
+                },
+                {
                     title: 'News & Opportunities',
                     page: '/news-opportunities',
                     translate: 'MENU.NEWS_OPPORTUNITIES',
@@ -143,39 +143,18 @@ export class MenuConfig {
                             page: '/success-stories',
                             translate: 'MENU.SUCCESS_STORIES'
                         }, {
-                            title: 'Job Opportunities',
-                            page: '/job-opportunities',
-                            translate: 'MENU.JOB_OPPORTUNITIES'
-                        }, {
-                            title: 'Scholarships',
-                            page: '/scholarships',
-                            translate: 'MENU.SCHOLARSHIPS'
-                        }, {
+                            title: 'Employment',
+                            page: '/employment',
+                            translate: 'MENU.EMPLOYEMENT'
+                        },
+                        {
                             title: 'Youth News',
                             page: '/youth-news',
                             translate: 'MENU.YOUTH_NEWS'
                         }
                     ]
-                }, {
-                    title: 'Complains & Questions',
-                    page: '/complains-questions',
-                    translate: 'MENU.COMPLAINS_QUESTIONS',
-                    submenu: [
-                        {
-                            title: 'Complains',
-                            page: '/complains',
-                            translate: 'MENU.COMPLAINS'
-                        }, {
-                            title: 'Questions',
-                            page: '/questions',
-                            translate: 'MENU.QUESTIONS'
-                        }
-                    ]
-                }, {
-                    title: 'Surveys',
-                    page: '/surveys',
-                    translate: 'MENU.SURVEYS',
-                }, {
+                },
+                {
                     title: 'YHC',
                     page: '/yhc',
                     translate: 'MENU.YHC',
@@ -232,11 +211,40 @@ export class MenuConfig {
                             translate: 'MENU.YHC_MEMBERSHIP',
                         }
                     ]
-                }, {
-                    title: 'Deputy Ministry of Youth Affairs',
-                    page: '/deputy-ministry-of-youth-affairs',
-                    translate: 'MENU.DEPUTY_MINISTRY_OF_YOUTH_AFFAIRS',
-                }
+                },
+                {
+                    title: 'More',
+                    page: '/',
+                    translate: 'MENU.MORE',
+                    submenu: [
+                        {
+                            title: 'Deputy Ministry of Youth Affairs',
+                            page: '/deputy-ministry-of-youth-affairs',
+                            translate: 'MENU.DEPUTY_MINISTRY_OF_YOUTH_AFFAIRS',
+                        },
+                        {
+                            title: 'Surveys',
+                            page: '/surveys',
+                            translate: 'MENU.SURVEYS',
+                        },
+                        {
+                            title: 'Blogs',
+                            page: '/',
+                            translate: 'MENU.BLOGS'
+                        },
+                        {
+                            title: 'Gallery',
+                            page: '/gallery',
+                            translate: 'MENU.GALLERY'
+                        },
+                        {
+                            title: 'Events',
+                            page: '/events',
+                            translate: 'MENU.EVENTS'
+                        }
+                    ]
+                },
+
 
 
             ]

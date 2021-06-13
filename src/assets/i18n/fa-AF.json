@@ -9,8 +9,10 @@
     "TITLE-NEWS": "اینده را بهتر میساز",
     "MENU.HOME": "صفحه اصلی",
     "MENU.VISION": "چشم انداز",
+    "MISSION": "ماموریت",
     "MENU.ABOUT_US": "درباره ما",
     "MENU.CONTACT_US": "با ما تماس بگیرید",
+    "MENU.GET_IN_TOUCH": "در تماس باشید",
     "MENU.MEMBERSHIP": "عضویت",
     "MENU.PROFILE": "پروفایل",
     "MENU.BUILD_RESUME": "ترتیب خلص سوانع",
@@ -34,6 +36,7 @@
     "MENU.DISCUSSION_BOARD": "بحث و گفتگو",
     "MENU.IDEAS": "ایده ها",
     "MENU.NEWS_OPPORTUNITIES": "اخبار و فرصت ها",
+    "MENU.EMPLOYEMENT": "استخدام",
     "MENU.SUCCESS_STORIES": "داستان های موفقیت",
     "MENU.JOB_OPPORTUNITIES": "فرصت های شغلی",
     "MENU.SCHOLARSHIPS": "بورسیه ها تحصیلی",
@@ -52,6 +55,9 @@
     "MENU.ZONAL": "ولسوالی",
     "MENU.DIASPORA": "دیاسپورا",
     "MENU.YHC_MEMBERSHIP": "عضویت شورای جوانان",
+    "MENU.MORE": "بیشتر",
+    "MENU.EVENTS": "مناسبت ها",
+    "MENU.GALLERY": "گالری",
     "MENU.DEPUTY_MINISTRY_OF_YOUTH_AFFAIRS": "معینیت امور جوانان",
     "YES": "انجمن توانمندسازی جوانان",
     "TOP-YOUTH": "جوانان برتر",
@@ -65,6 +71,8 @@
     "CONTACT.MESSAGE": "آیا کدام سوالی دارید؟ لطفا دریغ نکنید که به طور مستقیم با ما تماس بگیرید",
     "CONTACT_NAME":"اسم شما",
     "CONTACT_EMAIL": "ایمیل",
-    "CONTACT_MESSAGE": "پیام"
+    "CONTACT_MESSAGE": "پیام",
+    "YOUTH-NEWS": "اخبار جوانان",
+    "BLOGS": "مقالات"
 
 }
