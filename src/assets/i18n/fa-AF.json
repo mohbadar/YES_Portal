@@ -65,6 +65,8 @@
     "CONTACT.MESSAGE": "آیا کدام سوالی دارید؟ لطفا دریغ نکنید که به طور مستقیم با ما تماس بگیرید",
     "CONTACT_NAME":"اسم شما",
     "CONTACT_EMAIL": "ایمیل",
-    "CONTACT_MESSAGE": "پیام"
+    "CONTACT_MESSAGE": "پیام",
+    "YOUTH-NEWS": "اخبار جوانان",
+    "BLOGS": "مقالات"
 
 }
