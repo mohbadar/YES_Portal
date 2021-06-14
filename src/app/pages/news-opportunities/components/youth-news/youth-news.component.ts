@@ -58,7 +58,7 @@ export class YouthNewsComponent implements OnInit {
       const date = new Date(element.publishedAt);
       const year = date.getFullYear();
       const month = date.toLocaleString('default', { month: 'long' });
-      const day = date.getDay();
+      const day = date.getDate();
       element.createdMonth = month;
       element.createdYear = year;
       element.createdDay = day;

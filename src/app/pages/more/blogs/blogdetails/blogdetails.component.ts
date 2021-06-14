@@ -58,9 +58,10 @@ export class BlogdetailsComponent implements OnInit {
         console.log("🚀 ~ file: blogdetails.component.ts ~ line 57 ~ BlogdetailsComponent ~ this.pageService.getRecentBlogs ~ blogDetails", this.blogDetails)
       }
       const date = new Date(this.blogDetails.publishedAt);
+      console.log("🚀 ~ file: blogdetails.component.ts ~ line 61 ~ BlogdetailsComponent ~ this.pageService.getData ~ date", date)
       const year = date.getFullYear();
+      const day = date.getDate();
       const month = date.toLocaleString('default', { month: 'long' });
-      const day = date.getDay();
       this.blogDetails.createdMonth = month;
       this.blogDetails.createdYear = year;
       this.blogDetails.createdDay = day;

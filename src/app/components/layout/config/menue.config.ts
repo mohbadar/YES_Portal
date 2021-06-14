@@ -195,9 +195,9 @@ export class MenuConfig {
                                     page: '/provincial',
                                     translate: 'MENU.PROVINCIAL'
                                 }, {
-                                    title: 'Zonal',
-                                    page: '/zonal',
-                                    translate: 'MENU.ZONAL'
+                                    title: 'ZONES',
+                                    page: '/zones',
+                                    translate: 'MENU.ZONES'
                                 }
                             ]
                         }, {
@@ -214,7 +214,7 @@ export class MenuConfig {
                 },
                 {
                     title: 'More',
-                    page: '/',
+                    page: '/more',
                     translate: 'MENU.MORE',
                     submenu: [
                         {
@@ -229,7 +229,7 @@ export class MenuConfig {
                         },
                         {
                             title: 'Blogs',
-                            page: '/',
+                            page: '/blogs',
                             translate: 'MENU.BLOGS'
                         },
                         {

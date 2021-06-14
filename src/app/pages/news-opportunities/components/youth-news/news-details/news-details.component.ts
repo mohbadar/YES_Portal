@@ -57,7 +57,7 @@ export class NewsDetailsComponent implements OnInit {
       const date = new Date(this.newsDetails.publishedAt);
       const year = date.getFullYear();
       const month = date.toLocaleString('default', { month: 'long' });
-      const day = date.getDay();
+      const day = date.getDate();
       this.newsDetails.createdMonth = month;
       this.newsDetails.createdYear = year;
       this.newsDetails.createdDay = day;

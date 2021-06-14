@@ -22,7 +22,6 @@
                     <div class="blog-content">
                         <div class="blog-title">
                             <h3 (click)="redirectToBlogDetails(blog.id)">{{ blog?.title }}</h3>
-                            <p [innerHTML]="blog?.brief | parsehtml | safe"></p>
                         </div>
                         <div class="blog-meta">
                             <div class="blog-author">

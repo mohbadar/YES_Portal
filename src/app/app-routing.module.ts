@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
-import { HomeComponent } from './pages/home/home.component';
-import { BlogleftComponent } from './pages/e-learning/blogleft/blogleft.component';
-import { BlogrightComponent } from './pages/e-learning/blogright/blogright.component';
-import { BlogdetailsComponent } from './pages/e-learning/blogs/blogdetails/blogdetails.component';
 
 const routes: Routes = [
     {
@@ -26,6 +22,10 @@ const routes: Routes = [
             {
                 path: 'yhc',
                 loadChildren: () => import('./pages/yhc/yhc.module').then(m => m.YhcModule)
+            },
+            {
+                path: 'more',
+                loadChildren: () => import('./pages/more/more.module').then(m => m.MoreModule)
             }
 
         ]
