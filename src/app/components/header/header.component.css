@@ -105,11 +105,6 @@ ul.navbar-nav {
   margin-bottom: 0px;
 }
 
-.img-logo {
-  max-width: 30%;
-  height: auto
-}
-
 @media only screen and (max-width: 767px) {
   .navbar-nav .show .dropdown-menu .dropdown-menu>li>a {
     padding: 16px 15px 16px 35px;
@@ -119,3 +114,18 @@ ul.navbar-nav {
     padding: 16px 15px 16px 45px;
   }
 }
+
+.navbar-brand {
+  position: relative;
+  width: 180px;
+  left: 20px;
+  right: 25px;
+  margin-top: 7px;
+  min-height: 80px;
+  max-height: 90px;
+  /* height of the navbar */
+}
+
+/* .dropdown-toggle::after {
+  display: contents;
+} */

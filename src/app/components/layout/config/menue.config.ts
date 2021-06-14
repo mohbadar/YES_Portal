@@ -195,9 +195,9 @@ export class MenuConfig {
                                     page: '/provincial',
                                     translate: 'MENU.PROVINCIAL'
                                 }, {
-                                    title: 'Zonal',
-                                    page: '/zonal',
-                                    translate: 'MENU.ZONAL'
+                                    title: 'ZONES',
+                                    page: '/zones',
+                                    translate: 'MENU.ZONES'
                                 }
                             ]
                         }, {

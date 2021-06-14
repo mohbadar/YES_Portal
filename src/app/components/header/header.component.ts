@@ -47,6 +47,8 @@ export class HeaderComponent implements OnInit {
         } else {
             this.lang = this.translate.getDefaultLang
         }
+
+        this.selectedLang = this.lang;
         console.log('------ language: ', this.lang);
 
         this.menuQuery = `{categories(sort: "order") { _id, title:title_${this.lang},slug, subcategories { title:title_${this.lang}, slug}}}`;

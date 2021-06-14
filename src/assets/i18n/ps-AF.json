@@ -75,6 +75,8 @@
     "CONTACT_EMAIL": "بریښنالیک",
     "CONTACT_SUBJECT": "مضمون",
     "CONTACT_MESSAGE": "پیغام",
+    "SEND_COMPLAIN": "شکایت ولېږئ",
+    "SEND_MESSAGE": "پیغام ولیږئ",
     "YOUTH-NEWS": "د ځوانانو خبرونه",
     "BLOGS": "مقالې"
 }

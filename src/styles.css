@@ -1308,10 +1308,15 @@ blockquote {
 /*--------------------------------*/
 /*           13.Footer
 /*--------------------------------*/
-.footer {
+/* .footer {
   background: #2174b8;
   padding: 155px 0 10px;
   margin: -80px 0 0 0;
+} */
+
+.footer {
+  background: #2174b8;
+  padding: 50px 0 10px;
 }
 
 .img-footer {
@@ -1404,5 +1409,5 @@ body[dir=rtl] .footer p {
 hr.copyright {
   margin: 50px 0 20px 0;
   width: 100%;
-  border-top: 1px solid #1c3255;
+  border-top: 2px solid #ff9b0c;
 }

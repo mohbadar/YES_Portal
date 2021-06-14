@@ -52,7 +52,7 @@
     "MENU.ELECTION_REGISTRATIONS": "Election Registrations",
     "MENU.DISTRICT": "District",
     "MENU.PROVINCIAL": "Provincial",
-    "MENU.ZONAL": "Zonal",
+    "MENU.ZONES": "Zones",
     "MENU.DIASPORA": "Diaspora",
     "MENU.YHC_MEMBERSHIP": "YHC Membership",
     "MENU.MORE": "More",
@@ -76,6 +76,8 @@
     "CONTACT_EMAIL": "E-Mail",
     "CONTACT_SUBJECT": "Subject",
     "CONTACT_MESSAGE": "Message",
+    "SEND_COMPLAIN": "Send Complain",
+    "SEND_MESSAGE": "Send Message",
     "YOUTH-NEWS": "Youth News",
     "BLOGS": "Blogs"
 }
