@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     coverDetails;
     aboutUs;
     youthNews;
-    topYouths;
+    successStories;
     recentBlogs;
     lang;
     imageUrl = 'assets/images/afg-cover2.jpg';
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
         this.getCoverDetails();
         this.getYouthNews();
         this.getAboutUsDetails();
-        this.getTopYouth();
+        this.getSuccessStories();
         this.getRecentBlogs();
 
 
@@ -167,25 +167,18 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    getTopYouth() {
-        const graphQuery = `
-        {
-            topYouths(locale:"${this.lang}", limit:3) {
-              id
-              name
-              brief
-              photos {
-                url
-              }
-              
+    getSuccessStories() {
+        this.spinner.show();
+        const graphQuery = `{
+            successStories(locale:"${this.lang}", limit: 3, sort:"published_at") 
+            { 
+              id name brief description publishedAt: published_at photos{ url }
             }
           }`;
         this.pageService.getData(graphQuery).subscribe((res: any) => {
-            this.topYouths = res.data.topYouths;
-            console.log('YTouth: ', this.topYouths);
-        }, err => {
-            console.log(err);
-
+            this.spinner.hide();
+            this.successStories = res.data.successStories;
+            this.formatDate(this.successStories);
         });
     }
 
@@ -212,7 +205,7 @@ export class HomeComponent implements OnInit {
             const date = new Date(element.publishedAt);
             const year = date.getFullYear();
             const month = date.toLocaleString('default', { month: 'long' });
-            const day = date.getDay();
+            const day = date.getDate();
             element.createdMonth = month;
             element.createdYear = year;
             element.createdDay = day;
@@ -228,7 +221,7 @@ export class HomeComponent implements OnInit {
 
     showBlogDetails(id) {
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
-            this.router.navigate(['//e-learning/blogdetails/' + id])
+            this.router.navigate(['//more/blogdetails/' + id])
 
         )
     }
@@ -236,6 +229,13 @@ export class HomeComponent implements OnInit {
     showNewsDetails(id) {
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
             this.router.navigate(['//news-opportunities/news-details/' + id])
+
+        )
+    }
+
+    redirectToStoryDetails(id) {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.router.navigate(['/news-opportunities/success-story-details', id])
 
         )
     }

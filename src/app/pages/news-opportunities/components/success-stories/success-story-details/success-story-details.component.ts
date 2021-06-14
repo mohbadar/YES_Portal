@@ -32,7 +32,7 @@ export class SuccessStoryDetailsComponent implements OnInit {
     getSuccessStoryDetails() {
 
         this.loading = true;
-        const graphQuery = `{successStory(id: "${this.successStoryId}") {id title description author publishedAt: published_at photos { url } localizations(where: { locale: "${this.lang}" }) {id title description author publishedAt: published_at photos { url }}}}`;
+        const graphQuery = `{successStory(id: "${this.successStoryId}") {id name brief description publishedAt: published_at photos { url } localizations(where: { locale: "${this.lang}" }) {id name brief description publishedAt: published_at photos { url }}}}`;
         this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.loading = false;
             if (res.data.successStory.localizations.length > 0) {
@@ -45,7 +45,7 @@ export class SuccessStoryDetailsComponent implements OnInit {
             const date = new Date(this.successStoryDetails.publishedAt);
             const year = date.getFullYear();
             const month = date.toLocaleString('default', { month: 'long' });
-            const day = date.getDay();
+            const day = date.getDate();
             this.successStoryDetails.createdMonth = month;
             this.successStoryDetails.createdYear = year;
             this.successStoryDetails.createdDay = day;

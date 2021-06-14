@@ -214,7 +214,7 @@ export class MenuConfig {
                 },
                 {
                     title: 'More',
-                    page: '/',
+                    page: '/more',
                     translate: 'MENU.MORE',
                     submenu: [
                         {
@@ -229,7 +229,7 @@ export class MenuConfig {
                         },
                         {
                             title: 'Blogs',
-                            page: '/',
+                            page: '/blogs',
                             translate: 'MENU.BLOGS'
                         },
                         {

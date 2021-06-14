@@ -52,7 +52,7 @@
 </section>
 
 <section id="team" class="team section-padding-light">
-    <div class="container" *ngIf="topYouths; else nodata">
+    <div class="container" *ngIf="successStories; else nodata">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="text-center section-title">
@@ -61,12 +61,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" *ngFor="let youth of topYouths">
+            <div class="col-md-4" *ngFor="let ss of successStories">
                 <div class="member">
-                    <img [src]="youth?.photos[0]?.url" class="img-team" alt="">
+                    <img [src]="ss.photos[0].url" (error)="imageError($event.target)" class="img-team" alt="">
                     <div class="member-text">
-                        <h5>{{ youth?.name }}</h5>
-                        <p> {{ youth?.brief }} </p>
+                        <h5 (click)="redirectToStoryDetails(ss.id)">{{ss?.name}}</h5>
+                        <!-- <p> {{ ss?.brief }} </p> -->
                     </div>
                 </div>
             </div>
@@ -93,7 +93,6 @@
                     <div class="blog-content">
                         <div class="blog-title">
                             <h3 (click)="showBlogDetails(blog.id)">{{ blog?.title }}</h3>
-                            <p [innerHTML]="blog?.brief | parsehtml | safe"></p>
                         </div>
                         <div class="blog-meta">
                             <div class="blog-author">
