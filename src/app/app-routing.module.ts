@@ -22,7 +22,12 @@ const routes: Routes = [
             {
                 path: 'news-opportunities',
                 loadChildren: () => import('./pages/news-opportunities/news-opportunities.module').then(m => m.NewsOpportunitiesModule)
+            },
+            {
+                path: 'yhc',
+                loadChildren: () => import('./pages/yhc/yhc.module').then(m => m.YhcModule)
             }
+
         ]
     },
     {

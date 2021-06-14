@@ -1,0 +1,42 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ "Diaspora" | translate }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="section-padding">
+    <div class="container">
+        <div class="row" *ngIf="diaspora; else nodata">
+            <div class="col-md-12">
+                <blockquote class="blockquote">
+                    <h5 class="alert-heading">{{ diaspora?.title }}</h5>
+                    <p [innerHTML]=" diaspora?.message | parsehtml | safe"></p>
+
+                </blockquote>
+            </div>
+            <div class="col-md-12">
+                <p [innerHTML]=" diaspora?.info | parsehtml | safe"></p>
+                <div class="text-center">
+                    <a href="{{  diaspora?.link }}" target="_blank" class="badge badge-info text-center"> {{
+                        diaspora?.link_name}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -230,6 +230,11 @@ input:-webkit-autofill:focus {
   color: #4484CE;
 }
 
+body[dir=rtl] blockquote {
+  border-right: 5px solid #2174b8;
+  border-left: 0;
+}
+
 body[dir=rtl] p {
   line-height: 26px;
   font-size: 15px;
@@ -237,7 +242,7 @@ body[dir=rtl] p {
 }
 
 p {
-  color: #888;
+  /* color: #888; */
   line-height: 26px;
   font-size: 15px;
 }
@@ -1098,7 +1103,7 @@ body[dir=rtl] .bg-gradient {
 
 blockquote {
   background: #f7f7f7;
-  border-left: 4px solid #f33f4c;
+  border-left: 4px solid #2174b8;
   font-style: italic;
   font-size: 16px;
   line-height: 26px;

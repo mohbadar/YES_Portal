@@ -35,7 +35,7 @@ export class MenuConfig {
                                 },
                                 {
                                     title: 'Get In Touch',
-                                    path: '/get-in-touch',
+                                    page: '/contact-us',
                                     translate: 'MENU.GET_IN_TOUCH'
                                 }
                             ]
