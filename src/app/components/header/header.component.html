@@ -32,7 +32,9 @@
                                             <p class="dropdown-divider" *ngIf="s < m.submenu.length - 1"></p>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <ng-container *ngFor="let ssm of sm.submenu; let ss = index">
-                                                    <li><a href="#">{{ssm.translate | translate }}</a></li>
+                                                    <li><a routerLink="{{ ssm.page }}">{{ssm.translate | translate
+                                                            }}</a>
+                                                    </li>
                                                     <p class="dropdown-divider" *ngIf="ss < sm.submenu.length - 1">
                                                     </p>
                                                 </ng-container>

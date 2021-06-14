@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from 'src/app/shared.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ComplainsComponent } from './complains/complains.component';
 
 
 const routes: Routes = [
@@ -16,13 +17,16 @@ const routes: Routes = [
   },
   {
     path: 'contact-us', component: ContactUsComponent
+  },
+  {
+    path: 'complains', component: ComplainsComponent
   }
 ]
 
 
 
 @NgModule({
-  declarations: [AboutUsComponent, ContactUsComponent],
+  declarations: [AboutUsComponent, ContactUsComponent, ComplainsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
