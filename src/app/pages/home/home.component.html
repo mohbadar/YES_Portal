@@ -1,5 +1,5 @@
 <header id="header" class="header-1"
-    [ngStyle]="{'background-image': 'linear-gradient(to bottom, black, rgba(39, 35, 97, 0) 100%), url(' + coverDetails?.photo.url + ')'}">
+    [ngStyle]="{'background-image': 'linear-gradient(to bottom, #2E2E2E , rgba(39, 35, 97, 0) 100%), url(' + coverDetails?.photo.url + ')'}">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -63,10 +63,10 @@
         <div class="row">
             <div class="col-md-4" *ngFor="let ss of successStories">
                 <div class="member">
-                    <img [src]="ss.photos[0].url" (error)="imageError($event.target)" class="img-team" alt="">
+                    <img [src]="ss?.photos[0]?.url" (error)="imageError($event.target)" class="img-team" alt="">
                     <div class="member-text">
                         <h5 (click)="redirectToStoryDetails(ss.id)">{{ss?.name}}</h5>
-                        <!-- <p> {{ ss?.brief }} </p> -->
+                        <p> {{ ss?.shortBrief }} </p>
                     </div>
                 </div>
             </div>
@@ -88,11 +88,12 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 remb-30" *ngFor="let blog of recentBlogs">
                 <div class="blog-item h2-blogitem">
-                    <div class="blog-img"> <img [src]="blog?.photos[0].url" alt="" (error)="imageError($event.target)">
+                    <div class="blog-img"> <img [src]="blog?.photos[0]?.url" alt="" (error)="imageError($event.target)">
                     </div>
                     <div class="blog-content">
                         <div class="blog-title">
                             <h3 (click)="showBlogDetails(blog.id)">{{ blog?.title }}</h3>
+                            <!-- <p [innerHTML]="blog?.shortBrief | parsehtml | safe"></p> -->
                         </div>
                         <div class="blog-meta">
                             <div class="blog-author">

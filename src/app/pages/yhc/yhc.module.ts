@@ -4,6 +4,7 @@ import { YhcComponent } from './yhc.component';
 import { DiasporaComponent } from './components/diaspora/diaspora.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared.module';
+import { YhcMembershipComponent } from './components/yhc-membership/yhc-membership.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path: 'diaspora',
         component: DiasporaComponent
+      },
+      {
+        path: 'yhc-membership',
+        component: YhcMembershipComponent
       }
     ]
   }
@@ -22,7 +27,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [YhcComponent, DiasporaComponent],
+  declarations: [YhcComponent, DiasporaComponent, YhcMembershipComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

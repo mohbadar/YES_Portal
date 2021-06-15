@@ -1,0 +1,21 @@
+.section-padding {
+  padding: 40px 0 60px;
+
+}
+
+.btn-info {
+  background-color: #2174b8 !important;
+}
+
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.text-error {
+  color: red;
+}

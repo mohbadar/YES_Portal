@@ -1,26 +1,44 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { SharedModule } from "src/app/shared.module";
-import { BlogleftComponent } from "./blogleft/blogleft.component";
-import { BlogrightComponent } from "./blogright/blogright.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TrainingPackagesComponent } from './training-packages/training-packages.component';
+import { MemorySportComponent } from './training-packages/components/memory-sport/memory-sport.component';
+import { MotivationalVideosComponent } from './motivational-videos/motivational-videos.component';
+import { ELearningComponent } from './e-learning.component';
+import { SharedModule } from 'src/app/shared.module';
+import { RouterModule, Routes } from '@angular/router';
+
+
 
 const routes: Routes = [
-    {
-        path: 'blogright', component: BlogrightComponent
-    }
-]
+  {
+    path: '',
+    component: ELearningComponent,
+    children: [
+      {
+        path: 'training-packages',
+        component: TrainingPackagesComponent,
+        children: [
+          {
+            path: 'memory-sport',
+            component: MemorySportComponent
+          },
+        ]
+      },
+      {
+        path: 'motivational-videos',
+        component: MotivationalVideosComponent
+      }
+    ]
+  }
+];
+
 
 @NgModule({
-    declarations: [
-        BlogleftComponent,
-        BlogrightComponent
-    ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        SharedModule
-    ],
-    exports: []
+  declarations: [ELearningComponent, TrainingPackagesComponent, MemorySportComponent, MotivationalVideosComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule
+  ]
 })
-export class eLearningModule { }
+export class ELearningModule { }

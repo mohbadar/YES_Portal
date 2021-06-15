@@ -13,7 +13,7 @@ const routes: Routes = [
             },
             {
                 path: 'e-learning',
-                loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.eLearningModule)
+                loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.ELearningModule)
             },
             {
                 path: 'news-opportunities',
