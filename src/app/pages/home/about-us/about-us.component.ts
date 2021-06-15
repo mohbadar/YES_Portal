@@ -46,6 +46,7 @@ export class AboutUsComponent implements OnInit {
       this.aboutUs = res.data.aboutUs;
       console.log('ABOUT-US: ', this.aboutUs);
     }, err => {
+      this.loading = false;
       console.log(err);
 
     });

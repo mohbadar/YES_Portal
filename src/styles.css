@@ -249,9 +249,9 @@ p {
 
 ul li,
 ol li {
-  color: #747474;
+  /* color: #747474;
   line-height: 26px;
-  font-size: 14px;
+  font-size: 14px; */
 }
 
 /*--------------------------------*/
@@ -902,9 +902,9 @@ body[dir=rtl] .bg-gradient {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  min-height: 230px;
+  /* min-height: 230px;
   max-height: 230px;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 

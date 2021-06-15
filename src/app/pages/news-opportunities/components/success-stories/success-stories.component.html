@@ -16,7 +16,7 @@
         <div class="row" *ngIf="successStories; else noData">
             <div class="col-md-4" *ngFor="let ss of successStories">
                 <div class="member">
-                    <img [src]="ss.photos[0].url" (error)="imageError($event.target)" class="img-team" alt="">
+                    <img [src]="ss.photos[0].url" (error)="imageError($event.target)" class="img-team">
                     <div class="member-text">
                         <h5 (click)="redirectToStoryDetails(ss.id)">{{ss?.name}}</h5>
                         <p> {{ ss?.shortBrief }} </p>

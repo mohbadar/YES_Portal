@@ -13,6 +13,7 @@ export class BlogsComponent implements OnInit {
   lang;
   loading: boolean = false;
   blogs;
+  MAX_BRIEF_LENGTH = 60;
 
 
   constructor(
@@ -40,8 +41,23 @@ export class BlogsComponent implements OnInit {
     this.pageService.getData(graphQuery).subscribe((res: any) => {
       this.loading = false;
       this.blogs = res.data.blogs;
+      for (let blog of this.blogs) {
+        blog.title = this.getBrief(blog.title);
+      }
       this.formatDate();
+    }, err => {
+      this.loading = false;
+      console.log(err);
+
     });
+  }
+
+  getBrief(data) {
+    if (data && data.length > this.MAX_BRIEF_LENGTH) {
+      return data.substring(0, this.MAX_BRIEF_LENGTH) + '...';
+    } else {
+      return data;
+    }
   }
 
   formatDate() {

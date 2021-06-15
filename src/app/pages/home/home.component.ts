@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
     lang;
     imageUrl = 'assets/images/afg-cover2.jpg';
     customOptions: OwlOptions;
+    MAX_BRIEF_LENGTH = 60;
+    MAX_NEWS_TITLE_LENGTH = 50;
 
     constructor(
         private pageService: PageService,
@@ -113,6 +115,9 @@ export class HomeComponent implements OnInit {
             this.spinner.hide();
             console.log('YouthNews ', res.data);
             this.youthNews = res.data.youthNews;
+            for (let news of this.youthNews) {
+                news.title = this.getNewsTitle(news.title);
+            }
             this.formatDate(this.youthNews);
         }, err => {
             this.spinner.hide();
@@ -178,6 +183,9 @@ export class HomeComponent implements OnInit {
         this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.spinner.hide();
             this.successStories = res.data.successStories;
+            for (let success of this.successStories) {
+                success.shortBrief = this.getBrief(success.brief);
+            }
             this.formatDate(this.successStories);
         });
     }
@@ -191,12 +199,30 @@ export class HomeComponent implements OnInit {
           }`;
         this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.recentBlogs = res.data.blogs;
+            for (let blog of this.recentBlogs) {
+                blog.title = this.getBrief(blog.title);
+            }
             this.formatDate(this.recentBlogs);
             console.log('Blogs: ', this.recentBlogs);
         }, err => {
             console.log(err);
 
         });
+    }
+
+    getBrief(data) {
+        if (data && data.length > this.MAX_BRIEF_LENGTH) {
+            return data.substring(0, this.MAX_BRIEF_LENGTH) + '...';
+        } else {
+            return data;
+        }
+    }
+    getNewsTitle(data) {
+        if (data && data.length > this.MAX_NEWS_TITLE_LENGTH) {
+            return data.substring(0, this.MAX_NEWS_TITLE_LENGTH) + '...';
+        } else {
+            return data;
+        }
     }
 
 
