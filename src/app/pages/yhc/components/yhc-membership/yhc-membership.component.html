@@ -1,0 +1,65 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'MENU.YHC_MEMBERSHIP' | translate }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="section-padding">
+
+    <div class="container">
+        <h3 class="text-center text-uppercase">{{'YHC_MEMBERSHIP' | translate}} </h3>
+        <p class="text-center w-75 m-auto"> {{ 'YHC_MESSAGE' | translate }}</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <form [formGroup]="yhcForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="fname">{{'FIRST_NAME' | translate}}</label>
+                            <input type="text" formControlName="firstName" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lname">{{'LAST_NAME' | translate}}</label>
+                            <input type="text" formControlName="lastName" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">{{'EMAIL' | translate}}</label>
+                            <input type="email" formControlName="email" class="form-control">
+                            <span class="text-error"
+                                *ngIf="!yhcForm.controls['email'].valid && yhcForm.controls['email']?.touched"> Please
+                                enter a valid Email</span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="mobileNumber">{{'MOBILE_NUMBER' | translate}}</label>
+                            <input type="number" formControlName="mobileNumber" class="form-control" min="0">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="address">{{'ADDRESS' | translate}}</label>
+                            <textarea class="form-control" formControlName="address" id="address" rows="3"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button type="submit" [disabled]="yhcForm.invalid" class="btn btn-info">{{ 'SUBMIT' |
+                            translate }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -55,6 +55,8 @@
     "MENU.ZONES": "ولسوالي",
     "MENU.DIASPORA": "دیاسپورا",
     "MENU.YHC_MEMBERSHIP": "د ځوانانو عالي شورا",
+    "YHC_MEMBERSHIP": "د ځوانانو عالي شورا کې د غړیتوب فورمه",
+    "YHC_MESSAGE": "هغه ځوانان چې علاقه لري د ځوانانو عالي شورا کې ګډون وکړي لاندې فارم ډک کړي",
     "MENU.MORE": "نور",
     "MENU.EVENTS": "پیښې",
     "MENU.GALLERY": "ګالري",
@@ -79,5 +81,11 @@
     "SEND_COMPLAIN": "شکایت ولېږئ",
     "SEND_MESSAGE": "پیغام ولیږئ",
     "YOUTH-NEWS": "د ځوانانو خبرونه",
-    "BLOGS": "مقالې"
+    "BLOGS": "مقالې",
+    "FIRST_NAME":"نوم",
+    "LAST_NAME": "تخلص",
+    "EMAIL": "بریښنالیک",
+    "ADDRESS": "ادرس",
+    "MOBILE_NUMBER": "مبایل شمیره",
+    "SUBMIT": "سبت"
 }

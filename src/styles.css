@@ -1107,7 +1107,6 @@ body[dir=rtl] .bg-gradient {
 blockquote {
   background: #f7f7f7;
   border-left: 4px solid #2174b8;
-  font-style: italic;
   font-size: 16px;
   line-height: 26px;
   padding: 30px;

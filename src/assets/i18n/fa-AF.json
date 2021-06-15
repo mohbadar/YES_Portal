@@ -46,6 +46,7 @@
     "MENU.QUESTIONS": "سوالات",
     "MENU.SURVEYS": "سروی ها",
     "MENU.YHC": "شورای عالی جوانان",
+    "YHC_MEMBERSHIP": "فرم عضویت در شورای عالی جوانان",
     "MENU.ELECTED": "انتخابی",
     "MENU.APPOINTED": "انتصابی",
     "MENU.HONORARY": "افتخاری",
@@ -55,6 +56,7 @@
     "MENU.ZONES": "ولسوالی",
     "MENU.DIASPORA": "دیاسپورا",
     "MENU.YHC_MEMBERSHIP": "عضویت شورای جوانان",
+    "YHC_MESSAGE": "جوانان افغان که مایل به عضویت در شورای عالی جوانان هستند فرم زیر را پر کنند",
     "MENU.MORE": "بیشتر",
     "MENU.EVENTS": "مناسبت ها",
     "MENU.GALLERY": "گالری",
@@ -79,6 +81,12 @@
     "SEND_COMPLAIN": "ارسال شکایت",
     "SEND_MESSAGE": "پیام فرستادن",
     "YOUTH-NEWS": "اخبار جوانان",
-    "BLOGS": "مقالات"
+    "BLOGS": "مقالات",
+    "FIRST_NAME":"نام",
+    "LAST_NAME": "تخلص",
+    "EMAIL": "ایمیل",
+    "ADDRESS": "ادرس",
+    "MOBILE_NUMBER": "نمبر میایل",
+    "SUBMIT": "سبت"
 
 }

@@ -34,32 +34,30 @@
                 </div>
             </div>
             <div class="col-md-8 mt-4">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="name">{{ "CONTACT_NAME" | translate }}</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="email">{{ "CONTACT_EMAIL" | translate }} </label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">{{ "CONTACT_NAME" | translate }}</label>
+                        <input type="text" class="form-control" id="name">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="subject">{{ "CONTACT_SUBJECT" | translate }} </label>
-                            <input type="text" class="form-control" id="subject">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="message">{{"CONTACT_MESSAGE" | translate }}</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
-                        </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">{{ "CONTACT_EMAIL" | translate }} </label>
+                        <input type="email" class="form-control" id="email">
                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="subject">{{ "CONTACT_SUBJECT" | translate }} </label>
+                        <input type="text" class="form-control" id="subject">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="message">{{"CONTACT_MESSAGE" | translate }}</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                </div>
 
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">{{ 'SEND_MESSAGE' | translate }}</button>
-                    </div>
-                </form>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">{{ 'SEND_MESSAGE' | translate }}</button>
+                </div>
             </div>
         </div>
     </div>

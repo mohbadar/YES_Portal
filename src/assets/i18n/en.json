@@ -55,6 +55,8 @@
     "MENU.ZONES": "Zones",
     "MENU.DIASPORA": "Diaspora",
     "MENU.YHC_MEMBERSHIP": "YHC Membership",
+    "YHC_MEMBERSHIP": "Youth High Council Membership Form",
+    "YHC_MESSAGE": "Afghan youth who are interested to join youth high council fill form below",
     "MENU.MORE": "More",
     "MENU.EVENTS": "Events",
     "MENU.GALLERY": "Gallery",
@@ -79,5 +81,11 @@
     "SEND_COMPLAIN": "Send Complain",
     "SEND_MESSAGE": "Send Message",
     "YOUTH-NEWS": "Youth News",
-    "BLOGS": "Blogs"
+    "BLOGS": "Blogs",
+    "FIRST_NAME":"First Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "Email",
+    "ADDRESS": "Address",
+    "MOBILE_NUMBER": "Mobile Number",
+    "SUBMIT": "Submit"
 }
