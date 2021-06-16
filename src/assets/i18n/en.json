@@ -87,5 +87,8 @@
     "EMAIL": "Email",
     "ADDRESS": "Address",
     "MOBILE_NUMBER": "Mobile Number",
-    "SUBMIT": "Submit"
+    "SUBMIT": "Submit",
+    "STREET": "Street",
+    "PROVINCE": "Province",
+    "Zip": "Zip Code"
 }
