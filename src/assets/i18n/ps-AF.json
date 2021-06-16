@@ -87,5 +87,8 @@
     "EMAIL": "بریښنالیک",
     "ADDRESS": "ادرس",
     "MOBILE_NUMBER": "مبایل شمیره",
-    "SUBMIT": "سبت"
+    "SUBMIT": "سبت",
+    "STREET": "Street",
+    "PROVINCE": "ولایت",
+    "Zip": "Zip Code"
 }

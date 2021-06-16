@@ -18,7 +18,12 @@ export class YhcMembershipComponent implements OnInit {
       lastName: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       mobileNumber: [null, [Validators.required]],
-      address: [null, [Validators.required]],
+      address: this.fb.group({
+        address: [''],
+        province: [''],
+        street: [''],
+        zip: ['']
+      }),
     });
   }
 

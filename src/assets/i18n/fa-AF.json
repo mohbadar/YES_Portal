@@ -87,6 +87,9 @@
     "EMAIL": "ایمیل",
     "ADDRESS": "ادرس",
     "MOBILE_NUMBER": "نمبر میایل",
-    "SUBMIT": "سبت"
+    "SUBMIT": "سبت",
+    "STREET": "Street",
+    "PROVINCE": "ولایت",
+    "Zip": "Zip Code"
 
 }

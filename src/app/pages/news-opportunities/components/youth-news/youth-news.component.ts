@@ -13,7 +13,7 @@ export class YouthNewsComponent implements OnInit {
   lang;
   loading: boolean = false;
   youthNews;
-
+  MAX_NEWS_TITLE_LENGTH = 40;
 
   constructor(
     private router: Router,
@@ -44,6 +44,9 @@ export class YouthNewsComponent implements OnInit {
       this.loading = false;
       console.log('YouthNews ', res.data);
       this.youthNews = res.data.youthNews;
+      for (let news of this.youthNews) {
+        news.title = this.getNewsTitle(news.title)
+      }
       console.log("🚀 ~ file: youth-news.component.ts ~ line 47 ~ YouthNewsComponent ~ this.pageService.getData ~ youthNews", this.youthNews)
       this.formatDate(this.youthNews);
     }, err => {
@@ -51,6 +54,14 @@ export class YouthNewsComponent implements OnInit {
       console.log(err);
 
     });
+  }
+
+  getNewsTitle(data) {
+    if (data && data.length > this.MAX_NEWS_TITLE_LENGTH) {
+      return data.substring(0, this.MAX_NEWS_TITLE_LENGTH) + '...';
+    } else {
+      return data;
+    }
   }
 
   formatDate(data) {
