@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
-import { HomeComponent } from './pages/home/home.component';
-import { BlogleftComponent } from './pages/e-learning/blogleft/blogleft.component';
-import { BlogrightComponent } from './pages/e-learning/blogright/blogright.component';
-import { BlogdetailsComponent } from './pages/e-learning/blogdetails/blogdetails.component';
 
 const routes: Routes = [
     {
@@ -12,16 +8,26 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             {
-                path: '', component: HomeComponent
+                path: '',
+                loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
             },
             {
                 path: 'e-learning',
-                loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.eLearningModule)
+                loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.ELearningModule)
             },
             {
                 path: 'news-opportunities',
                 loadChildren: () => import('./pages/news-opportunities/news-opportunities.module').then(m => m.NewsOpportunitiesModule)
+            },
+            {
+                path: 'yhc',
+                loadChildren: () => import('./pages/yhc/yhc.module').then(m => m.YhcModule)
+            },
+            {
+                path: 'more',
+                loadChildren: () => import('./pages/more/more.module').then(m => m.MoreModule)
             }
+
         ]
     },
     {

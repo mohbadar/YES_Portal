@@ -16,11 +16,13 @@ export class HomeComponent implements OnInit {
     coverDetails;
     aboutUs;
     youthNews;
-    topYouths;
+    successStories;
     recentBlogs;
     lang;
     imageUrl = 'assets/images/afg-cover2.jpg';
     customOptions: OwlOptions;
+    MAX_BRIEF_LENGTH = 60;
+    MAX_NEWS_TITLE_LENGTH = 50;
 
     constructor(
         private pageService: PageService,
@@ -60,7 +62,7 @@ export class HomeComponent implements OnInit {
         this.getCoverDetails();
         this.getYouthNews();
         this.getAboutUsDetails();
-        this.getTopYouth();
+        this.getSuccessStories();
         this.getRecentBlogs();
 
 
@@ -109,10 +111,13 @@ export class HomeComponent implements OnInit {
             publishedAt:published_at
           }
         }`;
-        this.pageService.getYouthNews(graphqlQuery).subscribe((res: any) => {
+        this.pageService.getData(graphqlQuery).subscribe((res: any) => {
             this.spinner.hide();
             console.log('YouthNews ', res.data);
             this.youthNews = res.data.youthNews;
+            for (let news of this.youthNews) {
+                news.title = this.getNewsTitle(news.title);
+            }
             this.formatDate(this.youthNews);
         }, err => {
             this.spinner.hide();
@@ -136,7 +141,7 @@ export class HomeComponent implements OnInit {
             }
           }
         `;
-        this.pageService.getCoverDetails(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.spinner.hide();
             this.coverDetails = res.data.cover;
             console.log(' data: ', this.coverDetails);
@@ -150,14 +155,15 @@ export class HomeComponent implements OnInit {
     getAboutUsDetails() {
         const graphQuery = `{
             aboutUs(locale: "${this.lang}") {
-            title,
+            id
+            title
             brief
             photos {
               url
             }
           }
         }`;
-        this.pageService.getAboutUsDetails(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.aboutUs = res.data.aboutUs;
             console.log('ABOUT-US: ', this.aboutUs);
         }, err => {
@@ -166,25 +172,21 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    getTopYouth() {
-        const graphQuery = `
-        {
-            topYouths(locale:"${this.lang}", limit:3) {
-              id
-              name
-              brief
-              photos {
-                url
-              }
-              
+    getSuccessStories() {
+        this.spinner.show();
+        const graphQuery = `{
+            successStories(locale:"${this.lang}", limit: 3, sort:"published_at") 
+            { 
+              id name brief description publishedAt: published_at photos{ url }
             }
           }`;
-        this.pageService.getTopYouth(graphQuery).subscribe((res: any) => {
-            this.topYouths = res.data.topYouths;
-            console.log('YTouth: ', this.topYouths);
-        }, err => {
-            console.log(err);
-
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
+            this.spinner.hide();
+            this.successStories = res.data.successStories;
+            for (let success of this.successStories) {
+                success.shortBrief = this.getBrief(success.brief);
+            }
+            this.formatDate(this.successStories);
         });
     }
 
@@ -195,14 +197,32 @@ export class HomeComponent implements OnInit {
               id title brief author publishedAt: published_at photos{ url }
             }
           }`;
-        this.pageService.getRecentBlogs(graphQuery).subscribe((res: any) => {
+        this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.recentBlogs = res.data.blogs;
+            for (let blog of this.recentBlogs) {
+                blog.title = this.getBrief(blog.title);
+            }
             this.formatDate(this.recentBlogs);
             console.log('Blogs: ', this.recentBlogs);
         }, err => {
             console.log(err);
 
         });
+    }
+
+    getBrief(data) {
+        if (data && data.length > this.MAX_BRIEF_LENGTH) {
+            return data.substring(0, this.MAX_BRIEF_LENGTH) + '...';
+        } else {
+            return data;
+        }
+    }
+    getNewsTitle(data) {
+        if (data && data.length > this.MAX_NEWS_TITLE_LENGTH) {
+            return data.substring(0, this.MAX_NEWS_TITLE_LENGTH) + '...';
+        } else {
+            return data;
+        }
     }
 
 
@@ -229,7 +249,7 @@ export class HomeComponent implements OnInit {
 
     showBlogDetails(id) {
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
-            this.router.navigate(['//e-learning/blogdetails/' + id])
+            this.router.navigate(['//more/blogdetails/' + id])
 
         )
     }
@@ -237,6 +257,13 @@ export class HomeComponent implements OnInit {
     showNewsDetails(id) {
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
             this.router.navigate(['//news-opportunities/news-details/' + id])
+
+        )
+    }
+
+    redirectToStoryDetails(id) {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.router.navigate(['/news-opportunities/success-story-details', id])
 
         )
     }

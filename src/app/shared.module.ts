@@ -5,6 +5,7 @@ import { ParseHtmlPipe } from './parse-html-pipe';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -20,12 +21,14 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [
     SafePipe,
     ParseHtmlPipe,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

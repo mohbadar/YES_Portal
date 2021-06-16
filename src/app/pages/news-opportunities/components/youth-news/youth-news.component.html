@@ -1,0 +1,44 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ "YOUTH-NEWS" | translate }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="recentposts section-padding">
+    <div class="container">
+        <div class="row" *ngIf="youthNews; else nodata">
+            <div class="col-lg-4 col-md-4" *ngFor="let news of youthNews">
+                <div class="blog-item">
+                    <div class="blog-img"> <img [src]="news?.photos[0].url" alt="" (error)="imageError($event.target)">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-title">
+                            <h3 (click)="showNewsDetails(news.id)">{{ news?.title }}</h3>
+                        </div>
+                        <div class="blog-meta">
+                            <div class="blog-date"> <span>{{ news?.createdDay }} {{ news?.createdMonth}}
+                                    <br />
+                                    {{ news?.createdYear}}</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

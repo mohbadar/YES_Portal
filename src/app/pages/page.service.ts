@@ -21,28 +21,6 @@ export class PageService {
         return this.getGraphQueryData(graphQuery)
     }
 
-    getYouthNews(graphQuery) {
-        // console.log("News", graphQuery);
-        return this.getGraphQueryData(graphQuery)
-    }
-
-    getCoverDetails(graphQuery) {
-        // console.log("query", graphQuery);
-        return this.getGraphQueryData(graphQuery)
-    }
-
-    getAboutUsDetails(graphQuery) {
-        // console.log("About_Query", graphQuery);
-        return this.getGraphQueryData(graphQuery)
-    }
-    getTopYouth(graphQuery) {
-        return this.getGraphQueryData(graphQuery)
-    }
-
-    getRecentBlogs(graphQuery) {
-        return this.getGraphQueryData(graphQuery)
-    }
-
     getData(graphQuery) {
         return this.getGraphQueryData(graphQuery);
     }

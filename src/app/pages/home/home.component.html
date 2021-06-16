@@ -5,10 +5,8 @@
             <div class="col-md-12">
                 <div class="header-1-text">
                     <h1 class="text-center">{{ coverDetails?.slogan }}</h1>
-                    <h5 class="text-center" [innerHTML]="coverDetails?.quote | parsehtml | safe">
-                        <br />{{coverDetails?.quotee_name
-                        }}
-                    </h5>
+                    <h5 class="text-center" [innerHTML]="coverDetails?.quote | parsehtml | safe"></h5>
+                    <h5 class="text-center">{{coverDetails?.quotee_name }}</h5>
                 </div>
             </div>
         </div>
@@ -46,7 +44,7 @@
                 <h6>{{ 'ABOUT_US' | translate }}</h6>
                 <h2>{{ aboutUs?.title }}</h2>
                 <p [innerHTML]="aboutUs?.brief | parsehtml | safe"></p>
-                <a class="btn btn-primary" href="#">{{ "VIEW-DETAILS" | translate}}</a>
+                <a class="btn btn-primary" routerLink="/about-us">{{ "VIEW-DETAILS" | translate}}</a>
             </div>
             <div class="col-md-6"><img [src]="aboutUs?.photos[0]?.url" class="img-fluid" alt="about"></div>
         </div>
@@ -54,21 +52,21 @@
 </section>
 
 <section id="team" class="team section-padding-light">
-    <div class="container" *ngIf="topYouths; else nodata">
+    <div class="container" *ngIf="successStories; else nodata">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="text-center section-title">
-                    <h6 class="text-center">{{ "TOP-YOUTH" | translate }}</h6>
+                    <h6 class="text-center">{{ 'LABEL.SUCCESS_STORIES' | translate }}</h6>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" *ngFor="let youth of topYouths">
+            <div class="col-md-4" *ngFor="let ss of successStories">
                 <div class="member">
-                    <img [src]="youth?.photos[0]?.url" class="img-team" alt="">
+                    <img [src]="ss?.photos[0]?.url" (error)="imageError($event.target)" class="img-team" alt="">
                     <div class="member-text">
-                        <h5>{{ youth?.name }}</h5>
-                        <p> {{ youth?.brief }} </p>
+                        <h5 (click)="redirectToStoryDetails(ss.id)">{{ss?.name}}</h5>
+                        <p> {{ ss?.shortBrief }} </p>
                     </div>
                 </div>
             </div>
@@ -94,8 +92,8 @@
                     </div>
                     <div class="blog-content">
                         <div class="blog-title">
-                            <h3><a (click)="showBlogDetails(blog.id)">{{ blog?.title }}</a></h3>
-                            <p [innerHTML]="blog?.brief | parsehtml | safe"></p>
+                            <h3 (click)="showBlogDetails(blog.id)">{{ blog?.title }}</h3>
+                            <!-- <p [innerHTML]="blog?.shortBrief | parsehtml | safe"></p> -->
                         </div>
                         <div class="blog-meta">
                             <div class="blog-author">

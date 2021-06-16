@@ -12,6 +12,7 @@ export class SuccessStoriesComponent implements OnInit {
     lang;
     loading: boolean = false;
     successStories: any[] = [];
+    MAX_BRIEF_LENGTH = 80;
 
 
     constructor(
@@ -27,13 +28,29 @@ export class SuccessStoriesComponent implements OnInit {
 
     getSuccessStories() {
         this.loading = true;
-        const graphQuery = `{successStories(locale:"${this.lang}") { id title description author publishedAt: published_at photos{ url }}}`;
+        const graphQuery = `{
+            successStories(locale:"${this.lang}") 
+            { 
+              id name brief description publishedAt: published_at photos{ url }
+            }
+          }`;
         this.pageService.getData(graphQuery).subscribe((res: any) => {
             this.loading = false;
             this.successStories = res.data.successStories;
+            console.log("🚀 ~ file: success-stories.component.ts ~ line 40 ~ SuccessStoriesComponent ~ this.pageService.getData ~ successStories", this.successStories)
+            for (let success of this.successStories) {
+                success.shortBrief = this.getBrief(success.brief);
+            }
+
             this.formatDate();
             console.log("🚀 ~ file: success-stories.component.ts ~ line 30 ~ SuccessStoriesComponent ~ this.newsOpportunitiesService.getSuccessStories ~ res.data", res.data)
         });
+    }
+
+    getBrief(data) {
+        if (data && data.length > this.MAX_BRIEF_LENGTH) {
+            return data.substring(0, this.MAX_BRIEF_LENGTH) + '...';
+        }
     }
 
     formatDate() {

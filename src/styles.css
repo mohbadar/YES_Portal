@@ -230,17 +230,28 @@ input:-webkit-autofill:focus {
   color: #4484CE;
 }
 
-p {
-  color: #888;
+body[dir=rtl] blockquote {
+  border-right: 5px solid #2174b8;
+  border-left: 0;
+}
+
+body[dir=rtl] p {
   line-height: 26px;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+p {
+  /* color: #888; */
+  line-height: 26px;
+  font-size: 15px;
 }
 
 ul li,
 ol li {
-  color: #747474;
+  /* color: #747474;
   line-height: 26px;
-  font-size: 14px;
+  font-size: 14px; */
 }
 
 /*--------------------------------*/
@@ -470,7 +481,9 @@ body[dir=ltr].navbar-collapse {
 }
 
 .header-inner {
-  background-image: url(assets/images/header-1.png);
+  /* background-image: url(assets/images/afg-cover-3.jpg); */
+  background-image: linear-gradient(#2E2E2E, rgba(35, 34, 39, 0) 100%), url("assets/images/youthCover.jpg");
+  /* background-image: url("assets/images/afg-cover-3.jpg"), linear-gradient(#28313b, #485461); */
   min-height: 350px;
   background-repeat: no-repeat;
   background-position: center;
@@ -733,8 +746,8 @@ body[dir=rtl] .bg-gradient {
   cursor: pointer;
 }
 
-.member .member-text:hover {
-  color: red;
+.member .member-text h5:hover {
+  color: #2174b8;
 }
 
 /*--------------------------------*/
@@ -889,26 +902,27 @@ body[dir=rtl] .bg-gradient {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  min-height: 230px;
+  /* min-height: 230px;
   max-height: 230px;
-  overflow: hidden;
+  overflow: hidden; */
 }
+
 
 .blog-title h3 {
-  font-size: 18px;
-  max-height: 45px;
-  overflow: hidden;
-}
-
-.blog-title h3 a {
   color: #333;
   cursor: pointer;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  font-size: 18px;
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.blog-title h3 a:hover {
+.blog-title h3:hover {
   color: #3ba6de;
 }
 
@@ -1092,8 +1106,7 @@ body[dir=rtl] .bg-gradient {
 
 blockquote {
   background: #f7f7f7;
-  border-left: 4px solid #f33f4c;
-  font-style: italic;
+  border-left: 4px solid #2174b8;
   font-size: 16px;
   line-height: 26px;
   padding: 30px;
@@ -1297,10 +1310,15 @@ blockquote {
 /*--------------------------------*/
 /*           13.Footer
 /*--------------------------------*/
-.footer {
+/* .footer {
   background: #2174b8;
   padding: 155px 0 10px;
   margin: -80px 0 0 0;
+} */
+
+.footer {
+  background: #2174b8;
+  padding: 50px 0 10px;
 }
 
 .img-footer {
@@ -1316,7 +1334,7 @@ blockquote {
 
 .footer hr {
   margin-bottom: 1rem;
-  border-top: 2px solid #ff9b0c;
+  border-top: 2px solid #fff;
   width: 100%;
   display: inline-block;
 }
@@ -1336,7 +1354,7 @@ body[dir=rtl] .footer p {
 }
 
 .footer i {
-  color: #ff9b0c;
+  color: #fff;
   font-size: 16px;
   margin: 0 10px 0 0;
 }
@@ -1393,5 +1411,5 @@ body[dir=rtl] .footer p {
 hr.copyright {
   margin: 50px 0 20px 0;
   width: 100%;
-  border-top: 1px solid #1c3255;
+  border-top: 2px solid #fff;
 }

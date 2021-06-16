@@ -3,21 +3,27 @@
 }
 
 .img-team {
-  max-width: 100%;
-  height: 350px;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 
+.section-padding {
+  padding-top: 50px !important;
+}
+
+/* 
 .member-text {
   max-height: 118px;
   overflow: hidden;
-}
-
+} */
+/* 
 .col-md-6 .about-brief {
   min-height: 200px;
   overflow: hidden;
-}
+} */
 
-.blog-content-landing-page {
+/* .blog-content-landing-page {
   padding: 15px 20px;
   border: 1px solid #eaeaea;
   border-top: 0;
@@ -26,13 +32,13 @@
   transition: 0.3s;
   max-height: 230px;
   overflow: hidden;
-}
+} */
 
-.blog-title-landing-page p {
+/* .blog-title-landing-page p {
   margin-top: 10px;
   margin-bottom: 20px;
   max-height: 90px;
   text-align: justify;
   position: relative;
   overflow: hidden;
-}
+} */

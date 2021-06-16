@@ -1,8 +1,8 @@
 <div class="container">
     <nav class="navbar navbar-expand-md btco-hover-menu navbar-1 mainmenu" id="navbar-1">
-        <!-- <a data-scroll class="navbar-brand">
-            <img src="assets/images/logo/mainLogo.png" id="logo" class="img-logo desktop" alt="">
-            <img src="assets/images/logo/mainLogo.png" class="img-logo mobile" alt=""></a> -->
+        <a routerLink="/" data-scroll class="navbar-brand">
+            <img src="assets/images/logo/mainLogo.png" id="logo" class="img-fluid desktop" alt="">
+            <img src="assets/images/logo/mainLogo.png" class="img-fluid mobile" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,9 @@
                                             <p class="dropdown-divider" *ngIf="s < m.submenu.length - 1"></p>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <ng-container *ngFor="let ssm of sm.submenu; let ss = index">
-                                                    <li><a href="#">{{ssm.translate | translate }}</a></li>
+                                                    <li><a routerLink="{{ ssm.page }}">{{ssm.translate | translate
+                                                            }}</a>
+                                                    </li>
                                                     <p class="dropdown-divider" *ngIf="ss < sm.submenu.length - 1">
                                                     </p>
                                                 </ng-container>
@@ -50,12 +52,12 @@
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="assets/images/language.svg" alt="">
+                            <img src="assets/images/language.svg" style="width:34px" alt="">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <ng-container *ngFor="let language of languages ;let l = index">
                                 <li (click)="changeLang(language.value)">
-                                    <a href="#">
+                                    <a>
                                         <img [src]="'assets/images/flags/' + language.icon" alt="">&nbsp;&nbsp;
                                         <span>{{ language.name }}</span>
                                         <img class="check-img" *ngIf="selectedLang == language.value"
