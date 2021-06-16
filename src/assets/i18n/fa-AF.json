@@ -105,5 +105,8 @@
     "FEMALE": "زن",
     "MALE": "مرد",
     "SUCCESS": "موفق",
-    "ERROR": "خطا"
+    "ERROR": "خطا",
+    "STREET": "Street",
+    "PROVINCE": "ولایت",
+    "Zip": "Zip Code"
 }

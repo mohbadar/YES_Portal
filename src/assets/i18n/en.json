@@ -107,5 +107,8 @@
     "SUCCESS_MSG": "Record successfully saved",
     "ERR_MSG": "There was some error saving the record",
     "SUCCESS": "Success",
-    "ERROR": "Error"
+    "ERROR": "Error",
+    "STREET": "Street",
+    "PROVINCE": "Province",
+    "Zip": "Zip Code"
 }

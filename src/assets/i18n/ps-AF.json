@@ -105,5 +105,8 @@
     "FEMALE": "Female",
     "MALE": "Male",
     "SUCCESS": "Success",
-    "ERROR": "Error"
+    "ERROR": "Error",
+    "STREET": "Street",
+    "PROVINCE": "ولایت",
+    "Zip": "Zip Code"
 }
