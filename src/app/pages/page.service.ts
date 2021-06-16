@@ -13,9 +13,6 @@ export class PageService {
         private http: HttpClient
     ) { }
 
-
-    // baseUrl = 'http://localhost:1337';
-
     getMenuList(graphQuery) {
         // console.log("Menue", graphQuery);
         return this.getGraphQueryData(graphQuery)

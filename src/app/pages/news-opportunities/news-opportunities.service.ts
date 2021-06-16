@@ -1,12 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PageService } from '../page.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class NewsOpportunitiesService {
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
+    uploadApplication(application) {
+        return this.http.post(`/api/applications`, application);
+    }
 
 }

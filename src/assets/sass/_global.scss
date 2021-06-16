@@ -98,7 +98,25 @@ body[dir=rtl] {
   width: 20px;
 }
 
+.input-error {
 
+    .ng-select.ng-invalid .ng-select-container,
+    .form-control.ng-invalid,
+    input.ng-invalid {
+        // #f7b2cb
+        // border-color: #f50505 !important;
+        border-color: #fc0303 !important;
+        border-radius: 2px solid;
+        -webkit-transition: border-color 500ms ease-out;
+        -moz-transition: border-color 500ms ease-out;
+        -o-transition: border-color 500ms ease-out;
+        transition: border-color 500ms ease-out;
+    }
+}
+
+.required-field {
+    color: red;
+}
 
 /**
  * ==============================================
