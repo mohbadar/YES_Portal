@@ -227,15 +227,17 @@ export class HomeComponent implements OnInit {
 
 
     formatDate(data) {
-        data.forEach(element => {
-            const date = new Date(element.publishedAt);
-            const year = date.getFullYear();
-            const month = date.toLocaleString('default', { month: 'long' });
-            const day = date.getDate();
-            element.createdMonth = month;
-            element.createdYear = year;
-            element.createdDay = day;
-        });
+        if (data) {
+            data.forEach(element => {
+                const date = new Date(element.publishedAt);
+                const year = date.getFullYear();
+                const month = date.toLocaleString('default', { month: 'long' });
+                const day = date.getDay();
+                element.createdMonth = month;
+                element.createdYear = year;
+                element.createdDay = day;
+            });
+        }
     }
 
     imageError(el) {
