@@ -122,6 +122,7 @@ a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #143d3c;
+  cursor: pointer;
 }
 
 a:hover {
@@ -187,7 +188,7 @@ input:-webkit-autofill:focus {
 }
 
 .section-padding {
-  padding: 100px 0 40px;
+  padding: 70px 0 40px;
   overflow: hidden;
   position: relative;
 }
@@ -210,6 +211,7 @@ input:-webkit-autofill:focus {
 .section-title {
   margin-bottom: 35px;
 }
+
 
 .section-title hr {
   max-width: 50px;
@@ -992,8 +994,8 @@ body[dir=rtl] .bg-gradient {
 }
 
 .sidebar .widget hr {
-  border-bottom: 2px solid #f33f4c;
-  width: 30px;
+  border-bottom: 2px solid #2174b8;
+  width: 70%;
   margin: 0;
 }
 
@@ -1006,6 +1008,7 @@ body[dir=rtl] .bg-gradient {
   border-bottom: 1px solid #eaeaea;
   color: #667286;
   margin: 0;
+  cursor: pointer;
   overflow: hidden;
   padding: 15px 0;
   padding-top: 15px;
@@ -1028,7 +1031,7 @@ body[dir=rtl] .bg-gradient {
 }
 
 .sidebar .widget ul li a:hover {
-  color: #ff9b0c;
+  color: #007bff;
 }
 
 .sidebar .widget .tagcloud {

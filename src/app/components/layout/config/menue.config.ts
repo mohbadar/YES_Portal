@@ -41,68 +41,69 @@ export class MenuConfig {
                             ]
                         }
                     ]
-                }, {
+                },
+                {
                     title: 'E-Learning ',
                     page: '/e-learning',
                     translate: 'MENU.E_LEARNING',
-                    submenu: [
-                        // {
-                        //     title: 'Blogs',
-                        //     page: '/blogs',
-                        //     translate: 'MENU.BLOGS'
-                        // },
-                        {
-                            title: 'Training Packages',
-                            page: '/training-packages',
-                            translate: 'MENU.TRAINING_PACKAGES',
-                            submenu: [
-                                {
-                                    title: 'Memory Sport',
-                                    page: '/memory-sport',
-                                    translate: 'MENU.MEMORY_SPORT'
-                                },
-                                {
-                                    title: 'Memory Techniques',
-                                    path: '/memory-techniques',
-                                    translate: 'MENU.MEMORY_TECHNIQUES'
-                                },
-                                {
-                                    title: 'Speed Reading',
-                                    path: '/speed-reading',
-                                    translate: 'MENU.SPEED_READING'
-                                },
-                                {
-                                    title: 'Mind Mapping',
-                                    path: '/mind-mapping',
-                                    translate: 'MENU.MIND_MAPPING'
-                                },
-                                {
-                                    title: 'Personal Growth',
-                                    path: '/personal-growth',
-                                    translate: 'MENU.PERSONAL_GROWTH'
-                                },
-                                {
-                                    title: 'Critical Thinking',
-                                    path: '/critical-thinking',
-                                    translate: 'MENU.CRITICAL_THINKING'
-                                },
-                                {
-                                    title: 'Public Speaking',
-                                    path: '/public-speaking',
-                                    translate: 'MENU.PUBLIC_SPEAKING'
-                                },
-                                {
-                                    title: 'Management Skill',
-                                    path: '/management-skill',
-                                    translate: 'MENU.MANAGEMENT_SKILL'
-                                }
-                            ]
-                        }, {
-                            title: 'Motivational Videos',
-                            page: '/motivational-videos',
-                            translate: 'MENU.MOTIVATIONAL_VIDEOS'
-                        },
-                    ]
+                    // submenu: [
+                    //     // {
+                    //     //     title: 'Blogs',
+                    //     //     page: '/blogs',
+                    //     //     translate: 'MENU.BLOGS'
+                    //     // },
+                    //     {
+                    //         title: 'Training Packages',
+                    //         page: '/training-packages',
+                    //         translate: 'MENU.TRAINING_PACKAGES',
+                    //         submenu: [
+                    //             {
+                    //                 title: 'Memory Sport',
+                    //                 page: '/memory-sport',
+                    //                 translate: 'MENU.MEMORY_SPORT'
+                    //             },
+                    //             {
+                    //                 title: 'Memory Techniques',
+                    //                 path: '/memory-techniques',
+                    //                 translate: 'MENU.MEMORY_TECHNIQUES'
+                    //             },
+                    //             {
+                    //                 title: 'Speed Reading',
+                    //                 path: '/speed-reading',
+                    //                 translate: 'MENU.SPEED_READING'
+                    //             },
+                    //             {
+                    //                 title: 'Mind Mapping',
+                    //                 path: '/mind-mapping',
+                    //                 translate: 'MENU.MIND_MAPPING'
+                    //             },
+                    //             {
+                    //                 title: 'Personal Growth',
+                    //                 path: '/personal-growth',
+                    //                 translate: 'MENU.PERSONAL_GROWTH'
+                    //             },
+                    //             {
+                    //                 title: 'Critical Thinking',
+                    //                 path: '/critical-thinking',
+                    //                 translate: 'MENU.CRITICAL_THINKING'
+                    //             },
+                    //             {
+                    //                 title: 'Public Speaking',
+                    //                 path: '/public-speaking',
+                    //                 translate: 'MENU.PUBLIC_SPEAKING'
+                    //             },
+                    //             {
+                    //                 title: 'Management Skill',
+                    //                 path: '/management-skill',
+                    //                 translate: 'MENU.MANAGEMENT_SKILL'
+                    //             }
+                    //         ]
+                    //     }, {
+                    //         title: 'Motivational Videos',
+                    //         page: '/motivational-videos',
+                    //         translate: 'MENU.MOTIVATIONAL_VIDEOS'
+                    //     },
+                    // ]
                 }, {
                     title: 'Inventors Platform',
                     page: '/inventors-platform',

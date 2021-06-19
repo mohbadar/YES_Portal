@@ -19,6 +19,7 @@
     "MENU.E_LEARNING": "آموزش الکترونیکی",
     "MENU.BLOGS": "مقالات",
     "MENU.TRAINING_PACKAGES": "بسته های آموزشی",
+    "TRAINING_PACKAGES": "بسته های آموزشی",
     "MENU.MEMORY_SPORT": "ورزش حافظه",
     "MENU.MEMORY_TECHNIQUES": "تقویت حافظه",
     "MENU.SPEED_READING": "تند خوانی",
@@ -108,5 +109,7 @@
     "ERROR": "خطا",
     "STREET": "Street",
     "PROVINCE": "ولایت",
-    "Zip": "Zip Code"
+    "Zip": "Zip Code",
+    "NO_VIDEOS": "هیچ ویدئویی یافت نشد",
+    "READ_MORE": "مشاهیده بیشتر"
 }
