@@ -1,1 +1,51 @@
-<router-outlet></router-outlet>
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'MENU.MOTIVATIONAL_VIDEOS' | translate}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="blog" class="recentposts section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" *ngIf="videosTypes; else noData">
+                <div class="sidebar">
+                    <div class="widget">
+                        <h3>{{ 'TRAINING_PACKAGES' | translate }}</h3>
+                        <hr />
+                        <ul *ngFor="let type of videosTypes">
+                            <li><a (click)="getVideosByType(type.id)">{{ type.name }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9" *ngIf="videos && videos.length;else noData">
+                <div class="col-lg-6 col-md-6" *ngFor="let video of videos">
+                    <div class="card mt-3">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" [src]="video.youtube_url | video "
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ video?.title }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <ng-template #noData>
+        <div class="row">
+            <div [class.dot-falling]="loading"></div>
+            <h4 *ngIf="!loading" class="text-center" style="padding: 250px;">{{ 'NO_VIDEOS' | translate }}</h4>
+        </div>
+    </ng-template>
+</div>

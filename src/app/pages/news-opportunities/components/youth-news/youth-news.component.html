@@ -11,7 +11,7 @@
 </header>
 
 
-
+<!-- 
 <div class="recentposts section-padding">
     <div class="container">
         <div class="row" *ngIf="youthNews; else nodata">
@@ -39,5 +39,45 @@
                 </div>
             </div>
         </ng-template>
+    </div>
+</div> -->
+
+
+
+<div class="blog-home2 py-5">
+    <div class="container">
+        <!-- Row 
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h3 class="my-3">{{ "YOUTH-NEWS" | translate }}</h3>
+                <h6 class="subtitle font-weight-normal"></h6>
+            </div>
+        </div> -->
+        <div class="row mt-4">
+            <!-- Column -->
+            <div class="col-md-4 on-hover" *ngFor="let news of youthNews">
+                <div class="card border-0 mb-4">
+                    <a><img class="card-img-top" [src]="news?.photos[0].url" alt=""
+                            (error)="imageError($event.target)"></a>
+                    <div
+                        class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute">
+                        {{ news?.createdMonth}}<span class="d-block">{{ news?.createdDay }}</span></div>
+                    <div class="blog-title mt-2">
+                        <h3 (click)="showNewsDetails(news.id)">{{ news?.title }}</h3>
+                    </div>
+                    <a (click)="showNewsDetails(news.id)" class="text-decoration-none linking text-themecolor mt-2">{{
+                        'READ_MORE' | translate }}</a>
+                </div>
+
+            </div>
+            <ng-template #nodata>
+                <div class="">
+                    <div class="jumbotron no-data">
+                        <div [class.dot-falling]="loading"></div>
+                        <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
     </div>
 </div>

@@ -19,6 +19,7 @@
     "MENU.E_LEARNING": "بریښنايي زده کړه",
     "MENU.BLOGS": "مقالې",
     "MENU.TRAINING_PACKAGES": "زده کړیزې کڅوړې",
+    "TRAINING_PACKAGES": "زده کړیزې کڅوړې",
     "MENU.MEMORY_SPORT": "د حافظې ورزش",
     "MENU.MEMORY_TECHNIQUES": "د حافظې تقویت",
     "MENU.SPEED_READING": "چټک لوستل",
@@ -108,5 +109,7 @@
     "ERROR": "Error",
     "STREET": "Street",
     "PROVINCE": "ولایت",
-    "Zip": "Zip Code"
+    "Zip": "Zip Code",
+    "NO_VIDEOS": "هیڅ ویډیو ونه موندل شوه",
+    "READ_MORE": "نور یی ولوله"
 }

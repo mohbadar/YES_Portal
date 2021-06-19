@@ -19,6 +19,7 @@
     "MENU.E_LEARNING": "E Learning",
     "MENU.BLOGS": "Blogs",
     "MENU.TRAINING_PACKAGES": "Training Packages",
+    "TRAINING_PACKAGES": "Training Packages",
     "MENU.MEMORY_SPORT": "Memory Sport",
     "MENU.MEMORY_TECHNIQUES": "Memory Techniques",
     "MENU.SPEED_READING": "Speed Reading",
@@ -110,5 +111,7 @@
     "ERROR": "Error",
     "STREET": "Street",
     "PROVINCE": "Province",
-    "Zip": "Zip Code"
+    "Zip": "Zip Code",
+    "NO_VIDEOS": "No Video",
+    "READ_MORE": "Read More"
 }
