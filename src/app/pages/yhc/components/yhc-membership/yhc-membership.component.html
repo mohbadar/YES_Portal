@@ -22,32 +22,34 @@
                 <form [formGroup]="yhcForm" (ngSubmit)="onSubmit()">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="fname">{{'FIRST_NAME' | translate}}</label>
-                            <input type="text" formControlName="firstName" class="form-control">
+                            <label for="fname">{{'FIRST_NAME' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" formControlName="name" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="lname">{{'LAST_NAME' | translate}}</label>
+                            <label for="lname">{{'LAST_NAME' | translate}}<span class="required-field">*</span></label>
                             <input type="text" formControlName="lastName" class="form-control">
                         </div>
 
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="email">{{'EMAIL' | translate}}</label>
+                            <label for="email">{{'EMAIL' | translate}}<span class="required-field">*</span></label>
                             <input type="email" formControlName="email" class="form-control">
                             <span class="text-error"
                                 *ngIf="!yhcForm.controls['email'].valid && yhcForm.controls['email']?.touched"> Please
                                 enter a valid Email</span>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="mobileNumber">{{'MOBILE_NUMBER' | translate}}</label>
-                            <input type="number" formControlName="mobileNumber" class="form-control" min="0">
+                            <label for="mobileNumber">{{'MOBILE_NUMBER' | translate}}<span
+                                    class="required-field">*</span></label>
+                            <input type="text" formControlName="mobileNumber" class="form-control">
                         </div>
 
                     </div>
-                    <div class="form-row" formGroupName="address">
+                    <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="inputAddress">{{'ADDRESS' | translate}}</label>
+                            <label for="inputAddress">{{'ADDRESS' | translate}}<span
+                                    class="required-field">*</span></label>
                             <input type="text" class="form-control" id="inputAddress" formControlName="address">
                         </div>
                         <div class="form-group col-md-6">
@@ -55,12 +57,13 @@
                             <input type="text" class="form-control" id="inputStreet" formControlName="street">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputProvince">{{'PROVINCE' | translate}}</label>
+                            <label for="inputProvince">{{'PROVINCE' | translate}}<span
+                                    class="required-field">*</span></label>
                             <input type="text" class="form-control" id="inputProvince" formControlName="province">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputZip">{{'Zip' | translate}}</label>
-                            <input type="text" class="form-control" id="inputZip" formControlName="zip">
+                            <input type="text" class="form-control" id="inputZip" formControlName="zipCode">
                         </div>
                     </div>
 

@@ -106,10 +106,12 @@
     "FEMALE": "زن",
     "MALE": "مرد",
     "SUCCESS": "موفق",
+    "ERR_MSG": "لطفا فرم خود را بررسی کنید خطایی وجود دارد",
     "ERROR": "خطا",
     "STREET": "Street",
     "PROVINCE": "ولایت",
     "Zip": "Zip Code",
     "NO_VIDEOS": "هیچ ویدئویی یافت نشد",
-    "READ_MORE": "مشاهیده بیشتر"
+    "READ_MORE": "مشاهیده بیشتر",
+    "SUCCESS_MSG_YHC": "فرم عضویت شما با موفقیت ذخیره شد"
 }

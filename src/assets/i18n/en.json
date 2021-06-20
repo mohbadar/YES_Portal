@@ -113,5 +113,6 @@
     "PROVINCE": "Province",
     "Zip": "Zip Code",
     "NO_VIDEOS": "No Video",
-    "READ_MORE": "Read More"
+    "READ_MORE": "Read More",
+    "SUCCESS_MSG_YHC": "Your Membership form successfully submitted"
 }
