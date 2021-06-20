@@ -13,6 +13,13 @@ export class PageService {
         private http: HttpClient
     ) { }
 
+    complainForm(complain) {
+        return this.http.post(`/api//complains`, complain);
+    }
+    getInTouchForm(message) {
+        return this.http.post(`/api//get-in-touches`, message);
+    }
+
     getMenuList(graphQuery) {
         // console.log("Menue", graphQuery);
         return this.getGraphQueryData(graphQuery)
