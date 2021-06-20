@@ -27,7 +27,7 @@
             <div class="col-md-9">
                 <div *ngIf="videos && videos.length;else noData">
                     <div class="col-lg-6 col-md-6" *ngFor="let video of videos">
-                        <div class="card mt-3">
+                        <div class="card">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" [src]="video.youtube_url | video "
                                     allowfullscreen></iframe>

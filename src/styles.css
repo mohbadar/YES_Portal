@@ -986,7 +986,7 @@ body[dir=rtl] .bg-gradient {
 .sidebar .widget {
   padding: 30px;
   border: 1px solid #eaeaea;
-  margin: 15px 0 30px;
+  margin: 0px 0 30px;
 }
 
 .sidebar .widget h3 {
@@ -1030,9 +1030,18 @@ body[dir=rtl] .bg-gradient {
   transition: .3s;
 }
 
+
 .sidebar .widget ul li a:hover {
   color: #007bff;
+  /* text-decoration: underline; */
+  font-size: 18px;
 }
+
+.sidebar .widget ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 
 .sidebar .widget .tagcloud {
   padding: 15px 0 0 0;

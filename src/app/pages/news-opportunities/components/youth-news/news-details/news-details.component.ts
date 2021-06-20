@@ -14,6 +14,7 @@ export class NewsDetailsComponent implements OnInit {
   lang;
   newsId
   newsDetails;
+  loading: boolean = false;
 
   constructor(private pageService: PageService,
     private route: ActivatedRoute,
@@ -31,7 +32,7 @@ export class NewsDetailsComponent implements OnInit {
   }
 
   getNewsDetails() {
-    this.spinner.show();
+    this.loading = true;
     const graphQuery = `
     {
       youthNew(id: "${this.newsId}")
@@ -46,7 +47,7 @@ export class NewsDetailsComponent implements OnInit {
         localizations(where: { locale: "${this.lang}" }) {title contents publishedAt: published_at photos { url }}}}
     `;
     this.pageService.getData(graphQuery).subscribe((res: any) => {
-      this.spinner.hide();
+      this.loading = false;
       if (res.data.youthNew.localizations.length > 0) {
         this.newsDetails = res.data.youthNew.localizations[0];
         console.log("🚀 ~ file: news-details.component.ts ~ line 50 ~ NewsDetailsComponent ~ this.pageService.getData ~ newsDetails", this.newsDetails)
@@ -62,7 +63,7 @@ export class NewsDetailsComponent implements OnInit {
       this.newsDetails.createdYear = year;
       this.newsDetails.createdDay = day;
     }, err => {
-      this.spinner.hide();
+      this.loading = false;
       console.log(err);
 
     })
