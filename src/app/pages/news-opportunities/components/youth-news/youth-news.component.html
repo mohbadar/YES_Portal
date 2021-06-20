@@ -53,7 +53,7 @@
                 <h6 class="subtitle font-weight-normal"></h6>
             </div>
         </div> -->
-        <div class="row mt-4">
+        <div class="row mt-4" *ngIf="youthNews; else noData">
             <!-- Column -->
             <div class="col-md-4 on-hover" *ngFor="let news of youthNews">
                 <div class="card border-0 mb-4">
@@ -70,14 +70,14 @@
                 </div>
 
             </div>
-            <ng-template #nodata>
-                <div class="">
-                    <div class="jumbotron no-data">
-                        <div [class.dot-falling]="loading"></div>
-                        <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
-                    </div>
-                </div>
-            </ng-template>
         </div>
+        <ng-template #noData>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
     </div>
 </div>

@@ -12,8 +12,8 @@
 
 <div id="blog" class="recentposts section-padding">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3" *ngIf="videosTypes; else noData">
+        <div class="row" *ngIf="videosTypes; else noData">
+            <div class="col-md-3">
                 <div class="sidebar">
                     <div class="widget">
                         <h3>{{ 'TRAINING_PACKAGES' | translate }}</h3>
@@ -24,28 +24,28 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9" *ngIf="videos && videos.length;else noData">
-                <div class="col-lg-6 col-md-6" *ngFor="let video of videos">
-                    <div class="card mt-3">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" [src]="video.youtube_url | video "
-                                allowfullscreen></iframe>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ video?.title }}</h5>
+            <div class="col-md-9">
+                <div *ngIf="videos && videos.length;else noData">
+                    <div class="col-lg-6 col-md-6" *ngFor="let video of videos">
+                        <div class="card">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" [src]="video.youtube_url | video "
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ video?.title }}</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
-
+        <ng-template #noData>
+            <div class="jumbotron row justify-content-center">
+                <div [class.dot-falling]="loading"></div>
+                <h4 *ngIf="!loading">{{ 'NO_VIDEOS' | translate }}</h4>
+            </div>
+        </ng-template>
     </div>
-    <ng-template #noData>
-        <div class="row">
-            <div [class.dot-falling]="loading"></div>
-            <h4 *ngIf="!loading" class="text-center" style="padding: 250px;">{{ 'NO_VIDEOS' | translate }}</h4>
-        </div>
-    </ng-template>
+
 </div>

@@ -986,7 +986,7 @@ body[dir=rtl] .bg-gradient {
 .sidebar .widget {
   padding: 30px;
   border: 1px solid #eaeaea;
-  margin: 15px 0 30px;
+  margin: 0px 0 30px;
 }
 
 .sidebar .widget h3 {
@@ -1033,7 +1033,7 @@ body[dir=rtl] .bg-gradient {
 
 .sidebar .widget ul li a:hover {
   color: #007bff;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-size: 18px;
 }
 

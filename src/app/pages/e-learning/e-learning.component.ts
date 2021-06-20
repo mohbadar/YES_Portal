@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { PageService } from '../page.service';
 
@@ -15,12 +14,10 @@ export class ELearningComponent implements OnInit {
   loading: boolean = false;
   videosTypes;
   videos;
-  firstArray;
 
   constructor(
     private translate: TranslateService,
-    private pageService: PageService,
-    private sanitizar: DomSanitizer
+    private pageService: PageService
   ) {
 
   }
@@ -33,15 +30,16 @@ export class ELearningComponent implements OnInit {
   getVideosTypes() {
     this.loading = true;
     const graphqlQuery = `{
-      videoTypes(sort: "order", locale: "${this.lang}") {
+      videoTypes(locale: "${this.lang}", sort: "order") {
         id
-         name
+        name
         slug
       }
     }`;
     this.pageService.getData(graphqlQuery).subscribe((res: any) => {
       this.loading = false;
       this.videosTypes = res.data.videoTypes;
+      this.getVideosByType(this.videosTypes[0].id);
       console.log("🚀 ~ file: e-learning.component.ts ~ line 41 ~ ELearningComponent ~ this.pageService.getData ~ videosTypes", this.videosTypes)
     }, err => {
       this.loading = false;
@@ -65,12 +63,9 @@ export class ELearningComponent implements OnInit {
       }
     }`;
     this.pageService.getData(graphqlQuery).subscribe((res: any) => {
+      console.log("🚀 ~ file: e-learning.component.ts ~ line 68 ~ ELearningComponent ~ this.pageService.getData ~ res", res)
       this.loading = false;
-      this.firstArray = res.data.videoTypes;
-      this.firstArray.forEach(element => {
-        this.videos = element.videos;
-        console.log("🚀 ~ file: e-learning.component.ts ~ line 68 ~ ELearningComponent ~ this.pageService.getData ~ vid", this.videos)
-      });
+      this.videos = res.data.videoTypes[0].videos;
     }, err => {
       this.loading = false;
       console.log(err);
