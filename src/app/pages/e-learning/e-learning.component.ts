@@ -33,7 +33,7 @@ export class ELearningComponent implements OnInit {
   getVideosTypes() {
     this.loading = true;
     const graphqlQuery = `{
-      videoTypes(locale: "${this.lang}") {
+      videoTypes(sort: "order", locale: "${this.lang}") {
         id
          name
         slug
