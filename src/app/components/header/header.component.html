@@ -51,8 +51,8 @@
                 <ng-container>
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle" data-scroll href="#lang" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="assets/images/language.svg" style="width:34px" alt="">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{'Language' |
+                            translate}}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <ng-container *ngFor="let language of languages ;let l = index">
@@ -70,6 +70,7 @@
                     </li>
                 </ng-container>
             </ul>
+
         </div>
     </nav>
 </div>
