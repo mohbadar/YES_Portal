@@ -188,7 +188,7 @@ input:-webkit-autofill:focus {
 }
 
 .section-padding {
-  padding: 70px 0 40px;
+  padding: 50px 0 40px;
   overflow: hidden;
   position: relative;
 }
@@ -486,6 +486,7 @@ body[dir=ltr].navbar-collapse {
   /* background-image: url(assets/images/afg-cover-3.jpg); */
   background-image: linear-gradient(#2E2E2E, rgba(35, 34, 39, 0) 100%), url("assets/images/youthCover.jpg");
   /* background-image: url("assets/images/afg-cover-3.jpg"), linear-gradient(#28313b, #485461); */
+  /* background: linear-gradient(to bottom right, #2174b8, #1a7fa3); */
   min-height: 350px;
   background-repeat: no-repeat;
   background-position: center;
@@ -503,6 +504,7 @@ body[dir=ltr].navbar-collapse {
   line-height: 65px;
   color: #fff;
   margin-bottom: 30px;
+  padding-top: 60px;
 }
 
 .header-inner-text h5 {
@@ -552,7 +554,7 @@ body[dir=ltr].navbar-collapse {
   position: absolute;
   right: 0;
   margin-right: 7px;
-  background-color: #3ba6de;
+  /* background-color: linear-gradient(to right, #188ef4 0%, #316ce8 100%); */
   color: #fff;
   padding: 1% 5%;
   text-align: center;
@@ -568,7 +570,7 @@ body[dir=ltr].navbar-collapse {
 
 .contents {
   position: absolute;
-  height: 40%;
+  height: 30%;
   color: #fff;
   bottom: 0;
   left: 0;
@@ -960,7 +962,7 @@ body[dir=rtl] .bg-gradient {
   font-size: 13px;
   font-weight: 500;
   /* font-family: 'Poppins', sans-serif; */
-  background: #2174b8;
+  background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
   color: #fff;
   line-height: 18px;
   padding: 5px 10px;
@@ -1113,8 +1115,8 @@ body[dir=rtl] .bg-gradient {
   font-weight: 600;
 }
 
-.blog-details-meta span a:hover {
-  color: #ff9b0c;
+.blog-details-meta span:hover {
+  color: #0c39ff;
 }
 
 blockquote {

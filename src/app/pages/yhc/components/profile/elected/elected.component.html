@@ -1,0 +1,56 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'MENU.PROFILE' | translate }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- <section class="section-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let elected of electedProfiles">
+                <div class="single-person">
+                    <div class="person-image">
+                        <img [src]="elected?.photo.url" alt="profileImage" (error)="imageError($event.target)">
+                    </div>
+                    <div class="person-info">
+                        <h3 class="full-name">{{elected?.name}}</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> -->
+
+
+<section class="section-padding-light">
+    <div class="container">
+        <div class="row" *ngIf="electedProfiles; else noData">
+            <div class="col-md-4" *ngFor="let elected of electedProfiles">
+                <div class="member">
+                    <img [src]="elected?.photo.url" (error)="imageError($event.target)" class="img-team">
+                    <div class="member-text">
+                        <h5>{{elected?.name}}</h5>
+                        <p> {{ elected?.shortBrief }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noData>
+            <div class=" row">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>
