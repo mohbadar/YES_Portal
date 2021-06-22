@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header-inner-text">
-                    <h1 class="text-center">{{ 'MENU.APPOINTED' | translate }} </h1>
+                    <h1 class="text-center">{{ 'MENU.HONORARY' | translate }} </h1>
                 </div>
             </div>
         </div>
@@ -12,13 +12,13 @@
 
 <section class="section-padding-light">
     <div class="container">
-        <div class="row" *ngIf="appointedProfiles && appointedProfiles.length; else noData">
-            <div class="col-md-4" *ngFor="let appointed of appointedProfiles">
+        <div class="row" *ngIf="honoraryProfiles && honoraryProfiles.length; else noData">
+            <div class="col-md-4" *ngFor="let honorary of honoraryProfiles">
                 <div class="member">
-                    <img [src]="appointed?.photo.url" (error)="imageError($event.target)" class="img-team">
+                    <img [src]="honorary?.photo.url" (error)="imageError($event.target)" class="img-team">
                     <div class="member-text">
-                        <h5>{{appointed?.name}}</h5>
-                        <p> {{ appointed?.shortBrief }} </p>
+                        <h5>{{honorary?.name}}</h5>
+                        <p> {{ honorary?.shortBrief }} </p>
                     </div>
                 </div>
             </div>

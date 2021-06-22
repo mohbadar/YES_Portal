@@ -8,6 +8,7 @@ import { YhcMembershipComponent } from './components/yhc-membership/yhc-membersh
 import { ProfileComponent } from './components/profile/profile.component';
 import { ElectedComponent } from './components/profile/elected/elected.component';
 import { AppointedComponent } from './components/profile/appointed/appointed.component';
+import { HonoraryComponent } from './components/profile/honorary/honorary.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
           {
             path: 'appointed',
             component: AppointedComponent
+          },
+          {
+            path: 'honorary',
+            component: HonoraryComponent
           }
         ]
       }
@@ -44,7 +49,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [YhcComponent, DiasporaComponent, YhcMembershipComponent, ProfileComponent, ElectedComponent, AppointedComponent],
+  declarations: [YhcComponent, DiasporaComponent, YhcMembershipComponent, ProfileComponent, ElectedComponent, AppointedComponent, HonoraryComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
