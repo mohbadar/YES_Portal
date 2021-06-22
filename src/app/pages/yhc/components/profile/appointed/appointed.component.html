@@ -1,0 +1,35 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'MENU.APPOINTED' | translate }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section-padding-light">
+    <div class="container">
+        <div class="row" *ngIf="appointedProfiles; else noData">
+            <div class="col-md-4" *ngFor="let appointed of appointedProfiles">
+                <div class="member">
+                    <img [src]="appointed?.photo.url" (error)="imageError($event.target)" class="img-team">
+                    <div class="member-text">
+                        <h5>{{appointed?.name}}</h5>
+                        <p> {{ appointed?.shortBrief }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noData>
+            <div class=" row">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>
