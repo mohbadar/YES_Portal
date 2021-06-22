@@ -484,9 +484,9 @@ body[dir=ltr].navbar-collapse {
 
 .header-inner {
   /* background-image: url(assets/images/afg-cover-3.jpg); */
-  /* background-image: linear-gradient(#2E2E2E, rgba(35, 34, 39, 0) 100%), url("assets/images/youthCover.jpg"); */
+  background-image: linear-gradient(#2E2E2E, rgba(35, 34, 39, 0) 100%), url("assets/images/youthCover.jpg");
   /* background-image: url("assets/images/afg-cover-3.jpg"), linear-gradient(#28313b, #485461); */
-  background: linear-gradient(to bottom right, #2174b8, #00b5f7);
+  /* background: linear-gradient(to bottom right, #2174b8, #1a7fa3); */
   min-height: 350px;
   background-repeat: no-repeat;
   background-position: center;
