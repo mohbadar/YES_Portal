@@ -16,6 +16,10 @@ const routes: Routes = [
                 loadChildren: () => import('./pages/e-learning/e-learning.module').then(m => m.ELearningModule)
             },
             {
+                path: 'inventors-platform',
+                loadChildren: () => import('./pages/inventors-platform/inventors-platform.module').then(m => m.InventorsPlatformModule)
+            },
+            {
                 path: 'news-opportunities',
                 loadChildren: () => import('./pages/news-opportunities/news-opportunities.module').then(m => m.NewsOpportunitiesModule)
             },
