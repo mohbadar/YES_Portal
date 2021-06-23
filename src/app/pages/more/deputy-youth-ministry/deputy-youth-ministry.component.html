@@ -1,0 +1,45 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ "MENU.DEPUTY_MINISTRY_OF_YOUTH_AFFAIRS" | translate }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="blog-home2 py-5">
+    <div class="container">
+        <div class="row mt-4" *ngIf="youthActivites && youthActivites.length; else noData">
+            <!-- Column -->
+            <div class="col-md-4 on-hover" *ngFor="let activity of youthActivites">
+                <div class="card border-0 mb-4">
+                    <a><img class="card-img-top" [src]="activity?.photos[0].url" alt=""
+                            (error)="imageError($event.target)"></a>
+                    <div
+                        class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute">
+                        {{ activity?.createdMonth}}<span class="d-block">{{ activity?.createdDay }}</span></div>
+                    <div class="blog-title mt-2">
+                        <h3 (click)="showActivityDetails(activity.id)">{{ activity?.title }}</h3>
+                    </div>
+                    <a (click)="showActivityDetails(activity.id)"
+                        class="text-decoration-none linking text-themecolor mt-2">{{
+                        'READ_MORE' | translate }}</a>
+                </div>
+
+            </div>
+        </div>
+        <ng-template #noData>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
