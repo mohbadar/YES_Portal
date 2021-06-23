@@ -1,0 +1,51 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <!-- <h1 class="text-center">{{ 'ACTIVITY-DETAILS' | translate }} </h1> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="blog" class="recentposts section-padding">
+    <div class="container">
+        <div class="row" *ngIf="activityDetails; else noData">
+            <div class="col-lg-12 col-md-12">
+                <div class="blog-item">
+                    <div class="blog-details">
+                        <div class="blog-details-meta mt-3 mb-3">
+                            <span><i class="icofont-calendar"></i> {{activityDetails?.createdMonth}}
+                                {{activityDetails?.createdDay}},
+                                {{activityDetails?.createdYear}} </span>
+                        </div>
+                        <div class="blog-title-body">
+                            <h2>{{ activityDetails?.title }}</h2>
+                            <p [innerHTML]="activityDetails?.contents | parsehtml | safe"></p>
+
+                        </div>
+                        <!-- <div *ngFor="let photo of photos">
+                            <div class="col-md-6 mb-2">
+                                <img [src]="photo?.url" alt="" class="image-column">
+                            </div>
+                        </div> -->
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <ng-template #noData>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
