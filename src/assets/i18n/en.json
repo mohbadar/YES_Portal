@@ -117,5 +117,9 @@
     "READ_MORE": "Read More",
     "SUCCESS_MSG_YHC": "Your Membership form successfully submitted",
     "SUCCESS_MSG_COMPLAIN": "Your Complain is Submitted, we will reach you soon!",
-    "SUCCESS_MSG_GET_IN_TOUCH": "Thank you, We received your message."
+    "SUCCESS_MSG_GET_IN_TOUCH": "Thank you, We received your message.",
+    "IDEA.NAME": "Name of Person",
+    "IDEA.SUBJECT": "Idea Subject",
+    "IDEA.ATTACHMENT": "Attachment",
+    "IDEA_MESSAGE": "If you have any idea please submit it here!"
 }

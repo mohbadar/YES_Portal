@@ -1,0 +1,68 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'MENU.IDEAS' | translate }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="section-padding">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <blockquote class="blockquote">
+                    <h5 class="alert-heading">{{ 'IDEA_MESSAGE' | translate }}</h5>
+                    <p></p>
+
+                </blockquote>
+            </div>
+            <div class="col-md-12 mt-4" id="mform">
+                <form [formGroup]="ideaForm" (ngSubmit)="submitIdeaForm()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">{{ 'IDEA.NAME' | translate }}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="subject">{{ 'IDEA.SUBJECT' | translate }}<span
+                                    class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="subject">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">{{ 'MOBILE_NUMBER' | translate }}</label>
+                            <input type="text" class="form-control" formControlName="mobileNumber">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">{{ 'EMAIL' | translate }}</label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                        <div class="form-group col-md-">
+                            <label for="">{{ 'IDEA.ATTACHMENT' | translate }}</label>
+                            <input type="file" class="form-control-file" formControlName="attachmentIdeas"
+                                (change)="uploadAttachement($event)">
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">{{ 'SUBMIT' | translate }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+</section>

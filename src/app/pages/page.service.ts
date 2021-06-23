@@ -20,6 +20,10 @@ export class PageService {
         return this.http.post(`/api//get-in-touches`, message);
     }
 
+    submitIdearForm(idea) {
+        return this.http.post(`/api//ideas`, idea);
+    }
+
     getMenuList(graphQuery) {
         // console.log("Menue", graphQuery);
         return this.getGraphQueryData(graphQuery)
