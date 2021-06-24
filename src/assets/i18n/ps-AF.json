@@ -120,5 +120,7 @@
     "IDEA.NAME": "شخص نوم ",
     "IDEA.SUBJECT": "د مفکوره موضوع",
     "IDEA.ATTACHMENT": "ضمیمه",
-    "IDEA_MESSAGE": "که تاسو کومه نظر لرئ مهرباني وکړئ دلته یې پوسټ کړئ!"
+    "IDEA_MESSAGE": "که تاسو کومه نظر لرئ مهرباني وکړئ دلته یې پوسټ کړئ!",
+    "PAGINATION_PREVIOUS": "مخکینی",
+    "PAGINATION_NEXT": "وروستی"
 }

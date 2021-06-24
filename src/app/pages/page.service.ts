@@ -33,6 +33,10 @@ export class PageService {
         return this.getGraphQueryData(graphQuery);
     }
 
+    getTotalCount(contentType, locale) {
+        return this.http.get(`/api/${contentType}/count?_locale=${locale}`);
+    }
+
     getGraphQueryData(query) {
         return this.http.get(`/graphql`, {
             params: { query }

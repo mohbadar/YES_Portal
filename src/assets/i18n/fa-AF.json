@@ -120,5 +120,7 @@
     "IDEA.NAME": "اسم شخص",
     "IDEA.SUBJECT": "موضوع ایده",
     "IDEA.ATTACHMENT": "ضمیمه",
-    "IDEA_MESSAGE": "اگر ایده ای دارید لطفا آن را در اینجا ارسال کنید!"
+    "IDEA_MESSAGE": "اگر ایده ای دارید لطفا آن را در اینجا ارسال کنید!",
+    "PAGINATION_PREVIOUS": "قبلی",
+    "PAGINATION_NEXT": "بعدی"
 }
