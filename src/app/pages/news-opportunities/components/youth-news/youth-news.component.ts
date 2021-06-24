@@ -9,11 +9,12 @@ import { PageService } from 'src/app/pages/page.service';
     styleUrls: ['./youth-news.component.css']
 })
 export class YouthNewsComponent implements OnInit {
+    componentName = "youth-news";
     limit: number = 10;
     offset: number = 1;
     total: number = 1;
     lang;
-    loading: boolean = false;
+    loading: boolean = true;
     youthNews = [];
     youthNewsArr = [];
     MAX_NEWS_TITLE_LENGTH = 40;
@@ -30,12 +31,8 @@ export class YouthNewsComponent implements OnInit {
     }
 
     getTotal() {
-        this.loading = true;
-
         this.pageService.getTotalCount('youth-news', this.lang).subscribe((res: any) => {
-            this.loading = false;
             this.total = res;
-            console.log("🚀 ~ file: youth-news.component.ts ~ line 45 ~ YouthNewsComponent ~ this.pageService.getData ~ this.total", this.total)
             this.getAllYouthNews(this.offset);
         }, err => {
             this.loading = false;
@@ -45,7 +42,6 @@ export class YouthNewsComponent implements OnInit {
     }
 
     getAllYouthNews(offset: number) {
-        this.loading = true;
         this.offset = offset;
         let start = (this.offset - 1) * this.limit;
         const graphqlQuery = `

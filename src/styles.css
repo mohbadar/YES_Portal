@@ -20,12 +20,11 @@
 /*--------------------------------*/
 /*           1.Default
 /*--------------------------------*/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800|Poppins:100,200,300,400,400i,500,600,700,800,900');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800|Poppins:100,200,300,400,400i,500,600,700,800,900");
 
 html {
   scroll-behavior: smooth;
 }
-
 
 @font-face {
   font-family: "Bahij Halvetica";
@@ -74,7 +73,7 @@ html {
 }
 
 a:focus {
-  outline: 0 solid
+  outline: 0 solid;
 }
 
 img {
@@ -83,7 +82,7 @@ img {
 }
 
 .fix {
-  overflow: hidden
+  overflow: hidden;
 }
 
 h1,
@@ -111,10 +110,11 @@ h6 span {
 html,
 body {
   height: 100%;
-  font-family: 'Open Sans', "Bahij Halvetica", "Segoe UI", Arial, sans-serif;
+  font-family: "Open Sans", "Bahij Halvetica", "Segoe UI", Arial, sans-serif;
 }
 
-body {}
+body {
+}
 
 a {
   -moz-transition: 0.3s;
@@ -127,12 +127,12 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #4484CE;
+  color: #4484ce;
 }
 
 a.yellow:hover {
   text-decoration: none;
-  color: #4484CE;
+  color: #4484ce;
 }
 
 /* Remove Chrome Input Field's Unwanted Yellow Background Color */
@@ -141,7 +141,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
-
 
 .btn-red {
   background: #f33f4c;
@@ -213,10 +212,9 @@ input:-webkit-autofill:focus {
   margin-bottom: 35px;
 }
 
-
 .section-title hr {
   max-width: 50px;
-  border-color: #4484CE;
+  border-color: #4484ce;
   border-width: 3px;
 }
 
@@ -230,15 +228,15 @@ input:-webkit-autofill:focus {
 
 .section-title h6 {
   font-weight: 600;
-  color: #4484CE;
+  color: #4484ce;
 }
 
-body[dir=rtl] blockquote {
+body[dir="rtl"] blockquote {
   border-right: 5px solid #2174b8;
   border-left: 0;
 }
 
-body[dir=rtl] p {
+body[dir="rtl"] p {
   line-height: 26px;
   font-size: 15px;
   font-weight: 600;
@@ -261,7 +259,6 @@ ol li {
 /*           2.Navbar
 /*--------------------------------*/
 
-
 .navbar-1 .navbar-toggler-icon,
 .fixed-top .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -276,7 +273,7 @@ ol li {
   font-size: 14px;
 }
 
-body[dir=rtl] .navbar-nav {
+body[dir="rtl"] .navbar-nav {
   margin-right: 30px;
 }
 
@@ -298,16 +295,16 @@ body[dir=rtl] .navbar-nav {
 .navbar-1 .dropdown-item:focus,
 .navbar-1 .dropdown-item:hover {
   background: #fff;
-  color: #4484CE;
+  color: #4484ce;
 }
 
-.navbar-1 ul li ul.dropdown-menu>li:hover>a {
-  color: #4484CE;
+.navbar-1 ul li ul.dropdown-menu > li:hover > a {
+  color: #4484ce;
   background: #fff;
 }
 
-.navbar-1 .collapse ul>li:hover>a {
-  color: #4484CE;
+.navbar-1 .collapse ul > li:hover > a {
+  color: #4484ce;
 }
 
 .fixed-top {
@@ -334,27 +331,22 @@ body[dir=rtl] .navbar-nav {
 .fixed-top .dropdown-item:hover,
 .navbar-1 .dropdown-item:hover {
   background: #fff;
-  color: #4484CE;
+  color: #4484ce;
 }
 
-.fixed-top ul li ul.dropdown-menu>li:hover>a {
-  color: #4484CE;
+.fixed-top ul li ul.dropdown-menu > li:hover > a {
+  color: #4484ce;
   background: #fff;
 }
 
-.fixed-top .collapse ul>li:hover>a {
-  color: #4484CE;
+.fixed-top .collapse ul > li:hover > a {
+  color: #4484ce;
 }
 
-.navbar-nav li:hover>.dropdown-menu {
+.navbar-nav li:hover > .dropdown-menu {
   display: block;
   border-radius: 0;
 }
-
-
-
-
-
 
 /*Search */
 .fixed-top ul li a i.icofont-search {
@@ -369,7 +361,7 @@ body[dir=rtl] .navbar-nav {
   display: none;
 }
 
-.chat_box .chat_message_wrapper ul.chat_message>li+li {
+.chat_box .chat_message_wrapper ul.chat_message > li + li {
   margin-top: 4px;
 }
 
@@ -447,11 +439,11 @@ button.close {
   background-size: cover;
 }
 
-body[dir=ltr] .marginLTR {
+body[dir="ltr"] .marginLTR {
   margin-right: auto;
 }
 
-body[dir=ltr].navbar-collapse {
+body[dir="ltr"].navbar-collapse {
   display: flex;
 }
 
@@ -484,14 +476,12 @@ body[dir=ltr].navbar-collapse {
 }
 
 .header-inner {
-  /* background-image: url(assets/images/afg-cover-3.jpg); */
-  background-image: linear-gradient(#2E2E2E, rgba(35, 34, 39, 0) 100%), url("assets/images/youthCover.jpg");
-  /* background-image: url("assets/images/afg-cover-3.jpg"), linear-gradient(#28313b, #485461); */
-  /* background: linear-gradient(to bottom right, #2174b8, #1a7fa3); */
-  min-height: 350px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: linear-gradient(#2e2e2e, rgba(35, 34, 39, 0) 100%),
+    url("assets/images/youthCover.jpg");
+  min-height: 350px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
 }
 
 .header-inner-text {
@@ -522,7 +512,7 @@ body[dir=ltr].navbar-collapse {
 }
 
 .breadcrumb-link:hover {
-  color: #ff9b0c
+  color: #ff9b0c;
 }
 
 /*--------------------------------*/
@@ -531,7 +521,6 @@ body[dir=ltr].navbar-collapse {
 .features {
   margin-top: -60px;
 }
-
 
 .np-news-card {
   position: relative;
@@ -582,19 +571,26 @@ body[dir=ltr].navbar-collapse {
   overflow: hidden;
 }
 
-body[dir=rtl] .bg-gradient {
-  background: linear-gradient(to left, #3ba6de, rgba(39, 35, 97, 0) 100%) !important;
+body[dir="rtl"] .bg-gradient {
+  background: linear-gradient(
+    to left,
+    #3ba6de,
+    rgba(39, 35, 97, 0) 100%
+  ) !important;
 }
 
 .bg-gradient {
-  background: linear-gradient(to right, #3ba6de, rgba(39, 35, 97, 0) 100%) !important;
+  background: linear-gradient(
+    to right,
+    #3ba6de,
+    rgba(39, 35, 97, 0) 100%
+  ) !important;
 }
-
-
 
 .features-cont {
   background: #fff;
-  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1),
+    0px 5px 15px rgba(0, 0, 0, 0.07);
   padding: 10px;
   /* padding: 15px; */
 }
@@ -665,7 +661,7 @@ body[dir=rtl] .bg-gradient {
 }
 
 .caption-cont a {
-  display: inline-block
+  display: inline-block;
 }
 
 /*--------------------------------*/
@@ -684,7 +680,8 @@ body[dir=rtl] .bg-gradient {
 
 .service {
   background: #fff;
-  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1),
+    0px 5px 15px rgba(0, 0, 0, 0.07);
   padding: 30px;
   margin: 15px auto;
 }
@@ -733,7 +730,8 @@ body[dir=rtl] .bg-gradient {
 
 .member {
   background: #fff;
-  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1),
+    0px 5px 15px rgba(0, 0, 0, 0.07);
   margin: 15px auto;
 }
 
@@ -816,7 +814,6 @@ body[dir=rtl] .bg-gradient {
   margin-top: 40px;
 }
 
-
 .portfolioFilter {
   margin: 0px 0px 10px 0px;
   overflow: hidden;
@@ -878,8 +875,6 @@ body[dir=rtl] .bg-gradient {
   transition-property: transform, opacity;
 }
 
-
-
 /*--------------------------------*/
 /*           10.Blog
 /*--------------------------------*/
@@ -911,7 +906,6 @@ body[dir=rtl] .bg-gradient {
   max-height: 230px;
   overflow: hidden; */
 }
-
 
 .blog-title h3 {
   color: #333;
@@ -1030,9 +1024,8 @@ body[dir=rtl] .bg-gradient {
   font-weight: 400;
   position: relative;
   text-transform: capitalize;
-  transition: .3s;
+  transition: 0.3s;
 }
-
 
 .sidebar .widget ul li a:hover {
   color: #007bff;
@@ -1044,7 +1037,6 @@ body[dir=rtl] .bg-gradient {
   transform: scaleX(1);
   transform-origin: left;
 }
-
 
 .sidebar .widget .tagcloud {
   padding: 15px 0 0 0;
@@ -1066,7 +1058,6 @@ body[dir=rtl] .bg-gradient {
   background: #ff9b0c;
   color: #fff;
 }
-
 
 .blog-title h2 {
   font-size: 28px;
@@ -1092,7 +1083,7 @@ body[dir=rtl] .bg-gradient {
   margin-bottom: 17px;
 }
 
-.blog-post-tag>a {
+.blog-post-tag > a {
   background: #f7f7f7 none repeat scroll 0 0;
   color: #6b7b98;
   display: inline-block;
@@ -1104,7 +1095,7 @@ body[dir=rtl] .bg-gradient {
   margin-right: 5px;
 }
 
-.blog-post-tag>a:hover {
+.blog-post-tag > a:hover {
   background: #ff9b0c;
   color: #fff;
 }
@@ -1127,9 +1118,6 @@ blockquote {
   line-height: 26px;
   padding: 30px;
 }
-
-
-
 
 .post-comments {
   border-bottom: 1px solid #eaedff;
@@ -1210,7 +1198,7 @@ blockquote {
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  transition: .3s;
+  transition: 0.3s;
   line-height: 1;
   margin-top: 4px;
   position: absolute;
@@ -1281,7 +1269,6 @@ blockquote {
   font-size: 14px;
 }
 
-
 /*--------------------------------*/
 /*           11.Caption 2
 /*--------------------------------*/
@@ -1306,9 +1293,6 @@ blockquote {
   font-weight: 600;
 }
 
-
-
-
 /*--------------------------------*/
 /*           12.Clients
 /*--------------------------------*/
@@ -1319,7 +1303,8 @@ blockquote {
 
 .clients-cont {
   background: #fff;
-  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1),
+    0px 5px 15px rgba(0, 0, 0, 0.07);
   padding: 0px;
 }
 
@@ -1339,7 +1324,7 @@ blockquote {
 
 .img-footer {
   max-width: 100%;
-  height: auto
+  height: auto;
 }
 
 .footer h5 {
@@ -1364,7 +1349,7 @@ blockquote {
   color: #fff;
 }
 
-body[dir=rtl] .footer p {
+body[dir="rtl"] .footer p {
   color: #fff;
   font-size: 24px;
 }

@@ -8,32 +8,32 @@ import { HomeComponent } from './components/home/home.component';
 import { TemplateComponent } from './template.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  {
-		path: '',
-		component: TemplateComponent,
-		children: [
-			{path: '', component: HomeComponent},
-			{path: 'blogleft', component: BlogleftComponent},
-			{path: 'blogright', component: BlogrightComponent},
-			{path: 'blogdetails', component: BlogdetailsComponent},
-		]
-	},
+    {
+        path: '',
+        component: TemplateComponent,
+        children: [
+            { path: '', component: HomeComponent },
+            { path: 'blogleft', component: BlogleftComponent },
+            { path: 'blogright', component: BlogrightComponent },
+            { path: 'blogdetails', component: BlogdetailsComponent },
+        ]
+    },
 ];
 
 @NgModule({
-  declarations: [HomeComponent,
-    BlogleftComponent,
-    BlogrightComponent,
-    BlogdetailsComponent,
-    TemplateComponent,
-    HeaderComponent,
-    FooterComponent,],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-  ]
+    declarations: [HomeComponent,
+        BlogleftComponent,
+        BlogrightComponent,
+        BlogdetailsComponent,
+        TemplateComponent,
+        HeaderComponent,
+        FooterComponent,
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+    ]
 })
 export class TemplateModule { }

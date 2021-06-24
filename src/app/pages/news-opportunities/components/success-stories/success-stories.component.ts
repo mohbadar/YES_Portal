@@ -10,6 +10,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class SuccessStoriesComponent implements OnInit {
     lang;
+    componentName = "success-stories";
     loading: boolean = false;
     successStories: any[] = [];
     MAX_BRIEF_LENGTH = 80;
