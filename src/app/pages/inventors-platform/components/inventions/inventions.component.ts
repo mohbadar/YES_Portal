@@ -31,6 +31,7 @@ export class InventionsComponent implements OnInit {
     const graphqlQuery = `
     {
       inventions(locale: "${this.lang}") {
+        id
         title
         contents
         inventor_name
@@ -71,9 +72,9 @@ export class InventionsComponent implements OnInit {
     return true;
   }
 
-  showNewsDetails(id) {
+  redirectToInventorDetails(id) {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
-      this.router.navigate(['///invention-details/' + id])
+      this.router.navigate(['//inventors-platform/inventor-details/' + id])
 
     )
   }

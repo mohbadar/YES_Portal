@@ -5,6 +5,7 @@ import { IdeasComponent } from './components/ideas/ideas.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared.module';
 import { InventionsComponent } from './components/inventions/inventions.component';
+import { InventorDetailsComponent } from './components/inventions/inventor-details/inventor-details.component';
 
 
 const routes: Routes = [
@@ -19,13 +20,17 @@ const routes: Routes = [
       {
         path: 'inventions',
         component: InventionsComponent
+      },
+      {
+        path: 'inventor-details/:inventor_id',
+        component: InventorDetailsComponent
       }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [InventorsPlatformComponent, IdeasComponent, InventionsComponent],
+  declarations: [InventorsPlatformComponent, IdeasComponent, InventionsComponent, InventorDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
