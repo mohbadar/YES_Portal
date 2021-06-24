@@ -79,4 +79,8 @@ export class InventionsComponent implements OnInit {
     )
   }
 
+  addInventor() {
+    this.router.navigateByUrl('/inventors-platform/add-inventor');
+  }
+
 }
