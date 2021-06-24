@@ -1,0 +1,46 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'INVENTORY-DETAILS' | translate }} </h1>
+                    <!-- <h5 class="text-center"><a class="breadcrumb-link" href="#">Home</a> > Blog Posts</h5> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section-padding-light" style="padding-top: 15px!important;">
+
+    <div class="container">
+        <div class="row" *ngIf="inventorDetails; else noData">
+            <div class="col-md-12 col-12 mt-4 pt-2">
+                <div class="team-list position-relative overflow-hidden">
+
+                    <div class="content float-right p-4">
+                        <h5 class="title mb-0 h2">{{ inventorDetails?.title }}</h5>
+                        <p class="text-muted mt-3" [innerHTML]="inventorDetails?.contents | parsehtml | safe">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4" *ngFor="let photo of inventorDetails.photos">
+                    <img [src]="photo.url" alt="">
+                </div>
+
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <ng-template #noData>
+            <div class="row">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>
