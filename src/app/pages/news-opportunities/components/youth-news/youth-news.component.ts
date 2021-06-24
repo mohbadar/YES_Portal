@@ -9,7 +9,7 @@ import { PageService } from 'src/app/pages/page.service';
     styleUrls: ['./youth-news.component.css']
 })
 export class YouthNewsComponent implements OnInit {
-    limit: number = 2;
+    limit: number = 10;
     offset: number = 1;
     total: number = 1;
     lang;
