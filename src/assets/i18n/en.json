@@ -122,5 +122,7 @@
     "IDEA.SUBJECT": "Idea Subject",
     "IDEA.ATTACHMENT": "Attachment",
     "IDEA_MESSAGE": "If you have any idea please submit it here!",
-    "ADD_INVENSION": "Add Your Invention"
+    "ADD_INVENSION": "Add Your Invention",
+    "PAGINATION_PREVIOUS": "Previous",
+    "PAGINATION_NEXT": "Next"
 }

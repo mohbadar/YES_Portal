@@ -121,5 +121,7 @@
     "IDEA.SUBJECT": "د مفکوره موضوع",
     "IDEA.ATTACHMENT": "ضمیمه",
     "IDEA_MESSAGE": "که تاسو کومه نظر لرئ مهرباني وکړئ دلته یې پوسټ کړئ!",
-    "ADD_INVENSION": "خپله اختراع اضافه کړئ"
+    "ADD_INVENSION": "خپله اختراع اضافه کړئ",
+    "PAGINATION_PREVIOUS": "مخکینی",
+    "PAGINATION_NEXT": "وروستی"
 }
