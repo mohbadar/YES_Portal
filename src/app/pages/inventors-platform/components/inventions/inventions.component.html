@@ -1,0 +1,47 @@
+<header id="header" class="header-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-inner-text">
+                    <h1 class="text-center">{{ 'MENU.IDEAS' | translate }} </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row m-2">
+            <button type="button" class="btn btn-outline-secondary invention-message">{{'ADD_INVENSION' | translate
+                }}</button>
+        </div>
+        <hr>
+        <div class="row" *ngIf="inventors && inventors.length; else noData">
+            <div class="col-md-4" *ngFor="let inventor of inventors">
+                <div class="card" style="width: 23rem;">
+                    <a><img [src]="inventor?.photos[0].url" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                        <div class="d-flex flex-row align-items-center">
+                            <a class="card-title h5 mt-1 mb-3 d-block text-dark">{{ inventor?.title }}</a>
+                            <p class="card-text text-muted" [innerHTML]="inventor.contents"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <ng-template #noData>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+
+    </div>
+
+</section>
