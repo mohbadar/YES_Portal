@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoverComponent } from './pages/cover/cover.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,13 +26,15 @@ export function createTranslateLoader(http: HttpClient) {
         ParseHtmlPipe,
         TranslateModule,
         ReactiveFormsModule,
-        CoverComponent
+        CoverComponent,
+        NgxGalleryModule
     ],
     imports: [
         CommonModule,
         HttpClientModule,
         TranslateModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxGalleryModule
     ]
 })
 export class SharedModule { }
