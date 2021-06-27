@@ -14,6 +14,7 @@ export class SuccessStoryDetailsComponent implements OnInit {
     loading: boolean = false;
     successStoryId;
     successStoryDetails;
+    componentName = "success_story_details";
 
     constructor(
         private route: ActivatedRoute,

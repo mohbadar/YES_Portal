@@ -9,10 +9,15 @@ import { PageService } from 'src/app/pages/page.service';
     styleUrls: ['./success-stories.component.css']
 })
 export class SuccessStoriesComponent implements OnInit {
+
+    limit: number = 2;
+    offset: number = 1;
+    total: number = 1;
     lang;
     componentName = "success-stories";
     loading: boolean = false;
-    successStories: any[] = [];
+    successStories;
+    successStroriesArr = [];
     MAX_BRIEF_LENGTH = 80;
 
 
@@ -24,28 +29,48 @@ export class SuccessStoriesComponent implements OnInit {
 
     ngOnInit(): void {
         this.lang = this.translate.currentLang;
-        this.getSuccessStories();
+        this.getTotal();
     }
 
-    getSuccessStories() {
-        this.loading = true;
+
+    getTotal() {
+        this.pageService.getTotalCount('success-stories', this.lang).subscribe((res: any) => {
+            this.total = res;
+            this.getSuccessStories(this.offset);
+        }, err => {
+            this.loading = false;
+            console.log(err);
+
+        });
+    }
+
+    getSuccessStories(offset: number) {
+        this.offset = offset;
+        let start = (this.offset - 1) * this.limit;
         const graphQuery = `{
-            successStories(locale:"${this.lang}") 
+            successStories(locale:"${this.lang}",start:${start},limit:${this.limit}) 
             { 
               id name brief description publishedAt: published_at photos{ url }
             }
           }`;
-        this.pageService.getData(graphQuery).subscribe((res: any) => {
-            this.loading = false;
-            this.successStories = res.data.successStories;
-            console.log("🚀 ~ file: success-stories.component.ts ~ line 40 ~ SuccessStoriesComponent ~ this.pageService.getData ~ successStories", this.successStories)
-            for (let success of this.successStories) {
-                success.shortBrief = this.getBrief(success.brief);
-            }
 
-            this.formatDate();
-            console.log("🚀 ~ file: success-stories.component.ts ~ line 30 ~ SuccessStoriesComponent ~ this.newsOpportunitiesService.getSuccessStories ~ res.data", res.data)
-        });
+        if ((this.successStroriesArr.length < 1) || (this.successStroriesArr.filter(d => d.page === this.offset)).length < 1) {
+            this.pageService.getData(graphQuery).subscribe((res: any) => {
+                this.loading = false;
+                const newData = {
+                    page: offset,
+                    data: res.data.successStories
+                };
+                this.successStroriesArr.push(newData);
+                this.successStories = newData.data;
+            }, err => {
+                this.loading = false;
+                console.log(err);
+
+            });
+        } else {
+            this.successStories = (this.successStroriesArr.filter(d => d.page === this.offset))[0].data;
+        }
     }
 
     getBrief(data) {
@@ -54,16 +79,12 @@ export class SuccessStoriesComponent implements OnInit {
         }
     }
 
-    formatDate() {
-        this.successStories.forEach(element => {
-            const date = new Date(element.publishedAt);
-            const year = date.getFullYear();
-            const month = date.toLocaleString('default', { month: 'long' });
-            const day = date.getDay();
-            element.createdMonth = month;
-            element.createdYear = year;
-            element.createdDay = day;
-        });
+
+
+
+    pageChanged(page: number) {
+        this.offset = page;
+        this.getSuccessStories(page);
     }
 
     imageError(el) {

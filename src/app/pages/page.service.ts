@@ -24,7 +24,7 @@ export class PageService {
         return this.http.post(`/api//ideas`, idea);
     }
     submitInventorForm(idea) {
-        return this.http.post(`/api///inventions`, idea);
+        return this.http.post(`/api//inventions`, idea);
     }
 
     getMenuList(graphQuery) {

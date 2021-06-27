@@ -14,6 +14,7 @@ export class ELearningComponent implements OnInit {
   loading: boolean = false;
   videosTypes;
   videos;
+  componentName = "motivational_videos";
 
   constructor(
     private translate: TranslateService,

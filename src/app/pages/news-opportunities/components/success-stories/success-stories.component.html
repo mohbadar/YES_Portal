@@ -3,17 +3,27 @@
 
 <section class="section-padding-light">
     <div class="container">
-        <div class="row" *ngIf="successStories; else noData">
-            <div class="col-md-4" *ngFor="let ss of successStories">
-                <div class="member">
-                    <img [src]="ss.photos[0].url" (error)="imageError($event.target)" class="img-team">
-                    <div class="member-text">
-                        <h5 (click)="redirectToStoryDetails(ss.id)">{{ss?.name}}</h5>
-                        <p> {{ ss?.shortBrief }} </p>
+        <div class="mt-4" *ngIf="successStories; else noData">
+            <div class="row">
+                <div class="col-md-4"
+                    *ngFor="let ss of successStories | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
+                    <div class="member">
+                        <img [src]="ss.photos[0].url" (error)="imageError($event.target)" class="img-team">
+                        <div class="member-text">
+                            <h5 (click)="redirectToStoryDetails(ss.id)">{{ss?.name}}</h5>
+                            <p> {{ ss?.shortBrief }} </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row justify-content-center pt-5">
+                <pagination-controls (pageChange)="pageChanged($event)" autoHide="true" responsive="true" maxSize="9"
+                    previousLabel="{{ 'PAGINATION_PREVIOUS' | translate }}"
+                    nextLabel="{{ 'PAGINATION_NEXT' | translate }}">
+                </pagination-controls>
+            </div>
         </div>
+
         <ng-template #noData>
             <div class=" row">
                 <div class="jumbotron no-data">

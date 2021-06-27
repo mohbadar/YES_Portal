@@ -14,6 +14,7 @@ export class InventionsComponent implements OnInit {
   loading: boolean = false;
   inventors;
   MAX_INVENTION_LENGTH = 40;
+  componentName = "inventions";
 
   constructor(
     private router: Router,

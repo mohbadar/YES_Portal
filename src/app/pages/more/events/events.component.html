@@ -1,52 +1,41 @@
-<header id="header" class="header-inner">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="header-inner-text">
-                    <h1 class="text-center">{{ "MENU.EVENTS" | translate }}</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
+<app-cover [componentName]="componentName"></app-cover>
 
 
 <section class="section-padding">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card card-margin">
-                    <div class="card-header no-border">
-                        <h5 class="card-title">MOM</h5>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="widget-49">
-                            <div class="widget-49-title-wrapper">
-                                <div class="widget-49-date-primary">
-                                    <span class="widget-49-date-day">09</span>
-                                    <span class="widget-49-date-month">apr</span>
-                                </div>
-                                <div class="widget-49-meeting-info">
-                                    <span class="widget-49-pro-title">PRO-08235 DeskOpe. Website</span>
-                                    <span class="widget-49-meeting-time">12:00 to 13.30 Hrs</span>
-                                </div>
-                            </div>
-                            <ol class="widget-49-meeting-points">
-                                <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
-                                <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
-                                <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span>
-                                </li>
-                            </ol>
-                            <div class="widget-49-meeting-action">
-                                <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
-                            </div>
+        <div class="row" *ngIf="events && events.length; else nodata">
+            <div class="col-md-12" *ngFor="let event of events">
+                <div class="bg-light px-4 py-3 my-lg-3 my-md-2 my-sm-2">
+                    <div class="d-flex justify-content-between align-items-center mx-auto">
+                        <div>
+                            <h2 class="font-weight-bold" style="margin-top: -30px;">{{ event?.name }}</h2>
                         </div>
+                        <p class="text-center">
+                            <i class="icofont-location-pin" style="font-size: 22px; color: #9b5de5;"></i>
+                            <small class="d-block font-weight-normal">{{ event?.location }}</small>
+                        </p>
+                    </div>
+                    <div class="my-2">
+                        <p [innerHTML]="event?.description | parsehtml | safe" class="text-secondary"
+                            style="line-height: 2;"></p>
+                        <div class="d-flex align-items-center">
+                            <span class="d-inline-block rounded-circle"
+                                style="width: 15px;height: 15px;background-color: #9b5de5"> </span>
+                            <small class="ml-1 text-secondary mr-2">{{ event?.start_date }}</small>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-
         </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
     </div>
 </section>

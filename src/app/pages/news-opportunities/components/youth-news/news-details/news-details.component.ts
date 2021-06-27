@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { PageService } from 'src/app/pages/page.service';
@@ -11,10 +12,13 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class NewsDetailsComponent implements OnInit {
 
+  componentName = "news-details";
   lang;
   newsId
   newsDetails;
   loading: boolean = false;
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
 
   constructor(private pageService: PageService,
     private route: ActivatedRoute,
@@ -26,6 +30,11 @@ export class NewsDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.galleryOptions = [
+      { image: false, height: "40vh", width: "100%", thumbnailsMoveSize: 4, previewAutoPlay: true, previewAutoPlayPauseOnHover: true, previewCloseOnClick: true, previewCloseOnEsc: true },
+      { breakpoint: 500, thumbnailsColumns: 2, imageAutoPlay: true, }
+    ];
+
     this.lang = this.translate.currentLang;
     console.log('Current Lang: ', this.lang);
     this.getNewsDetails();
@@ -62,6 +71,14 @@ export class NewsDetailsComponent implements OnInit {
       this.newsDetails.createdMonth = month;
       this.newsDetails.createdYear = year;
       this.newsDetails.createdDay = day;
+
+      this.galleryImages = res.data.youthNew.photos.map(item => {
+        let imageSize: any = {};
+        imageSize.small = item.url;
+        imageSize.medium = item.url;
+        imageSize.big = item.url;
+        return imageSize;
+      });
     }, err => {
       this.loading = false;
       console.log(err);

@@ -13,6 +13,7 @@ import { YhcService } from '../../yhc.service';
 export class YhcMembershipComponent implements OnInit {
 
   yhcForm: FormGroup;
+  componentName = "yhc_membership"
 
   constructor(
     private fb: FormBuilder,

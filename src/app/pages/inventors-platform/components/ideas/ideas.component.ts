@@ -13,6 +13,7 @@ export class IdeasComponent implements OnInit {
 
   ideaForm: FormGroup;
   attachment: File;
+  componentName = "ideas";
 
   constructor(
     private fb: FormBuilder,

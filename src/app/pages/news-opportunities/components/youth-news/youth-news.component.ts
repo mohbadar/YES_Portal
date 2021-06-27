@@ -10,7 +10,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class YouthNewsComponent implements OnInit {
     componentName = "youth-news";
-    limit: number = 10;
+    limit: number = 2;
     offset: number = 1;
     total: number = 1;
     lang;
