@@ -14,6 +14,7 @@ export class InventorDetailsComponent implements OnInit {
   loading: boolean = false;
   inventorId;
   inventorDetails;
+  componentName = "inventor_details";
 
   constructor(
     private route: ActivatedRoute,

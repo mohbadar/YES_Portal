@@ -10,6 +10,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class ElectedComponent implements OnInit {
 
+  componentName = "yhc_elected"
   lang;
   loading: boolean = false;
   electedProfiles: any[] = [];

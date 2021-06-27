@@ -79,6 +79,7 @@ export class HomeComponent implements OnInit {
             rtl: this.lang != 'en',
             navSpeed: 700,
             navText: ['', ''],
+            dots: false,
             responsive: {
                 0: {
                     items: 1
@@ -93,7 +94,7 @@ export class HomeComponent implements OnInit {
                     items: 4
                 }
             },
-            nav: true
+            nav: false
         }
     }
 

@@ -12,6 +12,7 @@ import { PageService } from '../../page.service';
 export class ComplainsComponent implements OnInit {
 
   complainForm: FormGroup;
+  componentName = "complain_form";
 
   constructor(
     private fb: FormBuilder,

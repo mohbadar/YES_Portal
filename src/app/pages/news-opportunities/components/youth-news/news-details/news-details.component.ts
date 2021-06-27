@@ -11,6 +11,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class NewsDetailsComponent implements OnInit {
 
+  componentName = "news-details";
   lang;
   newsId
   newsDetails;

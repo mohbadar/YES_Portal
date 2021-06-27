@@ -13,6 +13,7 @@ export class EmploymentComponent implements OnInit {
 
     employmentForm: FormGroup;
     cv: File;
+    componentName = "employment"
 
     constructor(
         private fb: FormBuilder,

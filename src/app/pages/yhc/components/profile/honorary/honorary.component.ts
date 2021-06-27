@@ -10,8 +10,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class HonoraryComponent implements OnInit {
 
-
-
+  componentName = "yhc_honorary"
   lang;
   loading: boolean = false;
   honoraryProfiles: any[] = [];

@@ -47,7 +47,7 @@ export class CoverComponent implements OnInit {
 
     imageError(el) {
         el.onerror = '';
-        el.src = '../../../assets/images/youthCover.jpg';
+        el.src = '../../../assets/images/post-1.jpg';
         return true;
     }
 

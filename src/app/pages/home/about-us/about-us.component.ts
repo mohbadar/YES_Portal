@@ -13,6 +13,7 @@ export class AboutUsComponent implements OnInit {
   lang;
   loading: boolean = false;
   aboutUs;
+  componentName = "about_us";
 
 
   constructor(

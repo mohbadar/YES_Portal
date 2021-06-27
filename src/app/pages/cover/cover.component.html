@@ -1,5 +1,6 @@
 <header id="header" class="header-inner"
-    [ngStyle]="{'background': 'linear-gradient(#2e2e2e, rgba(35, 34, 39, 0) 100%), url(' + cover + ')'}">
+    [ngStyle]="{'background': 'linear-gradient(#2e2e2e, rgba(35, 34, 39, 0) 100%), url(' + cover + ')'}"
+    (error)="imageError($event.target)">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

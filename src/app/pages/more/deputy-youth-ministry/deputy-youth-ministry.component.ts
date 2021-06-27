@@ -10,7 +10,7 @@ import { PageService } from '../../page.service';
 })
 export class DeputyYouthMinistryComponent implements OnInit {
 
-
+  componentName = "deputy_ministry_of_youth_affairs";
   lang;
   loading: boolean = false;
   youthActivites;

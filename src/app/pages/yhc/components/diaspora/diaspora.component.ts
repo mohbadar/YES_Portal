@@ -12,6 +12,7 @@ export class DiasporaComponent implements OnInit {
   lang;
   loading: boolean = false;
   diaspora;
+  componentName = "diaspora"
 
   constructor(
     private translate: TranslateService,

@@ -10,6 +10,7 @@ import { PageService } from '../../page.service';
 })
 export class BlogsComponent implements OnInit {
 
+  componentName = "blogs";
   lang;
   loading: boolean = false;
   blogs;

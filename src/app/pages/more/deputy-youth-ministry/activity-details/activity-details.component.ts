@@ -11,6 +11,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class ActivityDetailsComponent implements OnInit {
 
+  componentName = "deputy_ministry_of_youth_affairs";
   lang;
   activityId
   activityDetails;

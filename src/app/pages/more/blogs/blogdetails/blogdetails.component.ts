@@ -11,6 +11,7 @@ import { PageService } from '../../../page.service';
 })
 export class BlogdetailsComponent implements OnInit {
 
+  componentName = "blog-details";
   lang;
   blogId
   blogDetails;

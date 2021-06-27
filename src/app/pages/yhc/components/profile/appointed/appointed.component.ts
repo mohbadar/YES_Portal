@@ -10,7 +10,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class AppointedComponent implements OnInit {
 
-
+  componentName = "yhc_appointed"
   lang;
   loading: boolean = false;
   appointedProfiles: any[] = [];

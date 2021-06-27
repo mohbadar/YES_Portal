@@ -12,6 +12,7 @@ import { PageService } from '../../page.service';
 export class ContactUsComponent implements OnInit {
 
   getInTouchForm: FormGroup;
+  componentName = "get_in_touch";
 
   constructor(
     private fb: FormBuilder,

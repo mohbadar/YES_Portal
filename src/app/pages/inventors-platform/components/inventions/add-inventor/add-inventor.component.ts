@@ -13,6 +13,7 @@ export class AddInventorComponent implements OnInit {
 
   inventorForm: FormGroup;
   photos: File;
+  componentName = "add_form_invention";
 
   constructor(
     private fb: FormBuilder,
