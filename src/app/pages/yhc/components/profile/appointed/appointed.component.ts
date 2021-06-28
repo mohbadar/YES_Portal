@@ -40,6 +40,7 @@ export class AppointedComponent implements OnInit {
     {
       yhcProfileTypes(where: {slug: "${this.appointed}"}) {
         yhc_profiles(where: {locale: "${this.lang}"}) {
+          id
           name
           brief
           photo {
@@ -73,6 +74,10 @@ export class AppointedComponent implements OnInit {
     el.onerror = '';
     el.src = '../../../../../assets/images/post-1.jpg';
     return true;
+  }
+
+  redirectToProfileDetails(id) {
+    this.router.navigate(['/yhc/profile/profile-details/appointed', id])
   }
 
 }

@@ -40,6 +40,7 @@ export class ElectedComponent implements OnInit {
     {
       yhcProfileTypes(where: {slug: "${this.elected}"}) {
         yhc_profiles(where: {locale: "${this.lang}"}) {
+          id
           name
           brief
           photo {
@@ -77,9 +78,8 @@ export class ElectedComponent implements OnInit {
     return true;
   }
 
-  // redirectToStoryDetails(id) {
-  //     console.log("🚀 ~ file: success-stories.component.ts ~ line 56 ~ SuccessStoriesComponent ~ redirectToStoryDetails ~ id", id)
-  //     this.router.navigate(['//', id])
-  // }
+  redirectToProfileDetails(id) {
+    this.router.navigate(['/yhc/profile/profile-details/elected', id])
+  }
 
 }

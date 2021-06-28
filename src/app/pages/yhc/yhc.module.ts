@@ -9,6 +9,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ElectedComponent } from './components/profile/elected/elected.component';
 import { AppointedComponent } from './components/profile/appointed/appointed.component';
 import { HonoraryComponent } from './components/profile/honorary/honorary.component';
+import { ProfileDetailsComponent } from './components/profile/profile-details/profile-details.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,14 @@ const routes: Routes = [
           {
             path: 'honorary',
             component: HonoraryComponent
+          },
+          {
+            path: 'profile-details/:id',
+            component: ProfileDetailsComponent
+          },
+          {
+            path: 'profile-details/:slug/:id',
+            component: ProfileDetailsComponent
           }
         ]
       }
@@ -49,7 +58,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [YhcComponent, DiasporaComponent, YhcMembershipComponent, ProfileComponent, ElectedComponent, AppointedComponent, HonoraryComponent],
+  declarations: [YhcComponent, DiasporaComponent, YhcMembershipComponent, ProfileComponent, ElectedComponent, AppointedComponent, HonoraryComponent, ProfileDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -1,0 +1,29 @@
+<app-cover [componentName]="componentName"></app-cover>
+
+<section class="section-padding-light" style="padding-top: 15px!important;">
+
+    <div class="container">
+        <div class="row" *ngIf="profileDetails; else noData">
+            <div class="col-md-12 col-12 mt-4 pt-2">
+                <div class="team-list position-relative overflow-hidden">
+                    <img [src]="profileDetails?.photo?.url" class="img-fluid float-left" alt="">
+                    <div class="content float-right p-4">
+                        <h5 class="title mb-0 h2">{{ profileDetails?.name }}</h5>
+                        <p class="text-muted mt-3" [innerHTML]="profileDetails?.description | parsehtml | safe">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <ng-template #noData>
+            <div class="row">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>
