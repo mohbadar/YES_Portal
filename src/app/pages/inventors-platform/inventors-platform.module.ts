@@ -7,6 +7,10 @@ import { SharedModule } from 'src/app/shared.module';
 import { InventionsComponent } from './components/inventions/inventions.component';
 import { InventorDetailsComponent } from './components/inventions/inventor-details/inventor-details.component';
 import { AddInventorComponent } from './components/inventions/add-inventor/add-inventor.component';
+import { PerilesionalExpertiseComponent } from './components/perilesional-expertise/perilesional-expertise.component';
+import { ResearchComponent } from './components/research/research.component';
+import { AddExpertiseComponent } from './components/perilesional-expertise/add-expertise/add-expertise.component';
+import { ExpertiseDetailsComponent } from './components/perilesional-expertise/expertise-details/expertise-details.component';
 
 
 const routes: Routes = [
@@ -29,13 +33,25 @@ const routes: Routes = [
       {
         path: 'add-inventor',
         component: AddInventorComponent
+      },
+      {
+        path: 'perilesional-expertise',
+        component: PerilesionalExpertiseComponent
+      },
+      {
+        path: 'add-expertise',
+        component: AddExpertiseComponent
+      },
+      {
+        path: 'expertise-details/:expertise_id',
+        component: ExpertiseDetailsComponent
       }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [InventorsPlatformComponent, IdeasComponent, InventionsComponent, InventorDetailsComponent, AddInventorComponent],
+  declarations: [InventorsPlatformComponent, IdeasComponent, InventionsComponent, InventorDetailsComponent, AddInventorComponent, PerilesionalExpertiseComponent, ResearchComponent, AddExpertiseComponent, ExpertiseDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -1,0 +1,52 @@
+<app-cover [componentName]="componentName"></app-cover>
+
+<section class="section-padding">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <blockquote class="blockquote">
+                    <h5 class="alert-heading">{{ 'EXPERTISE_MESSAGE' | translate }}</h5>
+                    <p></p>
+                </blockquote>
+            </div>
+            <div class="col-md-12 mt-4" id="mform">
+                <form [formGroup]="expertiseForm" (ngSubmit)="submitExpertiseForm()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">{{ 'NAME' | translate }}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="title">{{ 'TITLE' | translate }}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="title">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="contents">{{ 'CONTENTS' | translate }}<span
+                                    class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="contents">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">{{ 'MOBILE_NUMBER' | translate }}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="mobileNumber">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="">{{ 'EMAIL' | translate }}<span class="required-field">*</span></label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                        <div class="form-group col-md-">
+                            <label for="">{{ 'ATTACHMENT' | translate }}</label>
+                            <input type="file" class="form-control-file" (change)="uploadAttachement($event)"
+                                multiple="">
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">{{ 'SUBMIT' | translate }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

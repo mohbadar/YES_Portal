@@ -38,6 +38,7 @@
     "MENU.INVENTIONS": "Inventions",
     "INVENTIONS": "Inventions",
     "MENU.PERILESIONAL_EXPERTISE": "Perilesional Expertise",
+    "PERILESIONAL_EXPERTISES": "Perilesional Expertise",
     "MENU.RESEARCH": "Research",
     "MENU.DISCUSSION_BOARD": "Discussion Board",
     "MENU.IDEAS": "Ideas",
@@ -145,5 +146,8 @@
     "TITLE": "Title",
     "CONTENTS":"Brief Information",
     "ATTACHMENT": "Attachment",
-    "INVENTION_MESSAGE": "invention message"
+    "INVENTION_MESSAGE": "invention message",
+    "ADD_EXPERT": "Add new Expertise",
+    "EXPERTISE_FORM": "Expertise Form",
+    "EXPERTISE_DETAILS": "Perilesional Expertise Information"
 }
