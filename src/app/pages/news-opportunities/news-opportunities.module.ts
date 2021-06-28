@@ -11,7 +11,6 @@ import { NewsDetailsComponent } from './components/youth-news/news-details/news-
 import { SuccessStoryDetailsComponent } from './components/success-stories/success-story-details/success-story-details.component';
 import { YouthNewsComponent } from './components/youth-news/youth-news.component';
 import { EmploymentComponent } from './components/employment/employment.component';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 const routes: Routes = [
     {
@@ -50,7 +49,6 @@ const routes: Routes = [
         ReactiveFormsModule,
         DpDatePickerModule,
         CommonModule,
-        NgxPaginationModule,
         SharedModule
     ]
 })

@@ -8,21 +8,27 @@
                 }}</button>
         </div>
         <hr>
-        <div class="row" *ngIf="inventors && inventors.length; else noData">
-            <div class="col-md-4" *ngFor="let inventor of inventors">
-                <div class="card" style="width: 23rem;">
-                    <a><img [src]="inventor?.photos[0]?.url" (error)="imageError($event.target)" class="card-img-top"
-                            alt="..."></a>
-                    <div class="card-body">
-                        <div class="d-flex flex-row align-items-center">
-                            <h3 class="card-title h5 mt-1 mb-3 d-block"
-                                (click)="redirectToInventorDetails(inventor.id)">{{ inventor?.title }}</h3>
+        <div class="mt-4" *ngIf="inventors && inventors.length; else noData">
+            <div class="row">
+                <div class="col-md-4"
+                    *ngFor="let inventor of inventors  | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
+                    <div class="card" style="width: 23rem;">
+                        <a><img [src]="inventor?.photos[0]?.url" (error)="imageError($event.target)"
+                                class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <div class="d-flex flex-row align-items-center">
+                                <h3 class="card-title h5 mt-1 mb-3 d-block"
+                                    (click)="redirectToInventorDetails(inventor.id)">{{ inventor?.title }}</h3>
+                            </div>
                         </div>
-                        <p class="card-text text-muted" [innerHTML]="inventor?.contents"></p>
                     </div>
                 </div>
-
-
+            </div>
+            <div class="row justify-content-center pt-5">
+                <pagination-controls (pageChange)="pageChanged($event)" autoHide="true" responsive="true" maxSize="9"
+                    previousLabel="{{ 'PAGINATION_PREVIOUS' | translate }}"
+                    nextLabel="{{ 'PAGINATION_NEXT' | translate }}">
+                </pagination-controls>
             </div>
         </div>
         <ng-template #noData>

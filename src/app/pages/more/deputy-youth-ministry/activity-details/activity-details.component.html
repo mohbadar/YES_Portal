@@ -16,19 +16,11 @@
                             <p [innerHTML]="activityDetails?.contents | parsehtml | safe"></p>
 
                         </div>
-                        <!-- <div *ngFor="let photo of photos">
-                            <div class="col-md-6 mb-2">
-                                <img [src]="photo?.url" alt="" class="image-column">
-                            </div>
-                        </div> -->
-
-
-
                     </div>
-
-
                 </div>
             </div>
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages">
+            </ngx-gallery>
         </div>
         <ng-template #noData>
             <div class="">

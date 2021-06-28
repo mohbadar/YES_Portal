@@ -13,8 +13,12 @@ export class BlogsComponent implements OnInit {
   componentName = "blogs";
   lang;
   loading: boolean = false;
-  blogs;
-  MAX_BRIEF_LENGTH = 60;
+  blogs = [];
+  blogsArr = [];
+  MAX_BRIEF_LENGTH = 40;
+  limit: number = 10;
+  offset: number = 1;
+  total: number = 1;
 
 
   constructor(
@@ -25,32 +29,50 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit(): void {
     this.lang = this.translate.currentLang;
-    this.getBlogs();
+    this.getTotal();
   }
 
 
-  getBlogs() {
-    this.loading = true;
-    const graphQuery = `
-      {
-        blogs(locale:"${this.lang}") 
-        { 
-          id title author brief content publishedAt: published_at photos{ url }
-        }
-      }
-      `;
-    this.pageService.getData(graphQuery).subscribe((res: any) => {
-      this.loading = false;
-      this.blogs = res.data.blogs;
-      for (let blog of this.blogs) {
-        blog.title = this.getBrief(blog.title);
-      }
-      this.formatDate();
+  getTotal() {
+    this.pageService.getTotalCount('blogs', this.lang).subscribe((res: any) => {
+      this.total = res;
+      this.getBlogs(this.offset);
     }, err => {
       this.loading = false;
       console.log(err);
 
     });
+  }
+
+  getBlogs(offset: number) {
+    this.offset = offset;
+    let start = (this.offset - 1) * this.limit;
+    const graphqlQuery = `
+      {
+        blogs(locale:"${this.lang}",start:${start},limit:${this.limit}, sort: "published_at:DESC") 
+        { 
+          id title author brief content publishedAt: published_at photos{ url }
+        }
+      }
+      `;
+
+    if ((this.blogsArr.length < 1) || (this.blogsArr.filter(d => d.page === this.offset)).length < 1) {
+      this.pageService.getData(graphqlQuery).subscribe((res: any) => {
+        this.loading = false;
+        const newData = {
+          page: offset,
+          data: this.formatDate(res.data.blogs)
+        };
+        this.blogsArr.push(newData);
+        this.blogs = newData.data;
+      }, err => {
+        this.loading = false;
+        console.log(err);
+
+      });
+    } else {
+      this.blogs = (this.blogsArr.filter(d => d.page === this.offset))[0].data;
+    }
   }
 
   getBrief(data) {
@@ -61,8 +83,9 @@ export class BlogsComponent implements OnInit {
     }
   }
 
-  formatDate() {
-    this.blogs.forEach(element => {
+  formatDate(data) {
+    data.forEach(element => {
+      element.title = this.getBrief(element.title)
       const date = new Date(element.publishedAt);
       const year = date.getFullYear();
       const month = date.toLocaleString('default', { month: 'long' });
@@ -71,6 +94,13 @@ export class BlogsComponent implements OnInit {
       element.createdYear = year;
       element.createdDay = day;
     });
+    return data;
+  }
+
+
+  pageChanged(page: number) {
+    this.offset = page;
+    this.getBlogs(page);
   }
 
   imageError(el) {

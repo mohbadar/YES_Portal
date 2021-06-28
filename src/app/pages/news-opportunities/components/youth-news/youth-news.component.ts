@@ -46,7 +46,7 @@ export class YouthNewsComponent implements OnInit {
         let start = (this.offset - 1) * this.limit;
         const graphqlQuery = `
         {
-            youthNews(locale: "${this.lang}",start:${start},limit:${this.limit}) {
+            youthNews(locale: "${this.lang}",start:${start},limit:${this.limit}, sort: "published_at:DESC") {
             id
             title
             contents

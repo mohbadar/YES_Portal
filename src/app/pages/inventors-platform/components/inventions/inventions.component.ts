@@ -11,10 +11,14 @@ import { PageService } from 'src/app/pages/page.service';
 export class InventionsComponent implements OnInit {
 
   lang;
-  loading: boolean = false;
-  inventors;
+  loading: boolean = true;
+  inventors = [];
+  inventorsArr = [];
   MAX_INVENTION_LENGTH = 40;
   componentName = "inventions";
+  limit: number = 1;
+  offset: number = 1;
+  total: number = 1;
 
   constructor(
     private router: Router,
@@ -24,14 +28,26 @@ export class InventionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.lang = this.translate.currentLang;
-    this.getInventors();
+    this.getTotal();
   }
 
-  getInventors() {
-    this.loading = true;
+  getTotal() {
+    this.pageService.getTotalCount('inventions', this.lang).subscribe((res: any) => {
+      this.total = res;
+      this.getInventors(this.offset);
+    }, err => {
+      this.loading = false;
+      console.log(err);
+
+    });
+  }
+
+  getInventors(offset: number) {
+    this.offset = offset;
+    let start = (this.offset - 1) * this.limit;
     const graphqlQuery = `
     {
-      inventions(locale: "${this.lang}") {
+      inventions(locale: "${this.lang}",start:${start},limit:${this.limit}, sort: "published_at:DESC") {
         id
         title
         contents
@@ -41,29 +57,29 @@ export class InventionsComponent implements OnInit {
         }
       }
     }`;
-    this.pageService.getData(graphqlQuery).subscribe((res: any) => {
-      this.loading = false;
-      console.log('inventions ', res.data);
-      this.inventors = res.data.inventions;
-      console.log("🚀 ~ file: inventions.component.ts ~ line 46 ~ InventionsComponent ~ this.pageService.getData ~ inventors", this.inventors)
-      for (let inventor of this.inventors) {
-        inventor.contents = this.getInventorContents(inventor.contents)
-        console.log("🚀 ~ file: inventions.component.ts ~ line 49 ~ InventionsComponent ~ this.pageService.getData ~ inventor", inventor)
-      }
 
-    }, err => {
-      this.loading = false;
-      console.log(err);
+    if ((this.inventorsArr.length < 1) || (this.inventorsArr.filter(d => d.page === this.offset)).length < 1) {
+      this.pageService.getData(graphqlQuery).subscribe((res: any) => {
+        this.loading = false;
+        const newData = {
+          page: offset,
+          data: res.data.inventions
+        };
+        this.inventorsArr.push(newData);
+        this.inventors = newData.data;
+      }, err => {
+        this.loading = false;
+        console.log(err);
 
-    });
+      });
+    } else {
+      this.inventors = (this.inventorsArr.filter(d => d.page === this.offset))[0].data;
+    }
   }
 
-  getInventorContents(data) {
-    if (data && data.length > this.MAX_INVENTION_LENGTH) {
-      return data.substring(0, this.MAX_INVENTION_LENGTH) + '...';
-    } else {
-      return data;
-    }
+  pageChanged(page: number) {
+    this.offset = page;
+    this.getInventors(page);
   }
 
 

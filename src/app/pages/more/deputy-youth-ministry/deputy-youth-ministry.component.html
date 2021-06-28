@@ -3,23 +3,30 @@
 
 <div class="blog-home2 py-5">
     <div class="container">
-        <div class="row mt-4" *ngIf="youthActivites && youthActivites.length; else noData">
-            <!-- Column -->
-            <div class="col-md-4 on-hover" *ngFor="let activity of youthActivites">
-                <div class="card border-0 mb-4">
-                    <a><img class="card-img-top" [src]="activity?.photos[0].url" alt=""
-                            (error)="imageError($event.target)"></a>
-                    <div
-                        class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute">
-                        {{ activity?.createdMonth}}<span class="d-block">{{ activity?.createdDay }}</span></div>
-                    <div class="blog-title mt-2">
-                        <h3 (click)="showActivityDetails(activity.id)">{{ activity?.title }}</h3>
+        <div class="mt-4" *ngIf="youthActivites && youthActivites.length; else noData">
+            <div class="row">
+                <div class="col-md-4 on-hover"
+                    *ngFor="let activity of youthActivites | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
+                    <div class="card border-0 mb-4">
+                        <a><img class="card-img-top" [src]="activity?.photos[0].url" alt=""
+                                (error)="imageError($event.target)"></a>
+                        <div
+                            class="date-pos bg-info-gradiant p-2 d-inline-block text-center rounded text-white position-absolute">
+                            {{ activity?.createdMonth}}<span class="d-block">{{ activity?.createdDay }}</span></div>
+                        <div class="blog-title mt-2">
+                            <h3 (click)="showActivityDetails(activity.id)">{{ activity?.title }}</h3>
+                        </div>
+                        <a (click)="showActivityDetails(activity.id)"
+                            class="text-decoration-none linking text-themecolor mt-2">{{
+                            'READ_MORE' | translate }}</a>
                     </div>
-                    <a (click)="showActivityDetails(activity.id)"
-                        class="text-decoration-none linking text-themecolor mt-2">{{
-                        'READ_MORE' | translate }}</a>
                 </div>
-
+            </div>
+            <div class="row justify-content-center">
+                <pagination-controls (pageChange)="pageChanged($event)" autoHide="true" responsive="true" maxSize="9"
+                    previousLabel="{{ 'PAGINATION_PREVIOUS' | translate }}"
+                    nextLabel="{{ 'PAGINATION_NEXT' | translate }}">
+                </pagination-controls>
             </div>
         </div>
         <ng-template #noData>
