@@ -48,7 +48,7 @@ export class SuccessStoriesComponent implements OnInit {
         this.offset = offset;
         let start = (this.offset - 1) * this.limit;
         const graphQuery = `{
-            successStories(locale:"${this.lang}",start:${start},limit:${this.limit}) 
+            successStories(locale:"${this.lang}",start:${start},limit:${this.limit}, sort: "published_at:DESC") 
             { 
               id name brief description publishedAt: published_at photos{ url }
             }

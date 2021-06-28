@@ -3,22 +3,21 @@
 <section class="section-padding">
     <div class="container">
         <div class="row m-2">
-            <button (click)="addInventor();" type="button"
-                class="btn btn-outline-secondary invention-message">{{'ADD_INVENSION' | translate
+            <button (click)="addExpert();" type="button" class="btn btn-outline-secondary">{{'ADD_EXPERT' | translate
                 }}</button>
         </div>
         <hr>
-        <div class="mt-4" *ngIf="inventors && inventors.length; else noData">
+        <div class="mt-4" *ngIf="perilesionalExpertises && perilesionalExpertises.length; else noData">
             <div class="row">
                 <div class="col-md-4"
-                    *ngFor="let inventor of inventors  | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
+                    *ngFor="let expert of perilesionalExpertises  | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
                     <div class="card" style="width: 23rem;">
-                        <a (click)="redirectToInventorDetails(inventor.id)"><img [src]="inventor?.photos[0]?.url"
+                        <a (click)="redirectToExpertiseDetails(expert.id)"><img [src]="expert?.photos[0]?.url"
                                 (error)="imageError($event.target)" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center">
                                 <h3 class="card-title h5 mt-1 mb-3 d-block"
-                                    (click)="redirectToInventorDetails(inventor.id)">{{ inventor?.title }}</h3>
+                                    (click)="redirectToExpertiseDetails(expert.id)">{{ expert?.title }}</h3>
                             </div>
                         </div>
                     </div>

@@ -12,9 +12,13 @@ export class DeputyYouthMinistryComponent implements OnInit {
 
   componentName = "deputy_ministry_of_youth_affairs";
   lang;
-  loading: boolean = false;
-  youthActivites;
+  loading: boolean = true;
+  youthActivites = [];
+  youthActivitesArr = [];
   MAX_ACTIVITY_TITLE_LENGTH = 40;
+  limit: number = 2;
+  offset: number = 1;
+  total: number = 1;
 
   constructor(
     private router: Router,
@@ -24,14 +28,27 @@ export class DeputyYouthMinistryComponent implements OnInit {
 
   ngOnInit(): void {
     this.lang = this.translate.currentLang;
-    this.getYouthMinistryActivities();
+    this.getTotal();
   }
 
-  getYouthMinistryActivities() {
-    this.loading = true;
+
+  getTotal() {
+    this.pageService.getTotalCount('youth-deputy-ministry-activities', this.lang).subscribe((res: any) => {
+      this.total = res;
+      this.getYouthMinistryActivities(this.offset);
+    }, err => {
+      this.loading = false;
+      console.log(err);
+
+    });
+  }
+
+  getYouthMinistryActivities(offset: number) {
+    this.offset = offset;
+    let start = (this.offset - 1) * this.limit;
     const graphqlQuery = `
     {
-      youthDeputyMinistryActivities(locale: "${this.lang}"){
+      youthDeputyMinistryActivities(locale: "${this.lang}",start:${start},limit:${this.limit}, sort: "published_at:DESC"){
         id
         title
         photos {
@@ -40,20 +57,38 @@ export class DeputyYouthMinistryComponent implements OnInit {
         publishedAt:published_at
       }
     }`;
-    this.pageService.getData(graphqlQuery).subscribe((res: any) => {
-      this.loading = false;
-      console.log('youthActivites ', res.data);
-      this.youthActivites = res.data.youthDeputyMinistryActivities;
-      console.log("🚀 ~ file: deputy-youth-ministry.component.ts ~ line 46 ~ DeputyYouthMinistryComponent ~ this.pageService.getData ~ youthActivites", this.youthActivites)
-      for (let activity of this.youthActivites) {
-        activity.title = this.getActivityTitle(activity.title)
-      }
-      this.formatDate(this.youthActivites);
-    }, err => {
-      this.loading = false;
-      console.log(err);
 
+    if ((this.youthActivitesArr.length < 1) || (this.youthActivitesArr.filter(d => d.page === this.offset)).length < 1) {
+      this.pageService.getData(graphqlQuery).subscribe((res: any) => {
+        this.loading = false;
+        const newData = {
+          page: offset,
+          data: this.formatDate(res.data.youthDeputyMinistryActivities)
+        };
+        this.youthActivitesArr.push(newData);
+        this.youthActivites = newData.data;
+      }, err => {
+        this.loading = false;
+        console.log(err);
+
+      });
+    } else {
+      this.youthActivites = (this.youthActivitesArr.filter(d => d.page === this.offset))[0].data;
+    }
+  }
+
+  formatDate(data) {
+    data.forEach(element => {
+      element.title = this.getActivityTitle(element.title)
+      const date = new Date(element.publishedAt);
+      const year = date.getFullYear();
+      const month = date.toLocaleString('default', { month: 'long' });
+      const day = date.getDate();
+      element.createdMonth = month;
+      element.createdYear = year;
+      element.createdDay = day;
     });
+    return data;
   }
 
   getActivityTitle(data) {
@@ -64,17 +99,11 @@ export class DeputyYouthMinistryComponent implements OnInit {
     }
   }
 
-  formatDate(data) {
-    data.forEach(element => {
-      const date = new Date(element.publishedAt);
-      const year = date.getFullYear();
-      const month = date.toLocaleString('default', { month: 'long' });
-      const day = date.getDate();
-      element.createdMonth = month;
-      element.createdYear = year;
-      element.createdDay = day;
-    });
+  pageChanged(page: number) {
+    this.offset = page;
+    this.getYouthMinistryActivities(page);
   }
+
 
   imageError(el) {
     el.onerror = '';

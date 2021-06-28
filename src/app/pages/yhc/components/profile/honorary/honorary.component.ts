@@ -40,6 +40,7 @@ export class HonoraryComponent implements OnInit {
     {
       yhcProfileTypes(where: {slug: "${this.honorary}"}) {
         yhc_profiles(where: {locale: "${this.lang}"}) {
+          id
           name
           brief
           photo {
@@ -73,6 +74,10 @@ export class HonoraryComponent implements OnInit {
     el.onerror = '';
     el.src = '../../../../../assets/images/post-1.jpg';
     return true;
+  }
+
+  redirectToProfileDetails(id) {
+    this.router.navigate(['/yhc/profile/profile-details/honorary', id])
   }
 
 }

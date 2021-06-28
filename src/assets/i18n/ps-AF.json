@@ -37,7 +37,9 @@
     "MENU.INVENTIONS": "اختراعات",
     "INVENTIONS": "اختراعات",
     "MENU.PERILESIONAL_EXPERTISE": "حرفه‌ای تخصصونه",
+    "PERILESIONAL_EXPERTISES": "حرفه‌ای تخصصونه",
     "MENU.RESEARCH": "څېړنه",
+    "RESEARCH_PAPERS": "څېړنه",
     "MENU.DISCUSSION_BOARD": "بحث او خبرې اترې",
     "MENU.IDEAS": "مفکورې",
     "IDEAS": "مفکورې",
@@ -143,5 +145,10 @@
     "TITLE": "عنوان",
     "CONTENTS":"لنډ معلومات",
     "ATTACHMENT": "ضمیمه",
-    "INVENTION_MESSAGE": "invention message"
+    "INVENTION_MESSAGE": "invention message",
+    "ADD_EXPERT": "نوې تجربه اضافه کړئ",
+    "EXPERTISE_FORM": "د تخصص فورمه",    
+    "EXPERTISE_DETAILS": "د تخصص معلومات",
+    "ADD_RESEARCH": "څیړنه اضافه کړئ",
+    "PROFILE_DETAILS": "د پروفایل معلومات"
 }

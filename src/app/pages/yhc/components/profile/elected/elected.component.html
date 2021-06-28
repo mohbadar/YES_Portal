@@ -28,7 +28,7 @@
                 <div class="member">
                     <img [src]="elected?.photo.url" (error)="imageError($event.target)" class="img-team">
                     <div class="member-text">
-                        <h5>{{elected?.name}}</h5>
+                        <h5 (click)="redirectToProfileDetails(elected?.id)">{{elected?.name}}</h5>
                         <p> {{ elected?.shortBrief }} </p>
                     </div>
                 </div>

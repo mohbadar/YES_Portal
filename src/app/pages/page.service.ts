@@ -26,6 +26,9 @@ export class PageService {
     submitInventorForm(idea) {
         return this.http.post(`/api//inventions`, idea);
     }
+    submitEcpertiseForm(expertise) {
+        return this.http.post(`/api//perilesional-expertises`, expertise);
+    }
 
     getMenuList(graphQuery) {
         // console.log("Menue", graphQuery);

@@ -3,22 +3,22 @@
 <section class="section-padding">
     <div class="container">
         <div class="row m-2">
-            <button (click)="addInventor();" type="button"
-                class="btn btn-outline-secondary invention-message">{{'ADD_INVENSION' | translate
+            <button (click)="addResearch();" type="button"
+                class="btn btn-outline-secondary invention-message">{{'ADD_RESEARCH' | translate
                 }}</button>
         </div>
         <hr>
-        <div class="mt-4" *ngIf="inventors && inventors.length; else noData">
+        <div class="mt-4" *ngIf="research && research.length; else noData">
             <div class="row">
                 <div class="col-md-4"
-                    *ngFor="let inventor of inventors  | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
+                    *ngFor="let res of research  | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
                     <div class="card" style="width: 23rem;">
-                        <a (click)="redirectToInventorDetails(inventor.id)"><img [src]="inventor?.photos[0]?.url"
+                        <a (click)="redirectToResearchDetails(res.id)"><img [src]="res?.photos[0]?.url"
                                 (error)="imageError($event.target)" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                             <div class="d-flex flex-row align-items-center">
-                                <h3 class="card-title h5 mt-1 mb-3 d-block"
-                                    (click)="redirectToInventorDetails(inventor.id)">{{ inventor?.title }}</h3>
+                                <h3 class="card-title h5 mt-1 mb-3 d-block" (click)="redirectToResearchDetails(res.id)">
+                                    {{ res?.title }}</h3>
                             </div>
                         </div>
                     </div>

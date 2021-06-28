@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     lang;
     imageUrl = 'assets/images/afg-cover2.jpg';
     customOptions: OwlOptions;
-    MAX_BRIEF_LENGTH = 60;
+    MAX_BRIEF_LENGTH = 40;
     MAX_NEWS_TITLE_LENGTH = 50;
 
     constructor(
@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
         this.spinner.show();
         const graphqlQuery = `
         {
-            youthNews(locale: "${this.lang}") {
+            youthNews(locale: "${this.lang}", sort: "published_at:DESC") {
             id
             title
             photos {
@@ -176,7 +176,7 @@ export class HomeComponent implements OnInit {
     getSuccessStories() {
         this.spinner.show();
         const graphQuery = `{
-            successStories(locale:"${this.lang}", limit: 3, sort:"published_at") 
+            successStories(locale:"${this.lang}", limit: 3, sort: "published_at:DESC") 
             { 
               id name brief description publishedAt: published_at photos{ url }
             }
@@ -193,7 +193,7 @@ export class HomeComponent implements OnInit {
 
     getRecentBlogs() {
         const graphQuery = `{
-            blogs(locale:"${this.lang}", limit: 3) 
+            blogs(locale:"${this.lang}", limit: 3, sort: "published_at:DESC") 
             { 
               id title brief author publishedAt: published_at photos{ url }
             }
