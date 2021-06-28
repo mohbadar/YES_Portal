@@ -14,7 +14,7 @@ export class InventionsComponent implements OnInit {
   loading: boolean = true;
   inventors = [];
   inventorsArr = [];
-  MAX_INVENTION_LENGTH = 40;
+  MAX_INVENTION_LENGTH = 30;
   componentName = "inventions";
   limit: number = 1;
   offset: number = 1;
@@ -63,7 +63,7 @@ export class InventionsComponent implements OnInit {
         this.loading = false;
         const newData = {
           page: offset,
-          data: res.data.inventions
+          data: this.formatTitle(res.data.inventions)
         };
         this.inventorsArr.push(newData);
         this.inventors = newData.data;
@@ -82,6 +82,20 @@ export class InventionsComponent implements OnInit {
     this.getInventors(page);
   }
 
+  formatTitle(data) {
+    data.forEach(element => {
+      element.title = this.getInventionTitle(element.title)
+    });
+    return data;
+  }
+
+  getInventionTitle(data) {
+    if (data && data.length > this.MAX_INVENTION_LENGTH) {
+      return data.substring(0, this.MAX_INVENTION_LENGTH) + '...';
+    } else {
+      return data;
+    }
+  }
 
   imageError(el) {
     el.onerror = '';

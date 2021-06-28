@@ -17,7 +17,7 @@ export class PerilesionalExpertiseComponent implements OnInit {
   loading: boolean = true;
   perilesionalExpertises = [];
   perilesionalExpertisesArr = [];
-  MAX_INVENTION_LENGTH = 40;
+  MAX_EXPERTISE_TITLE = 30;
   componentName = "perilesional_expertises";
 
 
@@ -63,7 +63,7 @@ export class PerilesionalExpertiseComponent implements OnInit {
         this.loading = false;
         const newData = {
           page: offset,
-          data: res.data.perilesionalExpertises
+          data: this.formatTitle(res.data.perilesionalExpertises)
         };
         this.perilesionalExpertisesArr.push(newData);
         this.perilesionalExpertises = newData.data;
@@ -81,6 +81,20 @@ export class PerilesionalExpertiseComponent implements OnInit {
   pageChanged(page: number) {
     this.offset = page;
     this.getPerilesionalExpertises(page);
+  }
+  formatTitle(data) {
+    data.forEach(element => {
+      element.title = this.getExpertiseTitle(element.title)
+    });
+    return data;
+  }
+
+  getExpertiseTitle(data) {
+    if (data && data.length > this.MAX_EXPERTISE_TITLE) {
+      return data.substring(0, this.MAX_EXPERTISE_TITLE) + '...';
+    } else {
+      return data;
+    }
   }
 
 

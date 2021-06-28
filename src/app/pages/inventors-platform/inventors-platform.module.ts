@@ -11,6 +11,8 @@ import { PerilesionalExpertiseComponent } from './components/perilesional-expert
 import { ResearchComponent } from './components/research/research.component';
 import { AddExpertiseComponent } from './components/perilesional-expertise/add-expertise/add-expertise.component';
 import { ExpertiseDetailsComponent } from './components/perilesional-expertise/expertise-details/expertise-details.component';
+import { AddResearchComponent } from './components/research/add-research/add-research.component';
+import { ResearchDetailsComponent } from './components/research/research-details/research-details.component';
 
 
 const routes: Routes = [
@@ -45,13 +47,25 @@ const routes: Routes = [
       {
         path: 'expertise-details/:expertise_id',
         component: ExpertiseDetailsComponent
-      }
+      },
+      {
+        path: 'research',
+        component: ResearchComponent
+      },
+      {
+        path: 'add-research',
+        component: AddResearchComponent
+      },
+      {
+        path: 'research-details/:research_id',
+        component: ResearchDetailsComponent
+      },
     ]
   }
 ];
 
 @NgModule({
-  declarations: [InventorsPlatformComponent, IdeasComponent, InventionsComponent, InventorDetailsComponent, AddInventorComponent, PerilesionalExpertiseComponent, ResearchComponent, AddExpertiseComponent, ExpertiseDetailsComponent],
+  declarations: [InventorsPlatformComponent, IdeasComponent, InventionsComponent, InventorDetailsComponent, AddInventorComponent, PerilesionalExpertiseComponent, ResearchComponent, AddExpertiseComponent, ExpertiseDetailsComponent, AddResearchComponent, ResearchDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -1,1 +1,45 @@
-<p>research works!</p>
+<app-cover [componentName]="componentName"></app-cover>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row m-2">
+            <button (click)="addResearch();" type="button"
+                class="btn btn-outline-secondary invention-message">{{'ADD_RESEARCH' | translate
+                }}</button>
+        </div>
+        <hr>
+        <div class="mt-4" *ngIf="research && research.length; else noData">
+            <div class="row">
+                <div class="col-md-4"
+                    *ngFor="let res of research  | paginate: { itemsPerPage: limit, currentPage: offset, totalItems: total }">
+                    <div class="card" style="width: 23rem;">
+                        <a (click)="redirectToResearchDetails(res.id)"><img [src]="res?.photos[0]?.url"
+                                (error)="imageError($event.target)" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <div class="d-flex flex-row align-items-center">
+                                <h3 class="card-title h5 mt-1 mb-3 d-block" (click)="redirectToResearchDetails(res.id)">
+                                    {{ res?.title }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center pt-5">
+                <pagination-controls (pageChange)="pageChanged($event)" autoHide="true" responsive="true" maxSize="9"
+                    previousLabel="{{ 'PAGINATION_PREVIOUS' | translate }}"
+                    nextLabel="{{ 'PAGINATION_NEXT' | translate }}">
+                </pagination-controls>
+            </div>
+        </div>
+        <ng-template #noData>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+
+    </div>
+
+</section>
