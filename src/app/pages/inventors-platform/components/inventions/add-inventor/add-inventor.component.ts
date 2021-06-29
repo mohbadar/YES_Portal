@@ -72,11 +72,9 @@ export class AddInventorComponent implements OnInit {
   }
 
   uploadAttachement(event) {
-    console.log("🚀 ~ file: add-inventor.component.ts ~ line 74 ~ AddInventorComponent ~ uploadAttachement ~ event", event)
 
     if (event.target.files && event.target.files[0]) {
       this.photos = event.target.files[0];
-      console.log("🚀 ~ file: add-inventor.component.ts ~ line 76 ~ AddInventorComponent ~ uploadAttachement ~ attachment", this.photos)
     }
 
   }

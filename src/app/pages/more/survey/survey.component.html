@@ -1,0 +1,49 @@
+<app-cover [componentName]="componentName"></app-cover>
+
+<section class="section-padding">
+    <div class="container">
+        <div *ngIf="surveys && surveys.length; else nodata">
+            <div class="row" *ngFor="let survey of surveys">
+                <blockquote class="row blockquote">
+                    <div class="col-md-12">
+                        <h5 class="alert-heading">{{ survey?.title }}</h5>
+                        <p [innerHTML]=" survey?.description | parsehtml | safe"></p>
+                    </div>
+                    <div class="col-md-12">
+                        <h5 class="col-md-3">
+                            <p class="text-info">{{ 'START_DATE' | translate }} :</p> <span class="text-danger">{{
+                                survey?.start_date }}</span>
+                        </h5>
+                        <h5 class="col-md-3">
+                            <p class="text-info"> {{ 'END_DATE' | translate }} :</p><span class="text-danger">{{
+                                survey.end_date }}</span>
+                        </h5>
+
+                        <div class="col-md-3" *ngIf="survey.showLinks">
+                            <h5 class="text-info"> {{ 'SURVEY_LINK' | translate}}</h5>
+                            <a href="{{  survey?.link }}" target="_blank" class="badge badge-info text-center">
+                                {{ 'SURVEY_LINK' | translate}}
+                                <i class="m-2 fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-3 pt-4">
+                            <a [href]="survey?.attachment?.url" target="_blank" rel="noopener noreferrer"> <button
+                                    class="btn btn-outline-danger">
+                                    {{ 'DOWNLOAD_SURVEY' | translate}}
+                                    <i class="m-2 fa fa-download" aria-hidden="true"></i>
+                                </button></a>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+        <ng-template #nodata>
+            <div class="">
+                <div class="jumbotron no-data">
+                    <div [class.dot-falling]="loading"></div>
+                    <h4 *ngIf="!loading" class="text-center">{{ 'NODATA' | translate }}</h4>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>

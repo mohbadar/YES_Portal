@@ -152,6 +152,10 @@
     "EXPERTISE_FORM": "Expertise Form",
     "EXPERTISE_DETAILS": "Perilesional Expertise Information",
     "ADD_RESEARCH": "Add Research",
-    "PROFILE_DETAILS": "Profile Details"
+    "PROFILE_DETAILS": "Profile Details",
+    "DOWNLOAD_SURVEY": "Download Survey File",
+    "SURVEY_LINK": "Survey Link",
+    "START_DATE": "Start Date",
+    "END_DATE": "End Date"
 
 }
