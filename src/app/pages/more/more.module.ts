@@ -9,6 +9,7 @@ import { EventsComponent } from './events/events.component';
 import { DeputyYouthMinistryComponent } from './deputy-youth-ministry/deputy-youth-ministry.component';
 import { ActivityDetailsComponent } from './deputy-youth-ministry/activity-details/activity-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { SurveyComponent } from './survey/survey.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,9 @@ const routes: Routes = [
       },
       {
         path: 'gallery', component: GalleryComponent
+      },
+      {
+        path: 'surveys', component: SurveyComponent
       }
     ]
   }
@@ -40,7 +44,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [MoreComponent, BlogsComponent, BlogdetailsComponent, EventsComponent, DeputyYouthMinistryComponent, ActivityDetailsComponent, GalleryComponent],
+  declarations: [MoreComponent, BlogsComponent, BlogdetailsComponent, EventsComponent, DeputyYouthMinistryComponent, ActivityDetailsComponent, GalleryComponent, SurveyComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

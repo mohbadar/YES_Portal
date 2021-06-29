@@ -150,5 +150,9 @@
     "EXPERTISE_FORM": "فرم تخصص",
     "EXPERTISE_DETAILS": "جزئیات تخصص",
     "ADD_RESEARCH": "تحقیق اضافه کنید",
-    "PROFILE_DETAILS": "پروفایل معلومات"
+    "PROFILE_DETAILS": "پروفایل معلومات",
+    "DOWNLOAD_SURVEY": "ډاونلوډ فایل سروی",
+    "SURVEY_LINK": "لینک سروی",
+    "START_DATE": "تاریخ شروع",
+    "END_DATE": "تاریخ پایان"
 }

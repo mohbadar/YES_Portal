@@ -150,5 +150,9 @@
     "EXPERTISE_FORM": "د تخصص فورمه",    
     "EXPERTISE_DETAILS": "د تخصص معلومات",
     "ADD_RESEARCH": "څیړنه اضافه کړئ",
-    "PROFILE_DETAILS": "د پروفایل معلومات"
+    "PROFILE_DETAILS": "د پروفایل معلومات",
+    "DOWNLOAD_SURVEY": "د سروې فایل ډاونلوډ کړئ",
+    "SURVEY_LINK": "د سروې لینک",
+    "START_DATE": "پیل نېټه",
+    "END_DATE": "د پای نیټه"
 }
