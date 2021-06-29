@@ -3,25 +3,25 @@
     <div class="container" id="mform">
         <form [formGroup]="employmentForm">
             <div class="form-row">
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'FIRST_NAME' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="name">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'LAST_NAME' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="lastName">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'FATHER_NAME' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="fatherName">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'NID_NUMBER' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="nidNumber">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'GENDER' | translate}}<span class="required-field">*</span></label>
                     <select class="form-control" formControlName="gender">
                         <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
@@ -29,7 +29,7 @@
                         <option value="male">{{'MALE' | translate}}</option>
                     </select>
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'DATE_OF_BIRTH' | translate}}</label><br>
                     <input type="date" formControlName="dateOfBirth" class="form-control">
                     <!-- <dp-date-picker formControlName="dateOfBirth" theme="dp-material"></dp-date-picker> -->
@@ -37,21 +37,21 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'MOBILE_NUMBER' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="mobileNumber">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'EMAIL' | translate}}<span class="required-field">*</span></label>
                     <input type="" class="form-control" formControlName="email">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'ADDRESS' | translate}}</label>
                     <input type="text" class="form-control" formControlName="address">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'DEGREE' | translate}}<span class="required-field">*</span></label>
                     <select class="form-control" formControlName="degree">
                         <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
@@ -60,25 +60,25 @@
                         <option value="doctoral">{{'DOCTORAL' | translate}}</option>
                     </select>
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'ACADEMIC_FIELD' | translate}}</label>
                     <input type="text" class="form-control" formControlName="academicField">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'WORK_EXPERIENCE' | translate}}</label>
                     <input type="text" class="form-control" formControlName="workExperience">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'LANGUAGES' | translate}}</label>
                     <input type="text" class="form-control" formControlName="languages">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'SKILL' | translate}}</label>
                     <input type="text" class="form-control" formControlName="skill">
                 </div>
-                <div class="form-group col">
+                <div class="form-group col-md-4">
                     <label>{{'CV' | translate}}<span class="required-field">*</span></label>
                     <input type="file" class="form-control" formControlName="cv" (change)="uploadCV($event)">
                 </div>
