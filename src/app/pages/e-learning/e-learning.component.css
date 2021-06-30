@@ -2,3 +2,10 @@
   padding-right: 100px;
   padding-left: 100px;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
