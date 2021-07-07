@@ -197,7 +197,7 @@ export class MenuConfig {
                                     translate: 'MENU.PROVINCIAL'
                                 }, {
                                     title: 'ZONES',
-                                    page: '/zones',
+                                    page: '/zone-elections',
                                     translate: 'MENU.ZONES'
                                 }
                             ]
