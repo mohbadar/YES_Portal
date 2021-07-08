@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { districts } from 'src/assets/data/districts';
+import { provinces } from 'src/assets/data/provinces';
 
 @Injectable({
     providedIn: 'root'
@@ -49,5 +52,17 @@ export class PageService {
         }).pipe(map(m => {
             return m;
         }));
+    }
+
+    getProvinces() {
+        return provinces;
+    }
+
+    getDistricts(provinceId) {
+        const ds = districts.filter(d => d.province == provinceId);
+        if (ds.length) {
+            return of(ds[0].districts);
+        }
+        return of(null);
     }
 }

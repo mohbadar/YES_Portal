@@ -1,0 +1,205 @@
+<app-cover [componentName]="componentName"></app-cover>
+
+
+<section class="section-padding">
+
+    <div class="container" id="mform">
+        <h3 class="text-center w-75 m-auto"> {{ 'ELECTION_MESSAGE' | translate }}</h3>
+        <hr>
+        <!-- {{ electionForm.value | json }} -->
+        <form [formGroup]="electionForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="fname">{{'FIRST_NAME' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" formControlName="name" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="lname">{{'LAST_NAME' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" formControlName="lastName" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>{{'FATHER_NAME' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" formControlName="fatherName" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>{{'NID_NUMBER' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="nidNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="fname">{{'GENDER' | translate}}<span class="required-field">*</span></label>
+                    <select class="form-control" formControlName="gender">
+                        <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
+                        <option value="female">{{'FEMALE' | translate}}</option>
+                        <option value="male">{{'MALE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'DATE_OF_BIRTH' | translate}}<span class="required-field">*</span></label><br>
+                    <input type="date" formControlName="dateOfBirth" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'AGE' | translate}}<span class="required-field">*</span></label>
+                    <input type="number" formControlName="age" class="form-control" min="10">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 t-align-initial">
+                    <h6 class="font-weight-bold MarginHTop">{{'ORIGINAL_RESIDENCE'|translate}}</h6>
+                </div>
+            </div>
+            <hr class="marginHR" />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="inputProvince">{{'PROVINCE' | translate}}<span class="required-field">*</span></label>
+                    <select class="custom-select" formControlName="originalProvince"
+                        (change)="getOriginalDistricts($event.target.value)">
+                        <option value="" disabled>{{'PROVINCE' | translate}}</option>
+                        <option *ngFor="let p of origanalProvinces" [value]="p.id">{{ p.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="district">{{ 'DISTRICT' | translate}} <span class="required-field">*</span></label>
+                    <select class="custom-select" formControlName="originalDistrict">
+                        <option value="" disabled>{{ 'DISTRICT' | translate}}</option>
+                        <option *ngFor="let d of origanalDistricts$ | async" [value]="d.name">{{ d.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'VILLAGE' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="originalVillage">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 t-align-initial">
+                    <h6 class="font-weight-bold MarginHTop">{{'CURRENT_RESIDENCE'|translate}}</h6>
+                </div>
+            </div>
+            <hr class="marginHR" />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label>{{'PROVINCE' | translate}}<span class="required-field">*</span></label>
+                    <select class="custom-select" formControlName="currentProvince"
+                        (change)="getCurrentDistricts($event.target.value)">
+                        <option value="" disabled>{{'PROVINCE' | translate}}</option>
+                        <option *ngFor="let p of currentProvinces" [value]="p.id">{{ p.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="district">{{ 'DISTRICT' | translate}} <span class="required-field">*</span></label>
+                    <select class="custom-select" formControlName="currentDistrict">
+                        <option value="" disabled>{{ 'DISTRICT' | translate}}</option>
+                        <option *ngFor="let d of currentDistricts$ | async" [value]="d.name">{{ d.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'VILLAGE' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="currentVillage">
+                </div>
+            </div>
+            <hr class="marginHR" />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label>{{'LANGUAGES' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="languages">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'MOBILE_NUMBER' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="mobileNumber">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'EMAIL' | translate}}<span class="required-field">*</span></label>
+                    <input type="" class="form-control" formControlName="email">
+                </div>
+            </div>
+
+            <hr class="marginHR" />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label>{{'UNIVERSITY' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="university">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'ACADEMIC_FIELD' | translate}}<span class="required-field">*</span></label>
+                    <input type="text" class="form-control" formControlName="academicField">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'QUALIFICATION' | translate}}<span class="required-field">*</span></label>
+                    <select class="form-control" formControlName="qualification">
+                        <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
+                        <option value="bachelor">{{'BACHELOR' | translate}}</option>
+                        <option value="master">{{'MASTER' | translate}}</option>
+                        <option value="doctoral">{{'DOCTORAL' | translate}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label>{{'CURRENT_JOB' | translate}}<span class="required-field">*</span></label>
+                    <textarea class="form-control" rows="3" formControlName="job"></textarea>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'POLITICAL_PARRTY' | translate}}<span class="required-field">*</span></label>
+                    <textarea class="form-control" rows="3" formControlName="politicalParty"></textarea>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'CIVIL_SOCIETY' | translate}}<span class="required-field">*</span></label>
+                    <textarea class="form-control" rows="3" formControlName="civilSociety"></textarea>
+                </div>
+                <!-- <div class="form-group col-md-4">
+                    <label>{{'JOB_ORGANIZATION' | translate}}</label>
+                    <input type="text" class="form-control" formControlName="jobOrganization">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'DEPARTMENT' | translate}}</label>
+                    <input type="text" class="form-control" formControlName="jobDepartment">
+                </div> -->
+            </div>
+            <!-- <div class="row">
+                <div class="form-group col-md-6">
+                    <label>{{'POLITICAL_PARRTY' | translate}}<span class="required-field">*</span></label>
+                    <select class="form-control" formControlName="ploitical_party">
+                        <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
+                        <option value="yes">{{'OK' | translate}}</option>
+                        <option value="no">{{'NO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>{{'PARTY_NAME' | translate}}</label>
+                    <input type="text" class="form-control" formControlName="politiclPartyName">
+                </div>
+
+
+            </div> -->
+            <div class="row col-md-12">
+                <!-- <div class="form-group col-md-4">
+                    <label>{{'CIVIL_SOCIETY' | translate}}<span class="required-field">*</span></label>
+                    <select class="form-control" formControlName="civil_society_experiance">
+                        <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
+                        <option value="yes">{{'OK' | translate}}</option>
+                        <option value="no">{{'NO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>{{'SOCIETY_NAME' | translate}}</label>
+                    <input type="text" class="form-control" formControlName="societyName">
+                </div> -->
+
+                <div class="form-group col-md-4">
+                    <label>{{'PHOTO' | translate}}<span class="required-field">*</span></label>
+                    <input type="file" class="form-control" formControlName="image" (change)="uploadPhoto($event)">
+                </div>
+
+
+            </div>
+
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-info">{{ 'SUBMIT' |
+                    translate }}</button>
+            </div>
+        </form>
+    </div>
+
+</section>
