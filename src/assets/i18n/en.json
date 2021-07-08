@@ -69,9 +69,9 @@
     "MENU.ZONES": "Zones",
     "MENU.DIASPORA": "Diaspora",
     "DIASPORA": "Diaspora",
-    "MENU.YHC_MEMBERSHIP": "YHC Membership",
-    "YHC_MEMBERSHIP": "Youth High Council Membership Form",
-    "YHC_MESSAGE": "Afghan youth who are interested to join youth high council fill form below",
+    "MENU.YHC_MEMBERSHIP": "Youth Network",
+    "YHC_MEMBERSHIP": "Youth Network Membership Form",
+    "YHC_MESSAGE": "Afghan youth who are interested to join youth Network fill form below",
     "MENU.MORE": "More",
     "MENU.EVENTS": "Events",
     "EVENTS": "Events",
@@ -148,7 +148,7 @@
     "TITLE": "Title",
     "CONTENTS":"Brief Information",
     "ATTACHMENT": "Attachment",
-    "INVENTION_MESSAGE": "invention message",
+    "INVENTION_MESSAGE": "Please list your inventions here",
     "ADD_EXPERT": "Add new Expertise",
     "EXPERTISE_FORM": "Expertise Form",
     "EXPERTISE_DETAILS": "Perilesional Expertise Information",
@@ -173,6 +173,10 @@
     "CIVIL_SOCIETY": "",
     "SOCIETY_NAME": "",
     "PHOTO": "",
-    "age": ""
+    "age": "",
+    "BIRTH_PLACE": "Birth Place",
+    "JOB_EXPERIANCE": "Job Experience",
+    "SOCIAL_ACTIVITY": "SOCIAL ACTIVITY"
+
 
 }

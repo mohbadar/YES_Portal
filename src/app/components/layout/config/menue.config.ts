@@ -188,12 +188,12 @@ export class MenuConfig {
                             submenu: [
                                 {
                                     title: 'District',
-                                    page: '/district',
+                                    page: '/district-elections',
                                     translate: 'MENU.DISTRICT',
 
                                 }, {
                                     title: 'Provincial',
-                                    page: '/provincial',
+                                    page: '/provincial-elections',
                                     translate: 'MENU.PROVINCIAL'
                                 }, {
                                     title: 'ZONES',

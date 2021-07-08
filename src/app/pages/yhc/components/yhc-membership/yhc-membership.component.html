@@ -5,56 +5,124 @@
 
     <div class="container">
         <!-- <h3 class="text-center text-uppercase">{{'YHC_MEMBERSHIP' | translate}} </h3> -->
-        <p class="text-center w-75 m-auto"> {{ 'YHC_MESSAGE' | translate }}</p>
+        <h3 class="text-center w-75 m-auto"> {{ 'YHC_MESSAGE' | translate }}</h3>
         <hr>
         <div class="row">
-            <div class="col-md-12 mt-4">
+            <div class="col-md-12 mt-4" id="mform">
                 <form [formGroup]="yhcForm" (ngSubmit)="onSubmit()">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="fname">{{'FIRST_NAME' | translate}}<span class="required-field">*</span></label>
                             <input type="text" formControlName="name" class="form-control">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                             <label for="lname">{{'LAST_NAME' | translate}}<span class="required-field">*</span></label>
                             <input type="text" formControlName="lastName" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>{{'NID_NUMBER' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="nidNumber">
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputProvince">{{'PROVINCE' | translate}}<span
+                                    class="required-field">*</span></label>
+                            <select class="custom-select" formControlName="provinceName"
+                                (change)="getDistricts($event.target.value)">
+                                <option value="" disabled>{{'PROVINCE' | translate}}</option>
+                                <option *ngFor="let p of provinces" [value]="p.id">{{ p.name }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="district">{{ 'DISTRICT' | translate}} <span
+                                    class="required-field">*</span></label>
+                            <select class="custom-select" formControlName="districtName">
+                                <option value="" disabled>{{ 'DISTRICT' | translate}}</option>
+                                <option *ngFor="let d of districts$ | async" [value]="d.name">{{ d.name }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>{{'VILLAGE' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="villageNumber">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="fname">{{'GENDER' | translate}}<span class="required-field">*</span></label>
+                            <select class="form-control" formControlName="gender">
+                                <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
+                                <option value="female">{{'FEMALE' | translate}}</option>
+                                <option value="male">{{'MALE' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>{{'DATE_OF_BIRTH' | translate}}<span class="required-field">*</span></label><br>
+                            <input type="date" formControlName="dateOfBirth" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>{{'BIRTH_PLACE' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="birthPlace">
                         </div>
 
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+
+                        <div class="form-group col-md-4">
+                            <label>{{'QUALIFICATION' | translate}}<span class="required-field">*</span></label>
+                            <select class="form-control" formControlName="qualification">
+                                <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
+                                <option value="bachelor">{{'BACHELOR' | translate}}</option>
+                                <option value="master">{{'MASTER' | translate}}</option>
+                                <option value="doctoral">{{'DOCTORAL' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>{{'ACADEMIC_FIELD' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="academicField">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>{{'UNIVERSITY' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="university">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label>{{'MOBILE_NUMBER' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="mobileNumber">
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="email">{{'EMAIL' | translate}}<span class="required-field">*</span></label>
                             <input type="email" formControlName="email" class="form-control">
                             <span class="text-error"
                                 *ngIf="!yhcForm.controls['email'].valid && yhcForm.controls['email']?.touched"> Please
                                 enter a valid Email</span>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="mobileNumber">{{'MOBILE_NUMBER' | translate}}<span
-                                    class="required-field">*</span></label>
-                            <input type="text" formControlName="mobileNumber" class="form-control">
+                        <div class="form-group col-md-4">
+                            <label>{{'LANGUAGES' | translate}}<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" formControlName="languages">
                         </div>
-
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="inputAddress">{{'ADDRESS' | translate}}<span
-                                    class="required-field">*</span></label>
-                            <input type="text" class="form-control" id="inputAddress" formControlName="address">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputStreet">{{'STREET' | translate}}</label>
-                            <input type="text" class="form-control" id="inputStreet" formControlName="street">
+                    <div class="row">
+
+                        <div class="form-group col-md-4">
+                            <label>{{'JOB_EXPERIANCE' | translate}}<span class="required-field">*</span></label>
+                            <textarea class="form-control" rows="3" formControlName="jobExperiance"></textarea>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputProvince">{{'PROVINCE' | translate}}<span
-                                    class="required-field">*</span></label>
-                            <input type="text" class="form-control" id="inputProvince" formControlName="province">
+                            <label>{{'SOCIAL_ACTIVITY' | translate}}<span class="required-field">*</span></label>
+                            <textarea class="form-control" rows="3" formControlName="socialActivity"></textarea>
                         </div>
-                        <div class="form-group col-md-2">
-                            <label for="inputZip">{{'Zip' | translate}}</label>
-                            <input type="text" class="form-control" id="inputZip" formControlName="zipCode">
+                        <div class="form-group col-md-4">
+                            <label>{{'CURRENT_JOB' | translate}}<span class="required-field">*</span></label>
+                            <textarea class="form-control" rows="3" formControlName="job"></textarea>
                         </div>
+
                     </div>
 
 

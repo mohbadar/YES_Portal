@@ -147,7 +147,7 @@
     "TITLE": "عنوان",
     "CONTENTS":"لنډ معلومات",
     "ATTACHMENT": "ضمیمه",
-    "INVENTION_MESSAGE": "invention message",
+    "INVENTION_MESSAGE": "مهرباني وکړئ دلته خپل اختراعات ثبت کړئ",
     "ADD_EXPERT": "نوې تجربه اضافه کړئ",
     "EXPERTISE_FORM": "د تخصص فورمه",    
     "EXPERTISE_DETAILS": "د تخصص معلومات",
@@ -173,6 +173,13 @@
     "CIVIL_SOCIETY": "په مدنی تولنه کی لږ تر لږدری کلنه تجربه",
     "SOCIETY_NAME": "د اداره نوم",
     "PHOTO": "عکس",
-    "age": "عمر"
+    "age": "عمر",
+    "SUCCESS_MSG_ELECTIONS": "ستاسو د نوناندی  فارم په بریالیتوب سره خوندي شو",
+    "BIRTH_PLACE": "د زېږېدو ځای",
+    "JOB_EXPERIANCE": "د دندې تجربه",
+    "SOCIAL_ACTIVITY": "ټولنیز فعالیت"
+
+
+
 
 }

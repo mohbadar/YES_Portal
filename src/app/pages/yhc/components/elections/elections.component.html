@@ -36,7 +36,7 @@
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <label>{{'DATE_OF_BIRTH' | translate}}</label><br>
+                    <label>{{'DATE_OF_BIRTH' | translate}}<span class="required-field">*</span></label><br>
                     <input type="date" formControlName="dateOfBirth" class="form-control">
                 </div>
                 <div class="form-group col-md-4">
@@ -46,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="col-12 t-align-initial">
-                    <h5 class="font-weight-bold MarginHTop">{{'ORIGINAL_RESIDENCE'|translate}}</h5>
+                    <h6 class="font-weight-bold MarginHTop">{{'ORIGINAL_RESIDENCE'|translate}}</h6>
                 </div>
             </div>
             <hr class="marginHR" />
@@ -73,7 +73,7 @@
             </div>
             <div class="row">
                 <div class="col-12 t-align-initial">
-                    <h5 class="font-weight-bold MarginHTop">{{'CURRENT_RESIDENCE'|translate}}</h5>
+                    <h6 class="font-weight-bold MarginHTop">{{'CURRENT_RESIDENCE'|translate}}</h6>
                 </div>
             </div>
             <hr class="marginHR" />
@@ -101,7 +101,7 @@
             <hr class="marginHR" />
             <div class="row">
                 <div class="form-group col-md-4">
-                    <label>{{'LANGUAGES' | translate}}</label>
+                    <label>{{'LANGUAGES' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="languages">
                 </div>
                 <div class="form-group col-md-4">
@@ -117,16 +117,16 @@
             <hr class="marginHR" />
             <div class="row">
                 <div class="form-group col-md-4">
-                    <label>{{'UNIVERSITY' | translate}}</label>
+                    <label>{{'UNIVERSITY' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="university">
                 </div>
                 <div class="form-group col-md-4">
-                    <label>{{'ACADEMIC_FIELD' | translate}}</label>
+                    <label>{{'ACADEMIC_FIELD' | translate}}<span class="required-field">*</span></label>
                     <input type="text" class="form-control" formControlName="academicField">
                 </div>
                 <div class="form-group col-md-4">
                     <label>{{'QUALIFICATION' | translate}}<span class="required-field">*</span></label>
-                    <select class="form-control" formControlName="qulification">
+                    <select class="form-control" formControlName="qualification">
                         <option value="" selected disabled>{{'SELECT_AN_OPTION' | translate}}</option>
                         <option value="bachelor">{{'BACHELOR' | translate}}</option>
                         <option value="master">{{'MASTER' | translate}}</option>

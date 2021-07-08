@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { PageService } from 'src/app/pages/page.service';
@@ -24,6 +24,8 @@ export class ElectionsComponent implements OnInit {
   photo;
   originalProvinceName;
   currentProvinceName;
+  title;
+  lang;
 
   constructor(
     private fb: FormBuilder,
@@ -31,8 +33,14 @@ export class ElectionsComponent implements OnInit {
     private service: YhcService,
     private translate: TranslateService,
     private route: ActivatedRoute,
+    private router: Router,
     private pageService: PageService
   ) {
+
+    this.lang = this.translate.currentLang;
+    if (this.lang === 'en') {
+      this.router.navigateByUrl('/');
+    }
     this.route.params.subscribe((params) => {
       this.type = params['type']
       console.log("🚀 ~ file: elections.component.ts ~ line 29 ~ ElectionsComponent ~ this.route.params.subscribe ~ type", this.type);
@@ -44,6 +52,12 @@ export class ElectionsComponent implements OnInit {
     this.intializeForm();
     this.getCurrentProvinces();
     this.getOriginalProvinces();
+
+    // if (this.type === 'zone-elections') {
+    //   this.title = this.translate.instant('ZONE_MESSAGE')
+    // }
+
+
 
   }
   intializeForm() {
@@ -66,7 +80,7 @@ export class ElectionsComponent implements OnInit {
       mobileNumber: [, [Validators.required]],
       university: ['', [Validators.required]],
       academicField: ['', [Validators.required]],
-      qulification: ['', [Validators.required]],
+      qualification: ['', [Validators.required]],
       job: ['', [Validators.required]],
       politicalParty: ['', [Validators.required]],
       civilSociety: ['', [Validators.required]],
@@ -85,6 +99,7 @@ export class ElectionsComponent implements OnInit {
     } else {
       document.getElementById('mform').classList.remove('input-error');
       const data = JSON.parse(JSON.stringify((this.electionForm.value)));
+      data.published_at = null;
       data.originalProvince = this.originalProvinceName;
       data.currentProvince = this.currentProvinceName;
       console.log("🚀 ~ file: elections.component.ts ~ line 90 ~ ElectionsComponent ~ onSubmit ~ data", data)
@@ -98,7 +113,7 @@ export class ElectionsComponent implements OnInit {
         this.electionForm.reset();
         Swal.fire({
           icon: 'success',
-          title: this.translate.instant('SUCCESS_MSG'),
+          title: this.translate.instant('SUCCESS_MSG_ELECTIONS'),
           showConfirmButton: false,
           timer: 1500
         })

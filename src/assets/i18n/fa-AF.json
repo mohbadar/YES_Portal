@@ -55,7 +55,7 @@
     "MENU.QUESTIONS": "سوالات",
     "MENU.SURVEYS": "سروی ها",
     "MENU.YHC": "شورای عالی جوانان",
-    "YHC_MEMBERSHIP": "فرم عضویت در شورای عالی جوانان",
+    "YHC_MEMBERSHIP": "فورم عضویت شبکه جوانان",
     "MENU.ELECTED": "انتخابی",
     "YHC_ELECTED": "انتخابی",
     "MENU.APPOINTED": "انتصابی",
@@ -69,8 +69,8 @@
     "MENU.ZONES": "زون",
     "MENU.DIASPORA": "دیاسپورا",
     "DIASPORA": "دیاسپورا",
-    "MENU.YHC_MEMBERSHIP": "عضویت شورای جوانان",
-    "YHC_MESSAGE": "جوانان افغان که مایل به عضویت در شورای عالی جوانان هستند فرم زیر را پر کنند",
+    "MENU.YHC_MEMBERSHIP": "عضویت شبکه جوانان",
+    "YHC_MESSAGE": "جوانان افغان که مایل به عضویت در شبکه  جوانان هستند فورم زیر را خانه‌پری نمایند",
     "MENU.MORE": "بیشتر",
     "MENU.EVENTS": "مناسبت ها",
     "EVENTS": "مناسبت ها",
@@ -148,7 +148,7 @@
     "TITLE": "عنوان",
     "CONTENTS":"معلومات مختصر",
     "ATTACHMENT": "ضمیمه",
-    "INVENTION_MESSAGE": "invention message",
+    "INVENTION_MESSAGE": "لطف نموده اختراعات تان را در اینجا درج نمایید",
     "ADD_EXPERT": "تخصص جدید اضافه کنید",
     "EXPERTISE_FORM": "فرم تخصص",
     "EXPERTISE_DETAILS": "جزئیات تخصص",
@@ -174,5 +174,11 @@
     "CIVIL_SOCIETY": "تجربه کاری در نهادهای مدنی حد اقل سه سال",
     "SOCIETY_NAME": "عنوان نهاد",
     "PHOTO": "عکس",
-    "age": "سن"
+    "age": "سن",
+    "SUCCESS_MSG_ELECTIONS": "فرم انتخابات شما با موفقیت ذخیره شد",
+    "ZONE_MESSAGE": "",
+    "BIRTH_PLACE": "محل تولد",
+    "JOB_EXPERIANCE": "تجربه کاری",
+    "SOCIAL_ACTIVITY": "فعالیت های اجتماعی (رضاکارانه) "
+
 }
