@@ -1337,6 +1337,7 @@ blockquote {
 
 .footer p {
   color: #fff;
+  font-size: 20px;
 }
 
 .footer span {
@@ -1347,6 +1348,7 @@ blockquote {
 body[dir="rtl"] .footer p {
   color: #fff;
   font-size: 24px;
+  margin-right: 40px;
 }
 
 .footer i {
