@@ -13,9 +13,9 @@ export class SuccessStoriesComponent implements OnInit {
     limit: number = 2;
     offset: number = 1;
     total: number = 1;
+    loading: boolean = true;
     lang;
     componentName = "success-stories";
-    loading: boolean = false;
     successStories;
     successStroriesArr = [];
     MAX_BRIEF_LENGTH = 80;

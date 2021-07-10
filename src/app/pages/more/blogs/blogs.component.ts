@@ -12,7 +12,7 @@ export class BlogsComponent implements OnInit {
 
   componentName = "blogs";
   lang;
-  loading: boolean = false;
+  loading: boolean = true;
   blogs = [];
   blogsArr = [];
   MAX_BRIEF_LENGTH = 40;
