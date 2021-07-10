@@ -13,6 +13,7 @@ export class ContactUsComponent implements OnInit {
 
   getInTouchForm: FormGroup;
   componentName = "get_in_touch";
+  contactInfo;
 
   constructor(
     private fb: FormBuilder,
@@ -21,12 +22,32 @@ export class ContactUsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getContactInfo();
     this.getInTouchForm = this.fb.group({
       name: [, [Validators.required]],
       email: [, Validators.compose([Validators.required, Validators.email])],
       subject: [, [Validators.required]],
       message: ['', [Validators.required]]
     });
+  }
+
+  getContactInfo() {
+    const graphqlQuery = `
+    {
+      contactInfo{
+        email
+        mobile_number
+      }
+    }
+  `;
+    this.service.getData(graphqlQuery).subscribe((res: any) => {
+      this.contactInfo = res.data.contactInfo;
+
+    }, err => {
+      console.log(err);
+
+    });
+
   }
 
   submitGetInTouch() {

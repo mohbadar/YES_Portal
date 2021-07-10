@@ -22,14 +22,12 @@
             <div class="col-md-4">
                 <h5>{{ "CONTACT-INFO" | translate }}</h5>
                 <hr />
-                <span><i class="icofont-phone"></i> +93-700000000</span>
-                <span><i class="icofont-email"></i> email@gmail.com</span>
+                <span><i class="icofont-phone"></i>{{ contactInfo?.mobile_number }}</span>
+                <span><i class="icofont-email"></i> {{ contactInfo?.email}}</span>
                 <span>
                     <ul class="social  mt-3">
-                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                        <li><a href="#"><i class="icofont-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icofont-youtube"></i></a></li>
+                        <li *ngFor="let icon of socialMediaIcon"><a [href]="icon.link" target="_blank"><i
+                                    class="fa {{ icon.class_name }}"></i></a></li>
                     </ul>
                 </span>
             </div>
