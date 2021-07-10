@@ -2,7 +2,7 @@
 
 <section class="contact section-padding">
     <div class="container">
-        <h5 class="text-center text-uppercase">{{ 'CONTACT.MESSAGE' | translate }} </h5>
+        <h5 class="text-center">{{ 'CONTACT.MESSAGE' | translate }} </h5>
         <!-- <p class="text-center h2 m-auto">{{ "CONTACT.MESSAGE" | translate }}</p> -->
         <hr>
         <div class="row">
@@ -10,14 +10,14 @@
                 <div class="card border-0">
                     <div class="card-body text-center">
                         <i class="icofont-phone" aria-hidden="true"></i>
-                        <p>0093-070000000</p>
+                        <p>{{ contactInfo?.mobile_number}}</p>
                     </div>
                 </div>
 
                 <div class="card border-0">
                     <div class="card-body text-center">
                         <i class="icofont-email" aria-hidden="true"></i>
-                        <p>yes@gmail.com</p>
+                        <p>{{ contactInfo?.email}}</p>
                     </div>
 
                 </div>
