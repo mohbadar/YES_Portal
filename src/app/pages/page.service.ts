@@ -17,20 +17,20 @@ export class PageService {
     ) { }
 
     complainForm(complain) {
-        return this.http.post(`/api//complains`, complain);
+        return this.http.post(`/api/complains`, complain);
     }
     getInTouchForm(message) {
-        return this.http.post(`/api//get-in-touches`, message);
+        return this.http.post(`/api/get-in-touches`, message);
     }
 
     submitIdearForm(idea) {
-        return this.http.post(`/api//ideas`, idea);
+        return this.http.post(`/api/ideas`, idea);
     }
     submitInventorForm(idea) {
-        return this.http.post(`/api//inventions`, idea);
+        return this.http.post(`/api/inventions`, idea);
     }
     submitEcpertiseForm(expertise) {
-        return this.http.post(`/api//perilesional-expertises`, expertise);
+        return this.http.post(`/api/perilesional-expertises`, expertise);
     }
 
     getMenuList(graphQuery) {

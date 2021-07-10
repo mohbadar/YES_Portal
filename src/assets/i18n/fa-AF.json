@@ -141,12 +141,12 @@
     "IDEA_MESSAGE": "اگر ایده ای دارید لطفا آن را در اینجا ارسال کنید!",
     "ADD_INVENSION": "اختراع خود را اضافه کنید",
     "ADD_FORM_INVENTION": "فرم اختراع",
-    "INVENTOR_DETAILS" : "معلومات مخترع",
+    "INVENTOR_DETAILS": "معلومات مخترع",
     "PAGINATION_PREVIOUS": "قبلی",
     "PAGINATION_NEXT": "بعدی",
     "NAME": "اسم شخص",
     "TITLE": "عنوان",
-    "CONTENTS":"معلومات مختصر",
+    "CONTENTS": "معلومات مختصر",
     "ATTACHMENT": "ضمیمه",
     "INVENTION_MESSAGE": "لطف نموده اختراعات تان را در اینجا درج نمایید",
     "ADD_EXPERT": "تخصص جدید اضافه کنید",
@@ -167,8 +167,8 @@
     "OK": "بلی",
     "NO": "خیر",
     "CURRENT_JOB": "شغل فعلی در دولت",
-    "JOB_ORGANIZATION":"وزارت/اداره",
-    "DEPARTMENT":"ریاست",
+    "JOB_ORGANIZATION": "وزارت/اداره",
+    "DEPARTMENT": "ریاست",
     "POLITICAL_PARRTY": "عضویت در احزاب سیاسی",
     "PARTY_NAME": "عنوان حزب",
     "CIVIL_SOCIETY": "تجربه کاری در نهادهای مدنی حد اقل سه سال",
@@ -179,6 +179,6 @@
     "ZONE_MESSAGE": "",
     "BIRTH_PLACE": "محل تولد",
     "JOB_EXPERIANCE": "تجربه کاری",
-    "SOCIAL_ACTIVITY": "فعالیت های اجتماعی (رضاکارانه) "
-
+    "SOCIAL_ACTIVITY": "فعالیت های اجتماعی (رضاکارانه) ",
+    "ACTIVITY_CATEGORY": "کتگوری فعالیت"
 }
