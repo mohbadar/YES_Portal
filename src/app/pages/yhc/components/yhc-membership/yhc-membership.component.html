@@ -11,6 +11,15 @@
             <div class="col-md-12 mt-4" id="mform">
                 <form [formGroup]="yhcForm" (ngSubmit)="onSubmit()">
                     <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="activityCategory">{{'ACTIVITY_CATEGORY' | translate}}<span
+                                    class="required-field">*</span></label>
+                            <ng-select [items]="activityCategories" bindLabel="name" bindValue="id"
+                                formControlName="activityCategories" appendTo="body" [multiple]="true">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="fname">{{'FIRST_NAME' | translate}}<span class="required-field">*</span></label>
                             <input type="text" formControlName="name" class="form-control">
@@ -124,10 +133,8 @@
                         </div>
 
                     </div>
-
-
                     <div class="text-center">
-                        <button type="submit" [disabled]="yhcForm.invalid" class="btn btn-info">{{ 'SUBMIT' |
+                        <button type="submit" class="btn btn-info">{{ 'SUBMIT' |
                             translate }}</button>
                     </div>
                 </form>

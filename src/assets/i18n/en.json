@@ -141,12 +141,12 @@
     "EXPERTISE_MESSAGE": "If you have any Expertise please submit it here!",
     "ADD_INVENSION": "Add Your Invention",
     "ADD_FORM_INVENTION": "Invention Form",
-    "INVENTOR_DETAILS" : "Inventor Details",
+    "INVENTOR_DETAILS": "Inventor Details",
     "PAGINATION_PREVIOUS": "Previous",
     "PAGINATION_NEXT": "Next",
     "NAME": "Name of Person",
     "TITLE": "Title",
-    "CONTENTS":"Brief Information",
+    "CONTENTS": "Brief Information",
     "ATTACHMENT": "Attachment",
     "INVENTION_MESSAGE": "Please List Your Inventions Here",
     "RESEARCH_MESSAGE": "Please List Your Research Here",
@@ -167,8 +167,8 @@
     "OK": "Yes",
     "NO": "No",
     "CURRENT_JOB": "",
-    "JOB_ORGANIZATION":"",
-    "DEPARTMENT":"",
+    "JOB_ORGANIZATION": "",
+    "DEPARTMENT": "",
     "POLITICAL_PARRTY": "",
     "PARTY_NAME": "",
     "CIVIL_SOCIETY": "",
@@ -177,5 +177,6 @@
     "age": "",
     "BIRTH_PLACE": "Birth Place",
     "JOB_EXPERIANCE": "Job Experience",
-    "SOCIAL_ACTIVITY": "SOCIAL ACTIVITY"
+    "SOCIAL_ACTIVITY": "SOCIAL ACTIVITY",
+    "ACTIVITY_CATEGORY": "Activity Category"
 }

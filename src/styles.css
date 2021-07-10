@@ -21,7 +21,7 @@
 /*           1.Default
 /*--------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800|Poppins:100,200,300,400,400i,500,600,700,800,900");
-
+@import "~@ng-select/ng-select/themes/default.theme.css";
 html {
   scroll-behavior: smooth;
 }
@@ -113,7 +113,8 @@ body {
   font-family: "Open Sans", "Bahij Halvetica", "Segoe UI", Arial, sans-serif;
 }
 
-body {}
+body {
+}
 
 a {
   -moz-transition: 0.3s;
@@ -297,12 +298,12 @@ body[dir="rtl"] .navbar-nav {
   color: #4484ce;
 }
 
-.navbar-1 ul li ul.dropdown-menu>li:hover>a {
+.navbar-1 ul li ul.dropdown-menu > li:hover > a {
   color: #4484ce;
   background: #fff;
 }
 
-.navbar-1 .collapse ul>li:hover>a {
+.navbar-1 .collapse ul > li:hover > a {
   color: #4484ce;
 }
 
@@ -333,16 +334,16 @@ body[dir="rtl"] .navbar-nav {
   color: #4484ce;
 }
 
-.fixed-top ul li ul.dropdown-menu>li:hover>a {
+.fixed-top ul li ul.dropdown-menu > li:hover > a {
   color: #4484ce;
   background: #fff;
 }
 
-.fixed-top .collapse ul>li:hover>a {
+.fixed-top .collapse ul > li:hover > a {
   color: #4484ce;
 }
 
-.navbar-nav li:hover>.dropdown-menu {
+.navbar-nav li:hover > .dropdown-menu {
   display: block;
   border-radius: 0;
 }
@@ -360,7 +361,7 @@ body[dir="rtl"] .navbar-nav {
   display: none;
 }
 
-.chat_box .chat_message_wrapper ul.chat_message>li+li {
+.chat_box .chat_message_wrapper ul.chat_message > li + li {
   margin-top: 4px;
 }
 
@@ -571,15 +572,19 @@ body[dir="ltr"].navbar-collapse {
 }
 
 body[dir="rtl"] .bg-gradient {
-  background: linear-gradient(to left,
-      #3ba6de,
-      rgba(39, 35, 97, 0) 100%) !important;
+  background: linear-gradient(
+    to left,
+    #3ba6de,
+    rgba(39, 35, 97, 0) 100%
+  ) !important;
 }
 
 .bg-gradient {
-  background: linear-gradient(to right,
-      #3ba6de,
-      rgba(39, 35, 97, 0) 100%) !important;
+  background: linear-gradient(
+    to right,
+    #3ba6de,
+    rgba(39, 35, 97, 0) 100%
+  ) !important;
 }
 
 .features-cont {
@@ -1078,7 +1083,7 @@ body[dir="rtl"] .bg-gradient {
   margin-bottom: 17px;
 }
 
-.blog-post-tag>a {
+.blog-post-tag > a {
   background: #f7f7f7 none repeat scroll 0 0;
   color: #6b7b98;
   display: inline-block;
@@ -1090,7 +1095,7 @@ body[dir="rtl"] .bg-gradient {
   margin-right: 5px;
 }
 
-.blog-post-tag>a:hover {
+.blog-post-tag > a:hover {
   background: #ff9b0c;
   color: #fff;
 }
