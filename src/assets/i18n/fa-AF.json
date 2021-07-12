@@ -55,7 +55,7 @@
     "MENU.COMPLAINS": "شکایات",
     "MENU.QUESTIONS": "سوالات",
     "MENU.SURVEYS": "سروی ها",
-    "MENU.YHC": "عضویت شبکه جوانان",
+    "MENU.YHC": "شورای عالی جوانان",
     "YHC_MEMBERSHIP": "عضویت شبکه جوانان",
     "MENU.ELECTED": "انتخابی",
     "YHC_ELECTED": "انتخابی",
@@ -63,6 +63,7 @@
     "YHC_APPOINTED": "انتصابی",
     "MENU.HONORARY": "افتخاری",
     "YHC_HONORARY": "افتخاری",
+    "ELECTIONS": "ثبت نام انتخابات",
     "MENU.ELECTION_REGISTRATIONS": "ثبت نام انتخابات",
     "MENU.DISTRICT": "زون",
     "MENU.PROVINCIAL": "ولایتی",
@@ -155,36 +156,10 @@
     "SURVEY_LINK": "لینک سروی",
     "START_DATE": "تاریخ شروع",
     "END_DATE": "تاریخ پایان",
-
-
-
-
-    
-
-
-
-
     "SURVEYS": "سروی ها",
-
-  
-
-
-
-
     "RESEARCH_MESSAGE": "اگر ‌پژوهیش ای دارید لطفا آن را در اینجا ارسال کنید!",
-
-
-
-
-
     "INVENTION_MESSAGE": "لطف نموده اختراعات تان را در اینجا درج نمایید",
     "EXPERTISE_MESSAGE": "لطف نموده تخصص های حرفه‌ای تان را در اینجا درج نمایید",
-
-
-
-
-
-
     "DISTRICT": "ناحیه",
     "ELECTION_MESSAGE": "فورم انتخابات شورای عالی جوانان",
     "ORIGINAL_RESIDENCE": "سکونت اصلی",
@@ -195,6 +170,8 @@
     "NO": "خیر",
     "CURRENT_JOB": "شغل فعلی در دولت",
     "JOB_ORGANIZATION": "وزارت/اداره",
+    "QUALIFICATION": "درجه تحصیلی",
+    "UNIVERSITY": "پوهنتون",
     "DEPARTMENT": "ریاست",
     "POLITICAL_PARRTY": "عضویت در احزاب سیاسی",
     "PARTY_NAME": "عنوان حزب",

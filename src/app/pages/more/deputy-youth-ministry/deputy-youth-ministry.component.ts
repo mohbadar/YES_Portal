@@ -16,7 +16,7 @@ export class DeputyYouthMinistryComponent implements OnInit {
   youthActivites = [];
   youthActivitesArr = [];
   MAX_ACTIVITY_TITLE_LENGTH = 40;
-  limit: number = 2;
+  limit: number = 10;
   offset: number = 1;
   total: number = 1;
 

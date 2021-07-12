@@ -10,7 +10,7 @@ import { PageService } from 'src/app/pages/page.service';
 })
 export class SuccessStoriesComponent implements OnInit {
 
-    limit: number = 2;
+    limit: number = 10;
     offset: number = 1;
     total: number = 1;
     loading: boolean = true;
